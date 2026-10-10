@@ -13,3 +13,5 @@ __pycache__/
 # OS files
 .DS_Store
 Thumbs.db
+team1_backend_test/
+subteam2-database/premium-ui/

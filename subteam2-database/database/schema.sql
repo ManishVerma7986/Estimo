@@ -1,41 +1,52 @@
 -- database/schema.sql
 
-
--- 1. Stores the initial project input
-
-CREATE TABLE IF NOT EXISTS projects
-(
+CREATE TABLE IF NOT EXISTS projects (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    project_text TEXT NOT NULL,
+    project_text TEXT,
+    input_type TEXT, -- 'text', 'image', or 'image+text'
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-
-
--- 2. Stores the output from the models and cost engine
-CREATE TABLE IF NOT EXISTS estimates
-(
+CREATE TABLE IF NOT EXISTS estimates (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     project_id INTEGER,
-    decomposed_tasks TEXT,
-    effort_score REAL,
-    range_p50 REAL,
-    range_p80 REAL,
-    total_cost REAL,
-    shap_drivers TEXT,
-    cost_breakdown TEXT,
+    
+    -- Final Cost Prediction (INR)
+    total_cost_optimistic REAL,
+    total_cost_likely REAL,
+    total_cost_pessimistic REAL,
+    
+    -- Cost Breakdown (INR)
+    hardware_cost_min REAL,
+    hardware_cost_max REAL,
+    software_dev_cost_min REAL,
+    software_dev_cost_max REAL,
+    licence_cost_min REAL,
+    licence_cost_max REAL,
+    
+    -- Timeline (Months)
+    effort_months_low REAL,
+    effort_months_likely REAL,
+    effort_months_high REAL,
+    
+    -- Metadata
+    confidence TEXT,
+    summary TEXT,
+    
+    -- Complex nested JSON data from Team 1's agents
+    hw_items_json TEXT,   
+    sw_items_json TEXT,   
+    team_json TEXT,       
+    sources_json TEXT,    
+    
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (project_id) REFERENCES projects(id)
 );
 
-
-
--- 3. Stores the rates fetched by the web search agent
-CREATE TABLE IF NOT EXISTS okf_rates
-(
+CREATE TABLE IF NOT EXISTS okf_rates (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     role_name TEXT,
     rate_per_hour REAL,
     source_url TEXT,
     date_fetched DATE
 );
-
