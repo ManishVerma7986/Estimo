@@ -12,19 +12,37 @@ erDiagram
     PROJECTS {
         int id PK
         string project_text
+        string input_type "text, image, or image+text"
         timestamp created_at
     }
 
     ESTIMATES {
         int id PK
         int project_id FK
-        string decomposed_tasks "JSON"
-        float effort_score
-        float range_p50
-        float range_p80
-        float total_cost
-        string shap_drivers "JSON"
-        string cost_breakdown "JSON"
+        
+        float total_cost_optimistic
+        float total_cost_likely
+        float total_cost_pessimistic
+        
+        float hardware_cost_min
+        float hardware_cost_max
+        float software_dev_cost_min
+        float software_dev_cost_max
+        float licence_cost_min
+        float licence_cost_max
+        
+        float effort_months_low
+        float effort_months_likely
+        float effort_months_high
+        
+        string confidence
+        string summary
+        
+        string hw_items_json "JSON"
+        string sw_items_json "JSON"
+        string team_json "JSON"
+        string sources_json "JSON"
+        timestamp created_at
     }
 
     OKF_RATES {
