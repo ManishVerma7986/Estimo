@@ -16,7 +16,7 @@ erDiagram
         timestamp created_at
     }
 
-    ESTIMATES {
+        ESTIMATES {
         int id PK
         int project_id FK
         
@@ -42,6 +42,12 @@ erDiagram
         string sw_items_json "JSON"
         string team_json "JSON"
         string sources_json "JSON"
+        
+        float actual_cost
+        float actual_effort_months
+        float estimate_accuracy
+        string project_status "predicted or completed"
+        
         timestamp created_at
     }
 

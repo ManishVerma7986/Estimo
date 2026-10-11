@@ -33,11 +33,17 @@ CREATE TABLE IF NOT EXISTS estimates (
     confidence TEXT,
     summary TEXT,
     
-    -- Complex nested JSON data from Team 1's agents
+    -- Complex nested JSON data
     hw_items_json TEXT,   
     sw_items_json TEXT,   
     team_json TEXT,       
     sources_json TEXT,    
+    
+    -- NEW: Decision Support & Accuracy Tracking (Estimate vs Actual)
+    actual_cost REAL,               -- Filled in after project completion
+    actual_effort_months REAL,      -- Filled in after project completion
+    estimate_accuracy REAL,         -- Calculated as 1 - (|actual - predicted| / actual)
+    project_status TEXT DEFAULT 'predicted', -- 'predicted' or 'completed'
     
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (project_id) REFERENCES projects(id)
