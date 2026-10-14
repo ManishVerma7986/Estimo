@@ -1,0 +1,17 @@
+# Python Virtual Environment
+.venv/
+__pycache__/
+*.pyc
+
+# Local Database files
+*.db
+*.sqlite3
+
+# VS Code settings
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+team1_backend_test/
+subteam2-database/premium-ui/
