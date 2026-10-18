@@ -1,0 +1,215 @@
+{
+  "hardware_requirement": [
+    {
+      "name": "STM32 Microcontroller Development Board",
+      "spec": "ARM Cortex-M4/M7, 168-480MHz, 512KB-2MB Flash, Ethernet/CAN/USB peripherals",
+      "quantity": 3,
+      "suggested_models": [
+        {
+          "maker": "STMicroelectronics",
+          "model": "STM32H743ZI-Nucleo",
+          "why": "High-performance MCU with rich connectivity for building automation"
+        },
+        {
+          "maker": "STMicroelectronics",
+          "model": "STM32F407VG-Discovery",
+          "why": "Cost-effective Cortex-M4 board with ample GPIOs"
+        }
+      ]
+    },
+    {
+      "name": "Temperature/Humidity Sensor",
+      "spec": "I2C interface, ±0.2°C accuracy, ±2% RH, 1.8-5V operation",
+      "quantity": 5,
+      "suggested_models": [
+        {
+          "maker": "Sensirion",
+          "model": "SHT31-DIS",
+          "why": "High accuracy, calibrated digital output, industry standard"
+        },
+        {
+          "maker": "Bosch",
+          "model": "BME280",
+          "why": "Integrated pressure/temperature/humidity, compact"
+        }
+      ]
+    },
+    {
+      "name": "Wi-Fi/BLE Communication Module",
+      "spec": "802.11 b/g/n, BLE 5.0, UART/SPI interface, 2.4GHz",
+      "quantity": 3,
+      "suggested_models": [
+        {
+          "maker": "Espressif",
+          "model": "ESP32-WROOM-32D",
+          "why": "Dual-core, integrated Wi-Fi/BLE, low cost"
+        },
+        {
+          "maker": "Murata",
+          "model": "LBEE5KL1DX-883",
+          "why": "Industrial grade, certified module"
+        }
+      ]
+    },
+    {
+      "name": "Power Management Board",
+      "spec": "Input 9-24V DC, Output 3.3V/5V 2A, overcurrent protection",
+      "quantity": 3,
+      "suggested_models": [
+        {
+          "maker": "Texas Instruments",
+          "model": "TPS5430 Buck Converter EVM",
+          "why": "High efficiency step-down regulator"
+        },
+        {
+          "maker": "Mean Well",
+          "model": "IRM-10-5",
+          "why": "Compact AC/DC encapsulated PSU"
+        }
+      ]
+    },
+    {
+      "name": "Relay Actuator Module",
+      "spec": "4-channel, 5V logic, 10A/250VAC contacts, opto-isolated",
+      "quantity": 2,
+      "suggested_models": [
+        {
+          "maker": "Songle",
+          "model": "SRD-05VDC-SL-C",
+          "why": "Low cost, widely available"
+        },
+        {
+          "maker": "Omron",
+          "model": "G5Q-1A4",
+          "why": "High reliability, long life"
+        }
+      ]
+    },
+    {
+      "name": "ST-Link Debugger/Programmer",
+      "spec": "SWD/JTAG, USB 2.0, supports STM32/STM8",
+      "quantity": 2,
+      "suggested_models": [
+        {
+          "maker": "STMicroelectronics",
+          "model": "ST-LINK/V2-ISOL",
+          "why": "Isolated probe for robust debugging"
+        },
+        {
+          "maker": "Segger",
+          "model": "J-Link EDU Mini",
+          "why": "Fast, supports many cores"
+        }
+      ]
+    },
+    {
+      "name": "Custom PCB Prototype / Breadboard",
+      "spec": "FR4, 2-layer, 100x100mm, with headers for sensors and modules",
+      "quantity": 5,
+      "suggested_models": [
+        {
+          "maker": "JLCPCB",
+          "model": "2-Layer Prototype Service",
+          "why": "Low cost, fast turnaround"
+        },
+        {
+          "maker": "PCBWay",
+          "model": "Advanced PCB Prototype",
+          "why": "Good quality, assembly option"
+        }
+      ]
+    }
+  ],
+  "software_requirement": {
+    "project_name": "Smart Building Controller Prototype",
+    "currency": "INR",
+    "bom_items": [
+      {
+        "item_name": "Embedded IDE & Compiler License (Keil MDK Professional)",
+        "quantity": 1,
+        "unit_price": 250000.0,
+        "unit": "license",
+        "category": "software",
+        "currency": "INR",
+        "source": "Arm Keil",
+        "region": "India"
+      },
+      {
+        "item_name": "IoT Cloud Platform Subscription (AWS IoT Core)",
+        "quantity": 1,
+        "unit_price": 60000.0,
+        "unit": "subscription",
+        "category": "software",
+        "currency": "INR",
+        "source": "AWS",
+        "region": "India"
+      },
+      {
+        "item_name": "PCB Design & Simulation Software (Altium Designer)",
+        "quantity": 1,
+        "unit_price": 180000.0,
+        "unit": "subscription",
+        "category": "software",
+        "currency": "INR",
+        "source": "Altium",
+        "region": "India"
+      }
+    ],
+    "rules": {
+      "overhead_percentage": 15.0,
+      "contingency_percentage": 10.0,
+      "tax_percentage": 18.0,
+      "currency": "INR"
+    },
+    "target_metric": "Effort",
+    "analogy_dataset_id": "desharnais_software_projects_38c5d000",
+    "ml_features": {
+      "TeamExp": 4,
+      "ManagerExp": 5,
+      "Length": 8,
+      "Transactions": 200,
+      "Entities": 75,
+      "PointsAjust": 280
+    },
+    "labor_items": [
+      {
+        "role_name": "Lead Hardware & Systems Engineer",
+        "hourly_rate": 1800.0,
+        "hours": 120.0,
+        "personnel_count": 1,
+        "currency": "INR"
+      },
+      {
+        "role_name": "Firmware / Embedded Developer",
+        "hourly_rate": 1200.0,
+        "hours": 200.0,
+        "personnel_count": 2,
+        "currency": "INR"
+      },
+      {
+        "role_name": "Quality & Regulatory Compliance Specialist",
+        "hourly_rate": 950.0,
+        "hours": 60.0,
+        "personnel_count": 1,
+        "currency": "INR"
+      }
+    ]
+  },
+  "team": [
+    {
+      "role": "Lead Hardware & Systems Engineer",
+      "reason": "Allocated 120.0 hrs @ ₹1800.0/hr"
+    },
+    {
+      "role": "Firmware / Embedded Developer",
+      "reason": "Allocated 200.0 hrs @ ₹1200.0/hr"
+    },
+    {
+      "role": "Quality & Regulatory Compliance Specialist",
+      "reason": "Allocated 60.0 hrs @ ₹950.0/hr"
+    }
+  ],
+  "summary": "",
+  "input_type": "text",
+  "confidence": "high"
+}

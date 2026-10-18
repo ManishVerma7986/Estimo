@@ -1,0 +1,471 @@
+[
+  {
+    "estimate_id": "est_b5135636",
+    "timestamp": "2026-10-11T12:04:45.688333+00:00",
+    "project_name": "API Test Project",
+    "currency": "INR",
+    "total_cost": 126879.5,
+    "direct_materials": 25000.0,
+    "direct_labor": 60000.0,
+    "ml_prediction": null,
+    "request_payload": {
+      "project_name": "API Test Project",
+      "currency": "INR",
+      "bom_items": [
+        {
+          "item_name": "Sensor Unit",
+          "quantity": 10.0,
+          "unit_price": 2500.0,
+          "unit": "piece",
+          "currency": "INR",
+          "category": "materials",
+          "source": null,
+          "date": null,
+          "region": null
+        }
+      ],
+      "labor_items": [
+        {
+          "role_name": "Firmware Engineer",
+          "hourly_rate": 1500.0,
+          "hours": 40.0,
+          "currency": "INR",
+          "personnel_count": 1,
+          "notes": null
+        }
+      ],
+      "rules": null,
+      "ml_features": null,
+      "target_metric": "Effort",
+      "analogy_dataset_id": null
+    }
+  },
+  {
+    "estimate_id": "est_02e313c0",
+    "timestamp": "2026-10-11T11:51:40.376963+00:00",
+    "project_name": "API Test Project",
+    "currency": "INR",
+    "total_cost": 126879.5,
+    "direct_materials": 25000.0,
+    "direct_labor": 60000.0,
+    "ml_prediction": null,
+    "request_payload": {
+      "project_name": "API Test Project",
+      "currency": "INR",
+      "bom_items": [
+        {
+          "item_name": "Sensor Unit",
+          "quantity": 10.0,
+          "unit_price": 2500.0,
+          "unit": "piece",
+          "currency": "INR",
+          "category": "materials",
+          "source": null,
+          "date": null,
+          "region": null
+        }
+      ],
+      "labor_items": [
+        {
+          "role_name": "Firmware Engineer",
+          "hourly_rate": 1500.0,
+          "hours": 40.0,
+          "currency": "INR",
+          "personnel_count": 1,
+          "notes": null
+        }
+      ],
+      "rules": null,
+      "ml_features": null,
+      "target_metric": "Effort",
+      "analogy_dataset_id": null
+    }
+  },
+  {
+    "estimate_id": "est_619f9619",
+    "timestamp": "2026-10-11T11:50:29.077294+00:00",
+    "project_name": "API Test Project",
+    "currency": "INR",
+    "total_cost": 126879.5,
+    "direct_materials": 25000.0,
+    "direct_labor": 60000.0,
+    "ml_prediction": null,
+    "request_payload": {
+      "project_name": "API Test Project",
+      "currency": "INR",
+      "bom_items": [
+        {
+          "item_name": "Sensor Unit",
+          "quantity": 10.0,
+          "unit_price": 2500.0,
+          "unit": "piece",
+          "currency": "INR",
+          "category": "materials",
+          "source": null,
+          "date": null,
+          "region": null
+        }
+      ],
+      "labor_items": [
+        {
+          "role_name": "Firmware Engineer",
+          "hourly_rate": 1500.0,
+          "hours": 40.0,
+          "currency": "INR",
+          "personnel_count": 1,
+          "notes": null
+        }
+      ],
+      "rules": null,
+      "ml_features": null,
+      "target_metric": "Effort",
+      "analogy_dataset_id": null
+    }
+  },
+  {
+    "estimate_id": "est_714ea49c",
+    "timestamp": "2026-10-11T09:47:49.004626+00:00",
+    "project_name": "API Test Project",
+    "currency": "INR",
+    "total_cost": 126879.5,
+    "direct_materials": 25000.0,
+    "direct_labor": 60000.0,
+    "ml_prediction": null,
+    "request_payload": {
+      "project_name": "API Test Project",
+      "currency": "INR",
+      "bom_items": [
+        {
+          "item_name": "Sensor Unit",
+          "quantity": 10.0,
+          "unit_price": 2500.0,
+          "unit": "piece",
+          "currency": "INR",
+          "category": "materials",
+          "source": null,
+          "date": null,
+          "region": null
+        }
+      ],
+      "labor_items": [
+        {
+          "role_name": "Firmware Engineer",
+          "hourly_rate": 1500.0,
+          "hours": 40.0,
+          "currency": "INR",
+          "personnel_count": 1,
+          "notes": null
+        }
+      ],
+      "rules": null,
+      "ml_features": null,
+      "target_metric": "Effort",
+      "analogy_dataset_id": null
+    }
+  },
+  {
+    "estimate_id": "est_50f22f04",
+    "timestamp": "2026-10-11T09:01:11.187722+00:00",
+    "project_name": "API Test Project",
+    "currency": "INR",
+    "total_cost": 126879.5,
+    "direct_materials": 25000.0,
+    "direct_labor": 60000.0,
+    "ml_prediction": null,
+    "request_payload": {
+      "project_name": "API Test Project",
+      "currency": "INR",
+      "bom_items": [
+        {
+          "item_name": "Sensor Unit",
+          "quantity": 10.0,
+          "unit_price": 2500.0,
+          "unit": "piece",
+          "currency": "INR",
+          "category": "materials",
+          "source": null,
+          "date": null,
+          "region": null
+        }
+      ],
+      "labor_items": [
+        {
+          "role_name": "Firmware Engineer",
+          "hourly_rate": 1500.0,
+          "hours": 40.0,
+          "currency": "INR",
+          "personnel_count": 1,
+          "notes": null
+        }
+      ],
+      "rules": null,
+      "ml_features": null,
+      "target_metric": "Effort",
+      "analogy_dataset_id": null
+    }
+  },
+  {
+    "estimate_id": "est_5568bbf1",
+    "timestamp": "2026-10-11T07:55:38.959300+00:00",
+    "project_name": "Smart Building Controller Prototype",
+    "currency": "INR",
+    "total_cost": 1241180.05,
+    "direct_materials": 118500.0,
+    "direct_labor": 713000.0,
+    "ml_prediction": null,
+    "request_payload": {
+      "project_name": "Smart Building Controller Prototype",
+      "currency": "INR",
+      "bom_items": [
+        {
+          "item_name": "Microcontroller Boards",
+          "quantity": 15.0,
+          "unit_price": 3200.0,
+          "unit": "units",
+          "currency": "INR",
+          "category": "materials",
+          "source": null,
+          "date": null,
+          "region": null
+        },
+        {
+          "item_name": "Environmental Sensors",
+          "quantity": 30.0,
+          "unit_price": 850.0,
+          "unit": "units",
+          "currency": "INR",
+          "category": "materials",
+          "source": null,
+          "date": null,
+          "region": null
+        },
+        {
+          "item_name": "Cloud Dev Environment (3 months)",
+          "quantity": 1.0,
+          "unit_price": 45000.0,
+          "unit": "license",
+          "currency": "INR",
+          "category": "software",
+          "source": null,
+          "date": null,
+          "region": null
+        }
+      ],
+      "labor_items": [
+        {
+          "role_name": "Lead Embedded Engineer",
+          "hourly_rate": 1800.0,
+          "hours": 120.0,
+          "currency": "INR",
+          "personnel_count": 1,
+          "notes": null
+        },
+        {
+          "role_name": "Firmware Developer",
+          "hourly_rate": 1100.0,
+          "hours": 200.0,
+          "currency": "INR",
+          "personnel_count": 2,
+          "notes": null
+        },
+        {
+          "role_name": "QA & Compliance Specialist",
+          "hourly_rate": 950.0,
+          "hours": 60.0,
+          "currency": "INR",
+          "personnel_count": 1,
+          "notes": null
+        }
+      ],
+      "rules": {
+        "overhead_percentage": 15.0,
+        "contingency_percentage": 10.0,
+        "tax_percentage": 18.0,
+        "currency": "INR"
+      },
+      "ml_features": {
+        "TeamExp": 3,
+        "ManagerExp": 4,
+        "Length": 12,
+        "Transactions": 250,
+        "Entities": 90,
+        "PointsAjust": 320
+      },
+      "target_metric": "Effort",
+      "analogy_dataset_id": "desharnais_software_projects_38c5d000"
+    }
+  },
+  {
+    "estimate_id": "est_cddd9311",
+    "timestamp": "2026-10-11T07:53:51.474298+00:00",
+    "project_name": "faaah",
+    "currency": "INR",
+    "total_cost": 1241180.05,
+    "direct_materials": 118500.0,
+    "direct_labor": 713000.0,
+    "ml_prediction": 5694.0,
+    "request_payload": {
+      "project_name": "faaah",
+      "currency": "INR",
+      "bom_items": [
+        {
+          "item_name": "Microcontroller Boards",
+          "quantity": 15.0,
+          "unit_price": 3200.0,
+          "unit": "units",
+          "currency": "INR",
+          "category": "materials",
+          "source": null,
+          "date": null,
+          "region": null
+        },
+        {
+          "item_name": "Environmental Sensors",
+          "quantity": 30.0,
+          "unit_price": 850.0,
+          "unit": "units",
+          "currency": "INR",
+          "category": "materials",
+          "source": null,
+          "date": null,
+          "region": null
+        },
+        {
+          "item_name": "Cloud Dev Environment (3 months)",
+          "quantity": 1.0,
+          "unit_price": 45000.0,
+          "unit": "license",
+          "currency": "INR",
+          "category": "software",
+          "source": null,
+          "date": null,
+          "region": null
+        }
+      ],
+      "labor_items": [
+        {
+          "role_name": "Lead Embedded Engineer",
+          "hourly_rate": 1800.0,
+          "hours": 120.0,
+          "currency": "INR",
+          "personnel_count": 1,
+          "notes": null
+        },
+        {
+          "role_name": "Firmware Developer",
+          "hourly_rate": 1100.0,
+          "hours": 200.0,
+          "currency": "INR",
+          "personnel_count": 2,
+          "notes": null
+        },
+        {
+          "role_name": "QA & Compliance Specialist",
+          "hourly_rate": 950.0,
+          "hours": 60.0,
+          "currency": "INR",
+          "personnel_count": 1,
+          "notes": null
+        }
+      ],
+      "rules": {
+        "overhead_percentage": 15.0,
+        "contingency_percentage": 10.0,
+        "tax_percentage": 18.0,
+        "currency": "INR"
+      },
+      "ml_features": {
+        "TeamExp": 3,
+        "ManagerExp": 4,
+        "Length": 12,
+        "Transactions": 250,
+        "Entities": 90,
+        "PointsAjust": 320
+      },
+      "target_metric": "Effort",
+      "analogy_dataset_id": "desharnais_software_projects_38c5d000"
+    }
+  },
+  {
+    "estimate_id": "est_e5c7a81b",
+    "timestamp": "2026-10-11T07:50:25.114226+00:00",
+    "project_name": "API Test Project",
+    "currency": "INR",
+    "total_cost": 126879.5,
+    "direct_materials": 25000.0,
+    "direct_labor": 60000.0,
+    "ml_prediction": null,
+    "request_payload": {
+      "project_name": "API Test Project",
+      "currency": "INR",
+      "bom_items": [
+        {
+          "item_name": "Sensor Unit",
+          "quantity": 10.0,
+          "unit_price": 2500.0,
+          "unit": "piece",
+          "currency": "INR",
+          "category": "materials",
+          "source": null,
+          "date": null,
+          "region": null
+        }
+      ],
+      "labor_items": [
+        {
+          "role_name": "Firmware Engineer",
+          "hourly_rate": 1500.0,
+          "hours": 40.0,
+          "currency": "INR",
+          "personnel_count": 1,
+          "notes": null
+        }
+      ],
+      "rules": null,
+      "ml_features": null,
+      "target_metric": "Effort",
+      "analogy_dataset_id": null
+    }
+  },
+  {
+    "estimate_id": "est_fac81fd5",
+    "timestamp": "2026-10-11T07:43:00.399662+00:00",
+    "project_name": "API Test Project",
+    "currency": "INR",
+    "total_cost": 126879.5,
+    "direct_materials": 25000.0,
+    "direct_labor": 60000.0,
+    "ml_prediction": null,
+    "request_payload": {
+      "project_name": "API Test Project",
+      "currency": "INR",
+      "bom_items": [
+        {
+          "item_name": "Sensor Unit",
+          "quantity": 10.0,
+          "unit_price": 2500.0,
+          "unit": "piece",
+          "currency": "INR",
+          "category": "materials",
+          "source": null,
+          "date": null,
+          "region": null
+        }
+      ],
+      "labor_items": [
+        {
+          "role_name": "Firmware Engineer",
+          "hourly_rate": 1500.0,
+          "hours": 40.0,
+          "currency": "INR",
+          "personnel_count": 1,
+          "notes": null
+        }
+      ],
+      "rules": null,
+      "ml_features": null,
+      "target_metric": "Effort",
+      "analogy_dataset_id": null
+    }
+  }
+]

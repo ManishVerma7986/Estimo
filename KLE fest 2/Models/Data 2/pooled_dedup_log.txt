@@ -1,0 +1,27 @@
+Files found in /home/claude/stage
+  loaded  SEERA_main76.csv                              rows=120
+  loaded  isbsg10.arff                                  rows=37
+  loaded  nasa93.arff                                   rows=93
+
+Raw pooled rows: 250
+Dropped missing / non-positive effort: 0
+Removed same project present in two files (same key): 0
+Removed duplicate records with identical effort, size and year: 1
+Final pooled rows: 249
+source_family
+ISBSG      37
+NASA93     93
+SEERA     119
+
+=== Pooled 10-fold x5 CV (all datasets together) ===
+       model  MdMRE  PRED25       MAE  MdMRE_SEERA  MdMRE_ISBSG  MdMRE_NASA93
+   GradBoost  0.600   0.206 28054.108        0.623        0.705         0.527
+RandomForest  0.617   0.235 27938.828        0.648        0.723         0.525
+
+Best pooled model by MdMRE: GradBoost
+
+=== Per dataset: own-only vs pooled vs transfer (lower MdMRE is better) ===
+dataset  rows  own_only_MdMRE  pooled_CV_MdMRE  leave_out_MdMRE note
+  SEERA   119           0.652            0.623            0.647
+  ISBSG    37           0.785            0.705            2.060
+ NASA93    93           0.422            0.527            0.859

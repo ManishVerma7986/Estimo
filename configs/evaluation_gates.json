@@ -1,0 +1,16 @@
+{
+  "gate_version": "1.0",
+  "min_sample_size_ml": 25,
+  "min_sample_size_recommended": 50,
+  "default_thresholds": {
+    "min_pred25": 0.30,
+    "target_pred25_standard": 0.70,
+    "max_mmre": 1.00,
+    "target_mmre_standard": 0.40,
+    "must_beat_baseline_mae": true
+  },
+  "confidence_intervals": {
+    "expected_coverage": 0.80,
+    "default_seed": 42
+  }
+}

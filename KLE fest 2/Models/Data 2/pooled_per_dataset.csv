@@ -1,0 +1,4 @@
+dataset,rows,own_only_MdMRE,pooled_CV_MdMRE,leave_out_MdMRE,note
+SEERA,119,0.652,0.623,0.647,
+ISBSG,37,0.785,0.705,2.06,
+NASA93,93,0.422,0.527,0.859,

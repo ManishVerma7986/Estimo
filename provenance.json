@@ -1,0 +1,95 @@
+{
+  "generated_at": "2026-10-11T12:50:37.395479",
+  "random_seed": 42,
+  "gate": {
+    "min_PRED25": 0.3
+  },
+  "min_rows_for_approval": 25,
+  "datasets": {
+    "Albrecht": {
+      "source": "PROMISE SERepo",
+      "n": 24,
+      "target": "Effort",
+      "unit": "person-months",
+      "sha256": "cfd9713c6a0a45e318fd5345d3f45ac1cfbbf59191d91a645eabd6541890fd18"
+    },
+    "China": {
+      "source": "PROMISE SERepo",
+      "n": 499,
+      "target": "Effort",
+      "unit": "person-hours",
+      "sha256": "ae9df9c52c5bc5ba03b9732ecc159093f0c500ffa0f3d8260ddd7350f0a22c58"
+    },
+    "COCOMO-81": {
+      "source": "PROMISE SERepo",
+      "n": 63,
+      "target": "actual",
+      "unit": "person-months",
+      "sha256": "f7deb2ceffcb5f6631899e2439cbde5a0b25e22852f29c9bbe22d2f22435ab78"
+    },
+    "Desharnais": {
+      "source": "PROMISE SERepo",
+      "n": 81,
+      "target": "Effort",
+      "unit": "person-hours",
+      "sha256": "38c5d00053555cbe7f3c10c2b026990ea981612ddefd5a7e0fcf8aa52bc4fd64"
+    },
+    "Finnish": {
+      "source": "PROMISE SERepo",
+      "n": 38,
+      "target": "dev.eff.hrs.",
+      "unit": "person-hours",
+      "sha256": "abaf7925580e89de54cb5d9d44b6f12e4db83aa80e2a7080ca57e62f8b91a42e"
+    },
+    "Kitchenham": {
+      "source": "PROMISE SERepo",
+      "n": 145,
+      "target": "Actual.effort",
+      "unit": "person-hours",
+      "sha256": "0832342b248418cca324cebe77d86d2f90ae223c1119af9360783bdbad0b2ac0"
+    },
+    "Maxwell": {
+      "source": "PROMISE SERepo",
+      "n": 62,
+      "target": "Effort",
+      "unit": "person-hours",
+      "sha256": "1adb2b23c638a553a2b2e2d83476d983d1be13d4e891c4148f2a90834472c235"
+    },
+    "Miyazaki94": {
+      "source": "PROMISE SERepo",
+      "n": 48,
+      "target": "MM",
+      "unit": "person-months",
+      "sha256": "eeeb66f91c7f832aea975d69957f74154cc3088e960fabe123dfb4af1dc85186"
+    },
+    "NASA93": {
+      "source": "PROMISE SERepo",
+      "n": 93,
+      "target": "act_effort",
+      "unit": "person-months",
+      "sha256": "bcc97ecc9ab3f0f05da692075288d682478866bf8a7bb2b779b6b8de617d41d5"
+    },
+    "Subbiah": {
+      "source": "PROMISE SERepo",
+      "n": 72,
+      "target": "TotalLaborCost",
+      "unit": "USD (labor cost)",
+      "sha256": "23a1efbafcdaec1ed78cc779c07e652b33a17409e3021cf342d3227728a05071"
+    },
+    "UCP_Dataset": {
+      "source": "PROMISE SERepo",
+      "n": 71,
+      "target": "Real_Effort_Person_Hours",
+      "unit": "person-hours",
+      "sha256": "42985376107e3fc2aca9f12251a1f2d57ba328db5148a47df346cf0e4726ddf0"
+    },
+    "Valdes-Souto": {
+      "source": "PROMISE SERepo",
+      "n": 57,
+      "target": "Effort",
+      "unit": "person-hours",
+      "sha256": "d698fdae34b7e0452123f8eda604f777e6e683531e5d00bbf3b9cd19cbaede1b"
+    }
+  },
+  "note": "All values computed from real PROMISE SERepo datasets. No synthetic data used. Metrics from held-out test sets only."
+}

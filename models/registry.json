@@ -1,0 +1,529 @@
+{
+  "registry_version": "1.0",
+  "active_models": {
+    "Effort": "v20261011_080804",
+    "actual": "v20261011_080632",
+    "TotalLaborCost": "v20261011_080633",
+    "Real_Effort_Person_Hours": "v20261011_080634",
+    "dev.eff.hrs.": "v20261011_080759",
+    "Actual.effort": "v20261011_080759",
+    "MM": "v20261011_080802",
+    "act_effort": "v20261011_080802"
+  },
+  "models": {
+    "Effort@v20261011_072810": {
+      "target": "Effort",
+      "version": "v20261011_072810",
+      "algorithm": "Ridge",
+      "dataset_id": "desharnais_software_projects_38c5d000",
+      "status": "APPROVED",
+      "model_file_path": "models\\Effort\\v20261011_072810\\model.joblib",
+      "metadata_file_path": "models\\Effort\\v20261011_072810\\metadata.json",
+      "evaluation_file_path": "models\\Effort\\v20261011_072810\\evaluation.json",
+      "feature_schema_file_path": "models\\Effort\\v20261011_072810\\feature_schema.json",
+      "dataset_manifest_path": "models\\Effort\\v20261011_072810\\dataset_manifest.json",
+      "sha256": "4251f1549728deceb91a60872b88d9d376cc6e33c7d1ec7351100125eb2550f0",
+      "metrics": {
+        "n_test": 17,
+        "MAE": 2455.11,
+        "RMSE": 3706.34,
+        "MMRE": 0.4739,
+        "MdMRE": 0.328,
+        "PRED25": 0.4706,
+        "PRED50": 0.6471,
+        "Bias": 0.1087
+      },
+      "registered_at": "2026-10-11T07:28:11.185562+00:00"
+    },
+    "Effort@v20261011_073043": {
+      "target": "Effort",
+      "version": "v20261011_073043",
+      "algorithm": "Ridge",
+      "dataset_id": "desharnais_software_projects_38c5d000",
+      "status": "APPROVED",
+      "model_file_path": "models\\Effort\\v20261011_073043\\model.joblib",
+      "metadata_file_path": "models\\Effort\\v20261011_073043\\metadata.json",
+      "evaluation_file_path": "models\\Effort\\v20261011_073043\\evaluation.json",
+      "feature_schema_file_path": "models\\Effort\\v20261011_073043\\feature_schema.json",
+      "dataset_manifest_path": "models\\Effort\\v20261011_073043\\dataset_manifest.json",
+      "sha256": "e0a526a2c3f56487fa2b6aa2ec6d1330aa5987acfcb90390a95b05b0ee647628",
+      "metrics": {
+        "n_test": 17,
+        "MAE": 2455.11,
+        "RMSE": 3706.34,
+        "MMRE": 0.4739,
+        "MdMRE": 0.328,
+        "PRED25": 0.4706,
+        "PRED50": 0.6471,
+        "Bias": 0.1087
+      },
+      "registered_at": "2026-10-11T07:30:44.296148+00:00"
+    },
+    "Effort@v20261011_073306": {
+      "target": "Effort",
+      "version": "v20261011_073306",
+      "algorithm": "XGBoost",
+      "dataset_id": "desharnais_software_projects_38c5d000",
+      "status": "APPROVED",
+      "model_file_path": "models\\Effort\\v20261011_073306\\model.joblib",
+      "metadata_file_path": "models\\Effort\\v20261011_073306\\metadata.json",
+      "evaluation_file_path": "models\\Effort\\v20261011_073306\\evaluation.json",
+      "feature_schema_file_path": "models\\Effort\\v20261011_073306\\feature_schema.json",
+      "dataset_manifest_path": "models\\Effort\\v20261011_073306\\dataset_manifest.json",
+      "sha256": "ae45a0d59cfcbdb4c9da61e43a97ea3eaa288b5d9197013f71bc71618e4a449e",
+      "metrics": {
+        "n_test": 17,
+        "MAE": 2222.0,
+        "RMSE": 3187.26,
+        "MMRE": 0.4753,
+        "MdMRE": 0.3496,
+        "PRED25": 0.3529,
+        "PRED50": 0.6471,
+        "Bias": 0.1519
+      },
+      "registered_at": "2026-10-11T07:33:07.231587+00:00"
+    },
+    "actual@v20261011_080632": {
+      "target": "actual",
+      "version": "v20261011_080632",
+      "algorithm": "HistGradBoost",
+      "dataset_id": "cocomo-81_software_projects_f7deb2ce",
+      "status": "APPROVED",
+      "model_file_path": "models\\actual\\v20261011_080632\\model.joblib",
+      "metadata_file_path": "models\\actual\\v20261011_080632\\metadata.json",
+      "evaluation_file_path": "models\\actual\\v20261011_080632\\evaluation.json",
+      "feature_schema_file_path": "models\\actual\\v20261011_080632\\feature_schema.json",
+      "dataset_manifest_path": "models\\actual\\v20261011_080632\\dataset_manifest.json",
+      "sha256": "773a865b6763377d80016c2bf71a37b17adfdc8a8d458ed9afdeacb8cea220f8",
+      "metrics": {
+        "n_test": 13,
+        "MAE": 651.05,
+        "RMSE": 1646.18,
+        "MMRE": 0.5322,
+        "MdMRE": 0.4264,
+        "PRED25": 0.4615,
+        "PRED50": 0.6154,
+        "Bias": 0.0365
+      },
+      "registered_at": "2026-10-11T08:06:33.125578+00:00"
+    },
+    "Effort@v20261011_080633": {
+      "target": "Effort",
+      "version": "v20261011_080633",
+      "algorithm": "XGBoost",
+      "dataset_id": "desharnais_software_projects_38c5d000",
+      "status": "APPROVED",
+      "model_file_path": "models\\Effort\\v20261011_080633\\model.joblib",
+      "metadata_file_path": "models\\Effort\\v20261011_080633\\metadata.json",
+      "evaluation_file_path": "models\\Effort\\v20261011_080633\\evaluation.json",
+      "feature_schema_file_path": "models\\Effort\\v20261011_080633\\feature_schema.json",
+      "dataset_manifest_path": "models\\Effort\\v20261011_080633\\dataset_manifest.json",
+      "sha256": "ae45a0d59cfcbdb4c9da61e43a97ea3eaa288b5d9197013f71bc71618e4a449e",
+      "metrics": {
+        "n_test": 17,
+        "MAE": 2222.0,
+        "RMSE": 3187.26,
+        "MMRE": 0.4753,
+        "MdMRE": 0.3496,
+        "PRED25": 0.3529,
+        "PRED50": 0.6471,
+        "Bias": 0.1519
+      },
+      "registered_at": "2026-10-11T08:06:33.621591+00:00"
+    },
+    "TotalLaborCost@v20261011_080633": {
+      "target": "TotalLaborCost",
+      "version": "v20261011_080633",
+      "algorithm": "RandomForest",
+      "dataset_id": "subbiah_labor_cost_projects_23a1efba",
+      "status": "APPROVED",
+      "model_file_path": "models\\TotalLaborCost\\v20261011_080633\\model.joblib",
+      "metadata_file_path": "models\\TotalLaborCost\\v20261011_080633\\metadata.json",
+      "evaluation_file_path": "models\\TotalLaborCost\\v20261011_080633\\evaluation.json",
+      "feature_schema_file_path": "models\\TotalLaborCost\\v20261011_080633\\feature_schema.json",
+      "dataset_manifest_path": "models\\TotalLaborCost\\v20261011_080633\\dataset_manifest.json",
+      "sha256": "52530191717d5b9744e3ed48d9e187eddd6338d356f8fd7b5282b25caa402e19",
+      "metrics": {
+        "n_test": 15,
+        "MAE": 2956.82,
+        "RMSE": 4523.15,
+        "MMRE": 0.8421,
+        "MdMRE": 0.2622,
+        "PRED25": 0.4667,
+        "PRED50": 0.9333,
+        "Bias": 0.5981
+      },
+      "registered_at": "2026-10-11T08:06:34.223429+00:00"
+    },
+    "Real_Effort_Person_Hours@v20261011_080634": {
+      "target": "Real_Effort_Person_Hours",
+      "version": "v20261011_080634",
+      "algorithm": "RandomForest",
+      "dataset_id": "ucp_systems_projects_42985376",
+      "status": "APPROVED",
+      "model_file_path": "models\\Real_Effort_Person_Hours\\v20261011_080634\\model.joblib",
+      "metadata_file_path": "models\\Real_Effort_Person_Hours\\v20261011_080634\\metadata.json",
+      "evaluation_file_path": "models\\Real_Effort_Person_Hours\\v20261011_080634\\evaluation.json",
+      "feature_schema_file_path": "models\\Real_Effort_Person_Hours\\v20261011_080634\\feature_schema.json",
+      "dataset_manifest_path": "models\\Real_Effort_Person_Hours\\v20261011_080634\\dataset_manifest.json",
+      "sha256": "c7e13dda84a4c8a6a80765cbd0ae76b207617d644a19838c77fcdb6b282c9a46",
+      "metrics": {
+        "n_test": 15,
+        "MAE": 189.65,
+        "RMSE": 275.39,
+        "MMRE": 0.0268,
+        "MdMRE": 0.0141,
+        "PRED25": 1.0,
+        "PRED50": 1.0,
+        "Bias": -0.0044
+      },
+      "registered_at": "2026-10-11T08:06:34.864831+00:00"
+    },
+    "Effort@v20261011_080634": {
+      "target": "Effort",
+      "version": "v20261011_080634",
+      "algorithm": "XGBoost",
+      "dataset_id": "valdes-souto_cosmic_projects_d698fdae",
+      "status": "APPROVED",
+      "model_file_path": "models\\Effort\\v20261011_080634\\model.joblib",
+      "metadata_file_path": "models\\Effort\\v20261011_080634\\metadata.json",
+      "evaluation_file_path": "models\\Effort\\v20261011_080634\\evaluation.json",
+      "feature_schema_file_path": "models\\Effort\\v20261011_080634\\feature_schema.json",
+      "dataset_manifest_path": "models\\Effort\\v20261011_080634\\dataset_manifest.json",
+      "sha256": "19ea6270905ce21abf5d760c3978c6ce09de9b8e949b11a1feca9d1a6a48f727",
+      "metrics": {
+        "n_test": 12,
+        "MAE": 496.01,
+        "RMSE": 700.14,
+        "MMRE": 3.6993,
+        "MdMRE": 0.2065,
+        "PRED25": 0.5833,
+        "PRED50": 0.8333,
+        "Bias": 3.5996
+      },
+      "registered_at": "2026-10-11T08:06:35.336608+00:00"
+    },
+    "Effort@v20261011_080756": {
+      "target": "Effort",
+      "version": "v20261011_080756",
+      "algorithm": "RandomForest",
+      "dataset_id": "albrecht_software_projects_cfd9713c",
+      "status": "EXPERIMENTAL",
+      "model_file_path": "models\\Effort\\v20261011_080756\\model.joblib",
+      "metadata_file_path": "models\\Effort\\v20261011_080756\\metadata.json",
+      "evaluation_file_path": "models\\Effort\\v20261011_080756\\evaluation.json",
+      "feature_schema_file_path": "models\\Effort\\v20261011_080756\\feature_schema.json",
+      "dataset_manifest_path": "models\\Effort\\v20261011_080756\\dataset_manifest.json",
+      "sha256": "df4a9486e3af1540c23a59af3d1034db3b2e74ef3795bb2a3fcab139529b8ae2",
+      "metrics": {
+        "n_test": 5,
+        "MAE": 2.95,
+        "RMSE": 3.59,
+        "MMRE": 0.261,
+        "MdMRE": 0.2058,
+        "PRED25": 0.8,
+        "PRED50": 0.8,
+        "Bias": -0.261
+      },
+      "registered_at": "2026-10-11T08:07:57.237995+00:00"
+    },
+    "Effort@v20261011_080757": {
+      "target": "Effort",
+      "version": "v20261011_080757",
+      "algorithm": "XGBoost",
+      "dataset_id": "china_software_projects_ae9df9c5",
+      "status": "APPROVED",
+      "model_file_path": "models\\Effort\\v20261011_080757\\model.joblib",
+      "metadata_file_path": "models\\Effort\\v20261011_080757\\metadata.json",
+      "evaluation_file_path": "models\\Effort\\v20261011_080757\\evaluation.json",
+      "feature_schema_file_path": "models\\Effort\\v20261011_080757\\feature_schema.json",
+      "dataset_manifest_path": "models\\Effort\\v20261011_080757\\dataset_manifest.json",
+      "sha256": "50b13d602e05bbae75adfa7c4a37a6d20823ad30515005650a9da15c7d3bf134",
+      "metrics": {
+        "n_test": 100,
+        "MAE": 461.43,
+        "RMSE": 1013.73,
+        "MMRE": 0.1012,
+        "MdMRE": 0.0849,
+        "PRED25": 0.94,
+        "PRED50": 0.99,
+        "Bias": 0.0076
+      },
+      "registered_at": "2026-10-11T08:07:58.131597+00:00"
+    },
+    "actual@v20261011_080758": {
+      "target": "actual",
+      "version": "v20261011_080758",
+      "algorithm": "HistGradBoost",
+      "dataset_id": "cocomo-81_software_projects_f7deb2ce",
+      "status": "APPROVED",
+      "model_file_path": "models\\actual\\v20261011_080758\\model.joblib",
+      "metadata_file_path": "models\\actual\\v20261011_080758\\metadata.json",
+      "evaluation_file_path": "models\\actual\\v20261011_080758\\evaluation.json",
+      "feature_schema_file_path": "models\\actual\\v20261011_080758\\feature_schema.json",
+      "dataset_manifest_path": "models\\actual\\v20261011_080758\\dataset_manifest.json",
+      "sha256": "773a865b6763377d80016c2bf71a37b17adfdc8a8d458ed9afdeacb8cea220f8",
+      "metrics": {
+        "n_test": 13,
+        "MAE": 651.05,
+        "RMSE": 1646.18,
+        "MMRE": 0.5322,
+        "MdMRE": 0.4264,
+        "PRED25": 0.4615,
+        "PRED50": 0.6154,
+        "Bias": 0.0365
+      },
+      "registered_at": "2026-10-11T08:07:58.721524+00:00"
+    },
+    "Effort@v20261011_080758": {
+      "target": "Effort",
+      "version": "v20261011_080758",
+      "algorithm": "XGBoost",
+      "dataset_id": "desharnais_software_projects_38c5d000",
+      "status": "APPROVED",
+      "model_file_path": "models\\Effort\\v20261011_080758\\model.joblib",
+      "metadata_file_path": "models\\Effort\\v20261011_080758\\metadata.json",
+      "evaluation_file_path": "models\\Effort\\v20261011_080758\\evaluation.json",
+      "feature_schema_file_path": "models\\Effort\\v20261011_080758\\feature_schema.json",
+      "dataset_manifest_path": "models\\Effort\\v20261011_080758\\dataset_manifest.json",
+      "sha256": "ae45a0d59cfcbdb4c9da61e43a97ea3eaa288b5d9197013f71bc71618e4a449e",
+      "metrics": {
+        "n_test": 17,
+        "MAE": 2222.0,
+        "RMSE": 3187.26,
+        "MMRE": 0.4753,
+        "MdMRE": 0.3496,
+        "PRED25": 0.3529,
+        "PRED50": 0.6471,
+        "Bias": 0.1519
+      },
+      "registered_at": "2026-10-11T08:07:59.218915+00:00"
+    },
+    "dev.eff.hrs.@v20261011_080759": {
+      "target": "dev.eff.hrs.",
+      "version": "v20261011_080759",
+      "algorithm": "Huber",
+      "dataset_id": "finnish_software_projects_abaf7925",
+      "status": "APPROVED",
+      "model_file_path": "models\\dev.eff.hrs.\\v20261011_080759\\model.joblib",
+      "metadata_file_path": "models\\dev.eff.hrs.\\v20261011_080759\\metadata.json",
+      "evaluation_file_path": "models\\dev.eff.hrs.\\v20261011_080759\\evaluation.json",
+      "feature_schema_file_path": "models\\dev.eff.hrs.\\v20261011_080759\\feature_schema.json",
+      "dataset_manifest_path": "models\\dev.eff.hrs.\\v20261011_080759\\dataset_manifest.json",
+      "sha256": "e474c7f24debcc9306f4b230a91d15d6b7b43d6f5ba65c3c70e812ab116e22d5",
+      "metrics": {
+        "n_test": 8,
+        "MAE": 1110.69,
+        "RMSE": 1592.96,
+        "MMRE": 0.3179,
+        "MdMRE": 0.1797,
+        "PRED25": 0.625,
+        "PRED50": 0.875,
+        "Bias": 0.1294
+      },
+      "registered_at": "2026-10-11T08:07:59.783555+00:00"
+    },
+    "Actual.effort@v20261011_080759": {
+      "target": "Actual.effort",
+      "version": "v20261011_080759",
+      "algorithm": "RandomForest",
+      "dataset_id": "kitchenham_industrial_maintenance_0832342b",
+      "status": "APPROVED",
+      "model_file_path": "models\\Actual.effort\\v20261011_080759\\model.joblib",
+      "metadata_file_path": "models\\Actual.effort\\v20261011_080759\\metadata.json",
+      "evaluation_file_path": "models\\Actual.effort\\v20261011_080759\\evaluation.json",
+      "feature_schema_file_path": "models\\Actual.effort\\v20261011_080759\\feature_schema.json",
+      "dataset_manifest_path": "models\\Actual.effort\\v20261011_080759\\dataset_manifest.json",
+      "sha256": "43dee919bb9f0337ab95427b9762d894800f984ae6140d3347f32216b4c133b8",
+      "metrics": {
+        "n_test": 29,
+        "MAE": 401.88,
+        "RMSE": 672.99,
+        "MMRE": 0.2106,
+        "MdMRE": 0.1293,
+        "PRED25": 0.7586,
+        "PRED50": 0.8966,
+        "Bias": 0.065
+      },
+      "registered_at": "2026-10-11T08:08:01.335206+00:00"
+    },
+    "Effort@v20261011_080801": {
+      "target": "Effort",
+      "version": "v20261011_080801",
+      "algorithm": "RandomForest",
+      "dataset_id": "maxwell_telecom___space_1adb2b23",
+      "status": "APPROVED",
+      "model_file_path": "models\\Effort\\v20261011_080801\\model.joblib",
+      "metadata_file_path": "models\\Effort\\v20261011_080801\\metadata.json",
+      "evaluation_file_path": "models\\Effort\\v20261011_080801\\evaluation.json",
+      "feature_schema_file_path": "models\\Effort\\v20261011_080801\\feature_schema.json",
+      "dataset_manifest_path": "models\\Effort\\v20261011_080801\\dataset_manifest.json",
+      "sha256": "04b99dbdf39472d9ebe8e715c612ad647f3b853f1d1778799cd4992e0ed3ae06",
+      "metrics": {
+        "n_test": 13,
+        "MAE": 2964.47,
+        "RMSE": 5439.7,
+        "MMRE": 0.2576,
+        "MdMRE": 0.2389,
+        "PRED25": 0.5385,
+        "PRED50": 0.9231,
+        "Bias": -0.0342
+      },
+      "registered_at": "2026-10-11T08:08:01.993708+00:00"
+    },
+    "MM@v20261011_080802": {
+      "target": "MM",
+      "version": "v20261011_080802",
+      "algorithm": "RandomForest",
+      "dataset_id": "miyazaki_fujitsu_projects_eeeb66f9",
+      "status": "APPROVED",
+      "model_file_path": "models\\MM\\v20261011_080802\\model.joblib",
+      "metadata_file_path": "models\\MM\\v20261011_080802\\metadata.json",
+      "evaluation_file_path": "models\\MM\\v20261011_080802\\evaluation.json",
+      "feature_schema_file_path": "models\\MM\\v20261011_080802\\feature_schema.json",
+      "dataset_manifest_path": "models\\MM\\v20261011_080802\\dataset_manifest.json",
+      "sha256": "51969d9f0c93b8194213bd2dc687abcc458a413a27e186f0d9bd1efd6d9ebb7c",
+      "metrics": {
+        "n_test": 10,
+        "MAE": 21.06,
+        "RMSE": 36.36,
+        "MMRE": 0.2783,
+        "MdMRE": 0.2951,
+        "PRED25": 0.5,
+        "PRED50": 0.9,
+        "Bias": -0.0932
+      },
+      "registered_at": "2026-10-11T08:08:02.495755+00:00"
+    },
+    "act_effort@v20261011_080802": {
+      "target": "act_effort",
+      "version": "v20261011_080802",
+      "algorithm": "RandomForest",
+      "dataset_id": "nasa93_aerospace_projects_bcc97ecc",
+      "status": "APPROVED",
+      "model_file_path": "models\\act_effort\\v20261011_080802\\model.joblib",
+      "metadata_file_path": "models\\act_effort\\v20261011_080802\\metadata.json",
+      "evaluation_file_path": "models\\act_effort\\v20261011_080802\\evaluation.json",
+      "feature_schema_file_path": "models\\act_effort\\v20261011_080802\\feature_schema.json",
+      "dataset_manifest_path": "models\\act_effort\\v20261011_080802\\dataset_manifest.json",
+      "sha256": "e0f28e56605884096b82895296ce01e11816ce62597a32b7e632cc50c194e0a9",
+      "metrics": {
+        "n_test": 19,
+        "MAE": 109.25,
+        "RMSE": 155.96,
+        "MMRE": 0.2738,
+        "MdMRE": 0.225,
+        "PRED25": 0.5789,
+        "PRED50": 0.8421,
+        "Bias": 0.0356
+      },
+      "registered_at": "2026-10-11T08:08:03.363057+00:00"
+    },
+    "TotalLaborCost@v20261011_080803": {
+      "target": "TotalLaborCost",
+      "version": "v20261011_080803",
+      "algorithm": "RandomForest",
+      "dataset_id": "subbiah_labor_cost_projects_23a1efba",
+      "status": "APPROVED",
+      "model_file_path": "models\\TotalLaborCost\\v20261011_080803\\model.joblib",
+      "metadata_file_path": "models\\TotalLaborCost\\v20261011_080803\\metadata.json",
+      "evaluation_file_path": "models\\TotalLaborCost\\v20261011_080803\\evaluation.json",
+      "feature_schema_file_path": "models\\TotalLaborCost\\v20261011_080803\\feature_schema.json",
+      "dataset_manifest_path": "models\\TotalLaborCost\\v20261011_080803\\dataset_manifest.json",
+      "sha256": "52530191717d5b9744e3ed48d9e187eddd6338d356f8fd7b5282b25caa402e19",
+      "metrics": {
+        "n_test": 15,
+        "MAE": 2956.82,
+        "RMSE": 4523.15,
+        "MMRE": 0.8421,
+        "MdMRE": 0.2622,
+        "PRED25": 0.4667,
+        "PRED50": 0.9333,
+        "Bias": 0.5981
+      },
+      "registered_at": "2026-10-11T08:08:03.871667+00:00"
+    },
+    "Real_Effort_Person_Hours@v20261011_080803": {
+      "target": "Real_Effort_Person_Hours",
+      "version": "v20261011_080803",
+      "algorithm": "RandomForest",
+      "dataset_id": "ucp_systems_projects_42985376",
+      "status": "APPROVED",
+      "model_file_path": "models\\Real_Effort_Person_Hours\\v20261011_080803\\model.joblib",
+      "metadata_file_path": "models\\Real_Effort_Person_Hours\\v20261011_080803\\metadata.json",
+      "evaluation_file_path": "models\\Real_Effort_Person_Hours\\v20261011_080803\\evaluation.json",
+      "feature_schema_file_path": "models\\Real_Effort_Person_Hours\\v20261011_080803\\feature_schema.json",
+      "dataset_manifest_path": "models\\Real_Effort_Person_Hours\\v20261011_080803\\dataset_manifest.json",
+      "sha256": "c7e13dda84a4c8a6a80765cbd0ae76b207617d644a19838c77fcdb6b282c9a46",
+      "metrics": {
+        "n_test": 15,
+        "MAE": 189.65,
+        "RMSE": 275.39,
+        "MMRE": 0.0268,
+        "MdMRE": 0.0141,
+        "PRED25": 1.0,
+        "PRED50": 1.0,
+        "Bias": -0.0044
+      },
+      "registered_at": "2026-10-11T08:08:04.526516+00:00"
+    },
+    "Effort@v20261011_080804": {
+      "target": "Effort",
+      "version": "v20261011_080804",
+      "algorithm": "XGBoost",
+      "dataset_id": "valdes-souto_cosmic_projects_d698fdae",
+      "status": "APPROVED",
+      "model_file_path": "models\\Effort\\v20261011_080804\\model.joblib",
+      "metadata_file_path": "models\\Effort\\v20261011_080804\\metadata.json",
+      "evaluation_file_path": "models\\Effort\\v20261011_080804\\evaluation.json",
+      "feature_schema_file_path": "models\\Effort\\v20261011_080804\\feature_schema.json",
+      "dataset_manifest_path": "models\\Effort\\v20261011_080804\\dataset_manifest.json",
+      "sha256": "19ea6270905ce21abf5d760c3978c6ce09de9b8e949b11a1feca9d1a6a48f727",
+      "metrics": {
+        "n_test": 12,
+        "MAE": 496.01,
+        "RMSE": 700.14,
+        "MMRE": 3.6993,
+        "MdMRE": 0.2065,
+        "PRED25": 0.5833,
+        "PRED50": 0.8333,
+        "Bias": 3.5996
+      },
+      "registered_at": "2026-10-11T08:08:05.054160+00:00"
+    }
+  },
+  "history": {
+    "Effort": [
+      "v20261011_072810",
+      "v20261011_073043",
+      "v20261011_073306",
+      "v20261011_072810",
+      "v20261011_073043",
+      "v20261011_073306",
+      "v20261011_073043",
+      "v20261011_072810",
+      "v20261011_080804"
+    ],
+    "actual": [
+      "v20261011_080632"
+    ],
+    "TotalLaborCost": [
+      "v20261011_080633"
+    ],
+    "Real_Effort_Person_Hours": [
+      "v20261011_080634"
+    ],
+    "dev.eff.hrs.": [
+      "v20261011_080759"
+    ],
+    "Actual.effort": [
+      "v20261011_080759"
+    ],
+    "MM": [
+      "v20261011_080802"
+    ],
+    "act_effort": [
+      "v20261011_080802"
+    ]
+  }
+}

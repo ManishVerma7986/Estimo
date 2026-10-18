@@ -1,17 +1,107 @@
-# Python Virtual Environment
-.venv/
+# Python
 __pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
 *.pyc
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+.venv/
+venv/
+env/
+ENV/
 
-# Local Database files
+# Virtual environment
+cost_estimation_ai_env/
+.env
+.env.*
+!.env.example
+
+# Data & Models (keep placeholders, exclude actuals)
+data/raw/*/
+data/processed/*/
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+data/manifests/
+!data/manifests/.gitkeep
+
+models/*/
+!models/README.md
+!models/registry.json.example
+
+# Reports generated at runtime
+reports/*.pdf
+reports/*.xlsx
+reports/*.csv
+reports/*_audit_*.json
+reports/*_audit_*.txt
+
+# Node / Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+frontend/coverage/
+
+# SQLite DB
 *.db
+*.sqlite
 *.sqlite3
 
-# VS Code settings
-.vscode/
-
-# OS files
+# IDE
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
 .DS_Store
 Thumbs.db
-team1_backend_test/
-subteam2-database/premium-ui/
+
+# Pytest
+.pytest_cache/
+htmlcov/
+.coverage
+coverage.xml
+
+# Logs
+*.log
+logs/
+
+# Joblib / pickle artifacts (never commit)
+*.joblib
+*.pkl
+*.pickle
+KLE fest 2/Nvidea/key.txt
+KLE fest 2/Nvidea/.env
+# Secrets and local credentials
+KLE fest 2/Nvidea/key.txt
+KLE fest 2/Nvidea/.env
+KLE fest 2/Nvidea/.env.*
+!KLE fest 2/Nvidea/.env.example
+
+# Local credentials and generated cache
+KLE fest 2/Nvidea/key.txt
+KLE fest 2/Nvidea/.env
+KLE fest 2/Nvidea/.env.*
+KLE fest 2/Nvidea/.image_cache/
