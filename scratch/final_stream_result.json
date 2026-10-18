@@ -1,0 +1,1124 @@
+{
+  "session_id": "4b7ca6d0c159ac00",
+  "gemini": {
+    "hardware_requirement": [
+      {
+        "name": "STM32 Microcontroller Development Board",
+        "spec": "ARM Cortex-M4/M7, 168-480MHz, 512KB-2MB Flash, Ethernet/CAN/USB peripherals",
+        "quantity": 3,
+        "suggested_models": [
+          {
+            "maker": "STMicroelectronics",
+            "model": "STM32H743ZI-Nucleo",
+            "why": "High-performance MCU with rich connectivity for building automation"
+          },
+          {
+            "maker": "STMicroelectronics",
+            "model": "STM32F407VG-Discovery",
+            "why": "Cost-effective Cortex-M4 board with ample GPIOs"
+          }
+        ]
+      },
+      {
+        "name": "Temperature/Humidity Sensor",
+        "spec": "I2C interface, ±0.2°C accuracy, ±2% RH, 1.8-5V operation",
+        "quantity": 5,
+        "suggested_models": [
+          {
+            "maker": "Sensirion",
+            "model": "SHT31-DIS",
+            "why": "High accuracy, calibrated digital output, industry standard"
+          },
+          {
+            "maker": "Bosch",
+            "model": "BME280",
+            "why": "Integrated pressure/temperature/humidity, compact"
+          }
+        ]
+      },
+      {
+        "name": "Wi-Fi/BLE Communication Module",
+        "spec": "802.11 b/g/n, BLE 5.0, UART/SPI interface, 2.4GHz",
+        "quantity": 3,
+        "suggested_models": [
+          {
+            "maker": "Espressif",
+            "model": "ESP32-WROOM-32D",
+            "why": "Dual-core, integrated Wi-Fi/BLE, low cost"
+          },
+          {
+            "maker": "Murata",
+            "model": "LBEE5KL1DX-883",
+            "why": "Industrial grade, certified module"
+          }
+        ]
+      },
+      {
+        "name": "Power Management Board",
+        "spec": "Input 9-24V DC, Output 3.3V/5V 2A, overcurrent protection",
+        "quantity": 3,
+        "suggested_models": [
+          {
+            "maker": "Texas Instruments",
+            "model": "TPS5430 Buck Converter EVM",
+            "why": "High efficiency step-down regulator"
+          },
+          {
+            "maker": "Mean Well",
+            "model": "IRM-10-5",
+            "why": "Compact AC/DC encapsulated PSU"
+          }
+        ]
+      },
+      {
+        "name": "Relay Actuator Module",
+        "spec": "4-channel, 5V logic, 10A/250VAC contacts, opto-isolated",
+        "quantity": 2,
+        "suggested_models": [
+          {
+            "maker": "Songle",
+            "model": "SRD-05VDC-SL-C",
+            "why": "Low cost, widely available"
+          },
+          {
+            "maker": "Omron",
+            "model": "G5Q-1A4",
+            "why": "High reliability, long life"
+          }
+        ]
+      },
+      {
+        "name": "ST-Link Debugger/Programmer",
+        "spec": "SWD/JTAG, USB 2.0, supports STM32/STM8",
+        "quantity": 2,
+        "suggested_models": [
+          {
+            "maker": "STMicroelectronics",
+            "model": "ST-LINK/V2-ISOL",
+            "why": "Isolated probe for robust debugging"
+          },
+          {
+            "maker": "Segger",
+            "model": "J-Link EDU Mini",
+            "why": "Fast, supports many cores"
+          }
+        ]
+      },
+      {
+        "name": "Custom PCB Prototype / Breadboard",
+        "spec": "FR4, 2-layer, 100x100mm, with headers for sensors and modules",
+        "quantity": 5,
+        "suggested_models": [
+          {
+            "maker": "JLCPCB",
+            "model": "2-Layer Prototype Service",
+            "why": "Low cost, fast turnaround"
+          },
+          {
+            "maker": "PCBWay",
+            "model": "Advanced PCB Prototype",
+            "why": "Good quality, assembly option"
+          }
+        ]
+      }
+    ],
+    "software_requirement": {
+      "project_name": "Smart Building Controller Prototype",
+      "currency": "INR",
+      "bom_items": [
+        {
+          "item_name": "Embedded IDE & Compiler License (Keil MDK Professional)",
+          "quantity": 1,
+          "unit_price": 250000.0,
+          "unit": "license",
+          "category": "software",
+          "currency": "INR",
+          "source": "Arm Keil",
+          "region": "India"
+        },
+        {
+          "item_name": "IoT Cloud Platform Subscription (AWS IoT Core)",
+          "quantity": 1,
+          "unit_price": 60000.0,
+          "unit": "subscription",
+          "category": "software",
+          "currency": "INR",
+          "source": "AWS",
+          "region": "India"
+        },
+        {
+          "item_name": "PCB Design & Simulation Software (Altium Designer)",
+          "quantity": 1,
+          "unit_price": 180000.0,
+          "unit": "subscription",
+          "category": "software",
+          "currency": "INR",
+          "source": "Altium",
+          "region": "India"
+        }
+      ],
+      "rules": {
+        "overhead_percentage": 15.0,
+        "contingency_percentage": 10.0,
+        "tax_percentage": 18.0,
+        "currency": "INR"
+      },
+      "target_metric": "Effort",
+      "analogy_dataset_id": "desharnais_software_projects_38c5d000",
+      "ml_features": {
+        "TeamExp": 4,
+        "ManagerExp": 5,
+        "Length": 8,
+        "Transactions": 200,
+        "Entities": 75,
+        "PointsAjust": 280
+      },
+      "labor_items": [
+        {
+          "role_name": "Lead Hardware & Systems Engineer",
+          "hourly_rate": 1800.0,
+          "hours": 120.0,
+          "personnel_count": 1,
+          "currency": "INR"
+        },
+        {
+          "role_name": "Firmware / Embedded Developer",
+          "hourly_rate": 1200.0,
+          "hours": 200.0,
+          "personnel_count": 2,
+          "currency": "INR"
+        },
+        {
+          "role_name": "Quality & Regulatory Compliance Specialist",
+          "hourly_rate": 950.0,
+          "hours": 60.0,
+          "personnel_count": 1,
+          "currency": "INR"
+        }
+      ]
+    },
+    "team": [
+      {
+        "role": "Lead Hardware & Systems Engineer",
+        "reason": "Allocated 120.0 hrs @ ₹1800.0/hr"
+      },
+      {
+        "role": "Firmware / Embedded Developer",
+        "reason": "Allocated 200.0 hrs @ ₹1200.0/hr"
+      },
+      {
+        "role": "Quality & Regulatory Compliance Specialist",
+        "reason": "Allocated 60.0 hrs @ ₹950.0/hr"
+      }
+    ],
+    "summary": "",
+    "input_type": "text",
+    "confidence": "high"
+  },
+  "hardware": {
+    "items": [
+      {
+        "name": "STM32 Microcontroller Development Board",
+        "spec": "ARM Cortex-M4/M7, 168-480MHz, 512KB-2MB Flash, Ethernet/CAN/USB peripherals",
+        "quantity": 3,
+        "suggested_models": [
+          {
+            "maker": "STMicroelectronics",
+            "model": "STM32H743ZI-Nucleo",
+            "why": "High-performance MCU with rich connectivity for building automation"
+          },
+          {
+            "maker": "STMicroelectronics",
+            "model": "STM32F407VG-Discovery",
+            "why": "Cost-effective Cortex-M4 board with ample GPIOs"
+          }
+        ],
+        "seller_source": "indiamart.com",
+        "unit_price_inr": 2900.0,
+        "line_total_inr": 8700.0,
+        "price_str": "₹ 2,900",
+        "product_url": "https://www.indiamart.com/proddetail/nucleo-h743zi-stm32-development-board-2853654927773.html?srsltid=AU7gw4Vu6LnFVBDGTKev9QY_mBQuCe7Bcxl5JqcuAm2Xa6fVT_ecXLAB",
+        "price_range": {
+          "min": 2465.0,
+          "max": 4889.0
+        },
+        "sources": [
+          {
+            "title": "Buy STMICROELECTRONICS NUCLEO-H7A3ZI-Q ...",
+            "url": "https://robu.in/product/nucleo-h7a3zi-q/",
+            "snippet": ", STM32H743ZI MCU, the lowest price only ... ₹ 4889.00 (Incl. GST) Availability: In Stock For bulk orders inquiries, email us: sales@robu.in"
+          },
+          {
+            "title": "STMICROELECTRONICS NUCLEO-H7A3ZI-Q ...",
+            "url": "https://www.electropi.in/stmicroelectronics-nucleo-h7a3zi-q-development-board-stm32-nucleo-144-stm32h743zi-mcu-st-zio-st-morpho-internal-smps",
+            "snippet": "Buy STMICROELECTRONICS. STM32 Nucleo-144, STM32H743ZI MCU, online at lowest price. Rs.4599.00 (Excluding 18% GST) an affordable and flexible way … provided by ..."
+          },
+          {
+            "title": "NUCLEO-H743ZI STM32 Development Board",
+            "url": "https://www.indiamart.com/proddetail/nucleo-h743zi-stm32-development-board-2853654927773.html?srsltid=AU7gw4Vu6LnFVBDGTKev9QY_mBQuCe7Bcxl5JqcuAm2Xa6fVT_ecXLAB",
+            "snippet": "NUCLEO-H743ZI STM32 Development Board. ₹ 2,900 /Piece. by: Hubtronics. 4.2 ( ..."
+          },
+          {
+            "title": "ST NUCLEO-H7S3L8 STM32 Nucleo-144 Board",
+            "url": "https://in.element14.com/new-products/embedded-computers-education-maker-boards/stm-nucleo-h7s3l8",
+            "snippet": "The STM32 Nucleo-144 board provides developers with an affordable and versatile platform. It features 620 KB of RAM, 64 KB of built-in flash, and a 256-Mbit ..."
+          }
+        ],
+        "source_count": 4
+      },
+      {
+        "name": "Temperature/Humidity Sensor",
+        "spec": "I2C interface, ±0.2°C accuracy, ±2% RH, 1.8-5V operation",
+        "quantity": 5,
+        "suggested_models": [
+          {
+            "maker": "Sensirion",
+            "model": "SHT31-DIS",
+            "why": "High accuracy, calibrated digital output, industry standard"
+          },
+          {
+            "maker": "Bosch",
+            "model": "BME280",
+            "why": "Integrated pressure/temperature/humidity, compact"
+          }
+        ],
+        "seller_source": "playingwithfusion.com",
+        "unit_price_inr": 1113.7,
+        "line_total_inr": 5568.5,
+        "price_str": "$ 12.95",
+        "product_url": "https://www.playingwithfusion.com/products/81&catid=1027?srsltid=AU7gw4UVSpYb6Wx8lEzFHz7WMbnX7tynUTm1_9M6O7pXQqyVwltrvwuS",
+        "price_range": {
+          "min": 11.0,
+          "max": 1392.12
+        },
+        "sources": [
+          {
+            "title": "SENSIRION SHT31-DIS-B2.5KS Humidity & Temperature ...",
+            "url": "https://robu.in/product/sensirion-sht31-dis-b2-5ks-humidity-and-temperature-sensor-i2c-2/",
+            "snippet": "₹ 159.00 (Incl. GST) Availability: Out of Stock , email us: sales@robu.in … humidity and temperature sensor"
+          },
+          {
+            "title": "SHT31-DIS-B2.5kS - Sensirion | Digital Humidity Sensor",
+            "url": "https://evelta.com/sht31-dis-b2-5ks-5-5v-digital-humidity-temperature-sensor-i2c-8-pin-dfn/?srsltid=AU7gw4W8Tboi279zzKHnnvjJMWHxqxxnLu0RPrCZZBO-Rlpy1zf2jTFN",
+            "snippet": "SHT31-DIS-B2.5kS - 5.5V Digital Humidity Temperature Sensor I2C 8-Pin ... Price Now. ₹327.82 inc. GST. ₹277.81 ex. GST. Shipped in 24 Hours from Mumbai ..."
+          },
+          {
+            "title": "SHT30-DIS-B2.5kS - Sensirion | Digital Humidity Sensor",
+            "url": "https://evelta.com/sht30-dis-b2-5ks-5-5v-digital-humidity-temperature-sensor-i2c-8-pin-dfn/?srsltid=AU7gw4V6RHtndA-X6zMRvmp0GhSxnEdKrfqGlL0qenZHUur9CnVR0jhP",
+            "snippet": "MSRP Was Price Now ₹327.82 inc. Brand: Sensirion Typ. SHT31-DIS-B2.5kS. MSRP Was Price Now ₹670.98 inc. GST ₹568.63 ex. GST Shipped in 24 Hours from Mumbai ..."
+          },
+          {
+            "title": "SENSIRION SHT31-DIS-F2.5KS humidity and temperature ...",
+            "url": "https://www.electronicscomp.com/sensirion-sht31-dis-f25ks-humidity-and-temperature-sensor-i2c-2-",
+            "snippet": "SENSIRION SHT31-DIS-F2.5KS humidity and temperature sensor I2C,+/- 2 %. Product Code: EC-29921; Availability: Out Of Stock. Rs.383.00."
+          }
+        ],
+        "source_count": 4
+      },
+      {
+        "name": "Wi-Fi/BLE Communication Module",
+        "spec": "802.11 b/g/n, BLE 5.0, UART/SPI interface, 2.4GHz",
+        "quantity": 3,
+        "suggested_models": [
+          {
+            "maker": "Espressif",
+            "model": "ESP32-WROOM-32D",
+            "why": "Dual-core, integrated Wi-Fi/BLE, low cost"
+          },
+          {
+            "maker": "Murata",
+            "model": "LBEE5KL1DX-883",
+            "why": "Industrial grade, certified module"
+          }
+        ],
+        "seller_source": "digikey.in",
+        "unit_price_inr": 370.83,
+        "line_total_inr": 1112.49,
+        "price_str": "$4.31200",
+        "product_url": "https://www.digikey.in/en/products/detail/espressif-systems/ESP32-WROOM-32D-H4/22286700",
+        "price_range": {
+          "min": 2.5,
+          "max": 463.54
+        },
+        "sources": [
+          {
+            "title": "ESP32-WROOM-32D-H4 Espressif Systems",
+            "url": "https://www.digikey.in/en/products/detail/espressif-systems/ESP32-WROOM-32D-H4/22286700",
+            "snippet": "All prices are in USD. Bulk. Quantity, Unit Price, Ext Price. 650, $4.31200, $2,802.80. Manufacturers Standard Package. Product Attributes. Filter Similar ..."
+          },
+          {
+            "title": "ESP32-WROOM-32E-N4 Espressif Systems",
+            "url": "https://www.digikey.in/en/products/detail/espressif-systems/ESP32-WROOM-32E-N4/11613125",
+            "snippet": "Unit Price Ext Price 1 $4.99000 $4.99. Unit Price Ext Price 650 $2.50000 $1,625.00"
+          },
+          {
+            "title": "ESP32-WROOM-32D(M113DH3200PH3Q0)",
+            "url": "https://www.digikey.in/en/products/detail/espressif-systems/ESP32-WROOM-32D-M113DH3200PH3Q0/17887512",
+            "snippet": "In Stock: 10,182 Unit Price: $4.99000. All prices are in USD Tape & Reel (TR) Quantity Unit Price Ext Price 6,500 $4.18880 $27,227.20"
+          },
+          {
+            "title": "ESP32-WROOM-32D (4MB HIGH TEMP) Espressif Systems",
+            "url": "https://www.digikey.in/en/products/detail/espressif-systems/ESP32-WROOM-32D-4MB-HIGH-TEMP/12342929",
+            "snippet": "Unit Price Ext Price 1 $6.76000 $6.76 Tape & Reel. Price Ext Price 6,500 $4.31200 $28,028.00 Tariff if shipping to the United States."
+          }
+        ],
+        "source_count": 4
+      },
+      {
+        "name": "Power Management Board",
+        "spec": "Input 9-24V DC, Output 3.3V/5V 2A, overcurrent protection",
+        "quantity": 3,
+        "suggested_models": [
+          {
+            "maker": "Texas Instruments",
+            "model": "TPS5430 Buck Converter EVM",
+            "why": "High efficiency step-down regulator"
+          },
+          {
+            "maker": "Mean Well",
+            "model": "IRM-10-5",
+            "why": "Compact AC/DC encapsulated PSU"
+          }
+        ],
+        "seller_source": "Component Catalog",
+        "unit_price_inr": 1200.0,
+        "line_total_inr": 3600.0,
+        "price_str": "₹1,200 (Market reference)",
+        "product_url": "",
+        "price_range": {
+          "min": 1020.0,
+          "max": 1500.0
+        },
+        "sources": [
+          {
+            "title": "AC/DC and DC/DC Conversion Reference Designs",
+            "url": "https://www.digikey.in/reference-designs/en/ac-dc-and-dc-dc-conversion",
+            "snippet": "The Texas Instruments TPS62050 and TPS62052 evaluation modules (EVM) for low-power, high-efficiency, step-down converters help designers evaluate these devices."
+          },
+          {
+            "title": "TPS5430EVM-342 Texas Instruments",
+            "url": "https://www.mouser.in/ProductDetail/Texas-Instruments/TPS5430EVM-342?qs=Vj8prLbzEFCn1%2FedmsT%252BbQ%3D%3D&srsltid=AU7gw4WFLW3J_kFbJAm2SNwOwY-QC5qim-GP9dizbFiT8lBGTEZsE9HP",
+            "snippet": "Specifications ; Input Voltage: 12 V, 15 V ; Output Voltage: - 5 V ; Tool Is For Evaluation Of: TPS5430 ; Series: TPS5430-342."
+          },
+          {
+            "title": "TLV62569PEVM-860 Texas Instruments",
+            "url": "https://www.mouser.in/ProductDetail/Texas-Instruments/TLV62569PEVM-860?qs=7EBvPakHacXc3TSoeaLVmA%3D%3D&srsltid=AU7gw4XXoSP20wbeHO-X9R6rfuy9SVDg00kMXDjitU1nMoUkQSdGieOd",
+            "snippet": "Specifications ; Type: Voltage Regulator - Switching Regulator ; Input Voltage: 2.5 V to 5.5 V ; Output Voltage: 1.8 V ; Tool Is For Evaluation Of: TLV62569P."
+          },
+          {
+            "title": "TPS5430EVM-342 Evaluation board | TI.com",
+            "url": "https://www.ti.com/tool/TPS5430EVM-342",
+            "snippet": "The TPS5430 dc/dc converter is designed to provide up to a 3.0 A output from an input voltage source of 5.5 V to 36 V. Table 1 of the User Guide provides the ..."
+          }
+        ],
+        "source_count": 4
+      },
+      {
+        "name": "Relay Actuator Module",
+        "spec": "4-channel, 5V logic, 10A/250VAC contacts, opto-isolated",
+        "quantity": 2,
+        "suggested_models": [
+          {
+            "maker": "Songle",
+            "model": "SRD-05VDC-SL-C",
+            "why": "Low cost, widely available"
+          },
+          {
+            "maker": "Omron",
+            "model": "G5Q-1A4",
+            "why": "High reliability, long life"
+          }
+        ],
+        "seller_source": "lcsc.com",
+        "unit_price_inr": 20.38,
+        "line_total_inr": 40.76,
+        "price_str": "$0.237",
+        "product_url": "https://www.lcsc.com/product-detail/C35449.html",
+        "price_range": {
+          "min": 0.24,
+          "max": 25.47
+        },
+        "sources": [
+          {
+            "title": "SRD 24V DC Relay Cube",
+            "url": "https://quartzcomponents.com/products/srd-05vdc-srd-12vdc-srd-24vdc-relay?srsltid=AU7gw4WTFOaM8RxrnKSZUJlp1G6zOYVbswWYSrCoO7vARJgnx5lC0Bhn",
+            "snippet": "QuartzComponents. SRD 24V DC Relay Cube. Brand: GENERIC. SKU: MOD-QC0520. Availability: 409 In Stock. Rs. 18.00; Unit price: / per. Quantity: Subtotal: Rs."
+          },
+          {
+            "title": "2 Channel 5V Relay Module With Optocoupler Protection",
+            "url": "https://quartzcomponents.com/products/2-channel-relay-module-with-optocoupler-protection-5v?srsltid=AU7gw4WbCdTS64qh8SI93tL2n_OXffYCGY5q75EcyX-mN69GZk1-h2rM",
+            "snippet": "This 2-channel Relay module comes with Optocoupler protection. Availability: 1534 In Stock Rs. 62.00 Unit price / per. Unbeatable prices."
+          },
+          {
+            "title": "Buy Now SRD-05VDC-SL-A at Best Price - Power Relays",
+            "url": "https://robu.in/product/srd-05vdc-sl-a-ningbo-songle-relay-250vac-5v-15a-1-form-a-1a-spst-no-plugin15-6x19-2mm-power-relays-rohs/",
+            "snippet": "SRD-05VDC-SL-A-Ningbo Songle Relay-250V@AC 5V 15A 1 Form A: 1A (SPST-NO) Plugin,15.6x19.2mm Power Relays ROHS ; 1-4 · 5-9 · 10+ ; ₹ 67.00 · ₹ 58.00 · ₹ 54.00 ..."
+          },
+          {
+            "title": "SRD-DC3V-SL-C-Ningbo Songle Relay-250V@AC 3V 15A ...",
+            "url": "https://robu.in/product/srd-dc3v-sl-c-ningbo-songle-relay-250vac-3v-15a-1-form-c-1c-spdt-co-plugin15-6x19-2mm-power-relays-rohs/",
+            "snippet": "SRD-DC3V-SL-C-Ningbo Songle Relay-250V@AC 3V 15A 1 Form C: 1C (SPDT-CO) Plugin,15.6x19.2mm Power Relays ROHS ; 1-4 · 5-9 · 10+ ; ₹ 72.00 · ₹ 62.00 · ₹ 58.00 ..."
+          }
+        ],
+        "source_count": 4
+      },
+      {
+        "name": "ST-Link Debugger/Programmer",
+        "spec": "SWD/JTAG, USB 2.0, supports STM32/STM8",
+        "quantity": 2,
+        "suggested_models": [
+          {
+            "maker": "STMicroelectronics",
+            "model": "ST-LINK/V2-ISOL",
+            "why": "Isolated probe for robust debugging"
+          },
+          {
+            "maker": "Segger",
+            "model": "J-Link EDU Mini",
+            "why": "Fast, supports many cores"
+          }
+        ],
+        "seller_source": "estore.st.com",
+        "unit_price_inr": 2168.92,
+        "line_total_inr": 4337.84,
+        "price_str": "$25.22",
+        "product_url": "https://estore.st.com/en/st-link-v2-cpn.html?srsltid=AU7gw4Wqe04hXhgepz34pDU2b6qPpUj8Mt7Zs6-G9jjo1G8-rV0TlMWd",
+        "price_range": {
+          "min": 24.72,
+          "max": 2711.15
+        },
+        "sources": [
+          {
+            "title": "ST-LINK/V2-ISOL",
+            "url": "https://in.element14.com/stmicroelectronics/st-link-v2-isol/in-circuit-debugger-prog-stm8/dp/2318865",
+            "snippet": "Buy ST-LINK/V2-ISOL - Price 1+ Rs.8,017.920 Price for:Each Add to Basket Minimum: Rs.8,017.92"
+          },
+          {
+            "title": "Buy ST-LINK/V2 - ST's eStore - STMicroelectronics",
+            "url": "https://estore.st.com/en/st-link-v2-cpn.html?srsltid=AU7gw4Wqe04hXhgepz34pDU2b6qPpUj8Mt7Zs6-G9jjo1G8-rV0TlMWd",
+            "snippet": "ST-LINK/V2. Prices and availability in real-time, fast shipping. $25.22 $24.72. The ST-LINK/V2 is an in-circuit debugger and programmer for the STM8 and STM32 ..."
+          },
+          {
+            "title": "ST-LINK/V2-ISOL STMicroelectronics",
+            "url": "https://www.digikey.com/en/products/detail/stmicroelectronics/ST-LINK-V2-ISOL/4357213",
+            "snippet": "The ST-LINK/V2 is a USB-powered in-circuit debugging and programmer tool. All prices are in USD Box Quantity Unit Price Ext Price 1 $56.11000 $56.11. In Stock ..."
+          },
+          {
+            "title": "ST LINK V2 in-circuit Debugger / Programmer for STM8 ...",
+            "url": "https://www.rhydolabz.com/st-link-v2-in-circuit-debugger-programmer-for-stm8-and-stm32?srsltid=AU7gw4VTAfWzK4Om4q_uY7GGinbK18uGj7cSD_31LJouFyUxJZ_D1Vb_",
+            "snippet": "ST-LINK/V2 is an in-circuit debugger and programmer for the STM8 and STM32 microcontroller families. Rs 384.00 (Excluding GST) ST-LINK/V2 is an in-circuit ..."
+          }
+        ],
+        "source_count": 4
+      },
+      {
+        "name": "Custom PCB Prototype / Breadboard",
+        "spec": "FR4, 2-layer, 100x100mm, with headers for sensors and modules",
+        "quantity": 5,
+        "suggested_models": [
+          {
+            "maker": "JLCPCB",
+            "model": "2-Layer Prototype Service",
+            "why": "Low cost, fast turnaround"
+          },
+          {
+            "maker": "PCBWay",
+            "model": "Advanced PCB Prototype",
+            "why": "Good quality, assembly option"
+          }
+        ],
+        "seller_source": "zbotic.in",
+        "unit_price_inr": 172.0,
+        "line_total_inr": 860.0,
+        "price_str": "$2",
+        "product_url": "https://zbotic.in/pcb-assembly-service-india-jlcpcb-vs-local-fab-cost-guide/?srsltid=AU7gw4V0am6KSWMl6L4MHElIcMaUWmeTAZl6t12x3KVkaZpu1_Id5Epw",
+        "price_range": {
+          "min": 2.0,
+          "max": 215.0
+        },
+        "sources": [
+          {
+            "title": "PCB Assembly Service India: JLCPCB vs Local Fab Cost ...",
+            "url": "https://zbotic.in/pcb-assembly-service-india-jlcpcb-vs-local-fab-cost-guide/?srsltid=AU7gw4V0am6KSWMl6L4MHElIcMaUWmeTAZl6t12x3KVkaZpu1_Id5Epw",
+            "snippet": "JLCPCB PCB Fabrication Pricing (2025). 2-layer, 100×100mm, 5 pieces: $2 USD (approximately ₹170); 4-layer, 100×100mm, 5 pieces: $5–8 USD (₹420–680); 6-layer ..."
+          },
+          {
+            "title": "PCBSync vs JLCPCB vs PCBWay: PCB Prototype Services ...",
+            "url": "https://pcbsync.com/pcb-prototype-services-compared/",
+            "snippet": "JLCPCB wins on price and speed for plain FR-4 prototypes — boards from about $2 for five pieces and 24-hour fab on simple 2-layer designs. PCBWay wins on ..."
+          },
+          {
+            "title": "Imagine PCBs made in India at JLC prices… would ...",
+            "url": "https://www.reddit.com/r/PCB/comments/1n3sfhb/imagine_pcbs_made_in_india_at_jlc_prices_would/",
+            "snippet": "Whenever I think of PCB fabrication, the first name that pops up is JLCPCB. They do those famous $2 boards, but the problem is the shipping to India. it ..."
+          },
+          {
+            "title": "JLCPCB: PCB Prototype & PCB Fabrication Manufacturer",
+            "url": "https://jlcpcb.com/",
+            "snippet": "Instant online PCB quote, get PCBs for only >. Check design with the online gerber viewer, Easy and quick PCB Price Calculator from JLCPCB."
+          }
+        ],
+        "source_count": 4
+      }
+    ],
+    "total": {
+      "min": 10577.42,
+      "likely": 24219.59,
+      "max": 34066.46,
+      "currency": "INR"
+    },
+    "all_sources": [
+      {
+        "title": "Buy STMICROELECTRONICS NUCLEO-H7A3ZI-Q ...",
+        "url": "https://robu.in/product/nucleo-h7a3zi-q/",
+        "snippet": ", STM32H743ZI MCU, the lowest price only ... ₹ 4889.00 (Incl. GST) Availability: In Stock For bulk orders inquiries, email us: sales@robu.in",
+        "item": "STM32 Microcontroller Development Board"
+      },
+      {
+        "title": "STMICROELECTRONICS NUCLEO-H7A3ZI-Q ...",
+        "url": "https://www.electropi.in/stmicroelectronics-nucleo-h7a3zi-q-development-board-stm32-nucleo-144-stm32h743zi-mcu-st-zio-st-morpho-internal-smps",
+        "snippet": "Buy STMICROELECTRONICS. STM32 Nucleo-144, STM32H743ZI MCU, online at lowest price. Rs.4599.00 (Excluding 18% GST) an affordable and flexible way … provided by ...",
+        "item": "STM32 Microcontroller Development Board"
+      },
+      {
+        "title": "NUCLEO-H743ZI STM32 Development Board",
+        "url": "https://www.indiamart.com/proddetail/nucleo-h743zi-stm32-development-board-2853654927773.html?srsltid=AU7gw4Vu6LnFVBDGTKev9QY_mBQuCe7Bcxl5JqcuAm2Xa6fVT_ecXLAB",
+        "snippet": "NUCLEO-H743ZI STM32 Development Board. ₹ 2,900 /Piece. by: Hubtronics. 4.2 ( ...",
+        "item": "STM32 Microcontroller Development Board"
+      },
+      {
+        "title": "ST NUCLEO-H7S3L8 STM32 Nucleo-144 Board",
+        "url": "https://in.element14.com/new-products/embedded-computers-education-maker-boards/stm-nucleo-h7s3l8",
+        "snippet": "The STM32 Nucleo-144 board provides developers with an affordable and versatile platform. It features 620 KB of RAM, 64 KB of built-in flash, and a 256-Mbit ...",
+        "item": "STM32 Microcontroller Development Board"
+      },
+      {
+        "title": "SENSIRION SHT31-DIS-B2.5KS Humidity & Temperature ...",
+        "url": "https://robu.in/product/sensirion-sht31-dis-b2-5ks-humidity-and-temperature-sensor-i2c-2/",
+        "snippet": "₹ 159.00 (Incl. GST) Availability: Out of Stock , email us: sales@robu.in … humidity and temperature sensor",
+        "item": "Temperature/Humidity Sensor"
+      },
+      {
+        "title": "SHT31-DIS-B2.5kS - Sensirion | Digital Humidity Sensor",
+        "url": "https://evelta.com/sht31-dis-b2-5ks-5-5v-digital-humidity-temperature-sensor-i2c-8-pin-dfn/?srsltid=AU7gw4W8Tboi279zzKHnnvjJMWHxqxxnLu0RPrCZZBO-Rlpy1zf2jTFN",
+        "snippet": "SHT31-DIS-B2.5kS - 5.5V Digital Humidity Temperature Sensor I2C 8-Pin ... Price Now. ₹327.82 inc. GST. ₹277.81 ex. GST. Shipped in 24 Hours from Mumbai ...",
+        "item": "Temperature/Humidity Sensor"
+      },
+      {
+        "title": "SHT30-DIS-B2.5kS - Sensirion | Digital Humidity Sensor",
+        "url": "https://evelta.com/sht30-dis-b2-5ks-5-5v-digital-humidity-temperature-sensor-i2c-8-pin-dfn/?srsltid=AU7gw4V6RHtndA-X6zMRvmp0GhSxnEdKrfqGlL0qenZHUur9CnVR0jhP",
+        "snippet": "MSRP Was Price Now ₹327.82 inc. Brand: Sensirion Typ. SHT31-DIS-B2.5kS. MSRP Was Price Now ₹670.98 inc. GST ₹568.63 ex. GST Shipped in 24 Hours from Mumbai ...",
+        "item": "Temperature/Humidity Sensor"
+      },
+      {
+        "title": "SENSIRION SHT31-DIS-F2.5KS humidity and temperature ...",
+        "url": "https://www.electronicscomp.com/sensirion-sht31-dis-f25ks-humidity-and-temperature-sensor-i2c-2-",
+        "snippet": "SENSIRION SHT31-DIS-F2.5KS humidity and temperature sensor I2C,+/- 2 %. Product Code: EC-29921; Availability: Out Of Stock. Rs.383.00.",
+        "item": "Temperature/Humidity Sensor"
+      },
+      {
+        "title": "ESP32-WROOM-32D-H4 Espressif Systems",
+        "url": "https://www.digikey.in/en/products/detail/espressif-systems/ESP32-WROOM-32D-H4/22286700",
+        "snippet": "All prices are in USD. Bulk. Quantity, Unit Price, Ext Price. 650, $4.31200, $2,802.80. Manufacturers Standard Package. Product Attributes. Filter Similar ...",
+        "item": "Wi-Fi/BLE Communication Module"
+      },
+      {
+        "title": "ESP32-WROOM-32E-N4 Espressif Systems",
+        "url": "https://www.digikey.in/en/products/detail/espressif-systems/ESP32-WROOM-32E-N4/11613125",
+        "snippet": "Unit Price Ext Price 1 $4.99000 $4.99. Unit Price Ext Price 650 $2.50000 $1,625.00",
+        "item": "Wi-Fi/BLE Communication Module"
+      },
+      {
+        "title": "ESP32-WROOM-32D(M113DH3200PH3Q0)",
+        "url": "https://www.digikey.in/en/products/detail/espressif-systems/ESP32-WROOM-32D-M113DH3200PH3Q0/17887512",
+        "snippet": "In Stock: 10,182 Unit Price: $4.99000. All prices are in USD Tape & Reel (TR) Quantity Unit Price Ext Price 6,500 $4.18880 $27,227.20",
+        "item": "Wi-Fi/BLE Communication Module"
+      },
+      {
+        "title": "ESP32-WROOM-32D (4MB HIGH TEMP) Espressif Systems",
+        "url": "https://www.digikey.in/en/products/detail/espressif-systems/ESP32-WROOM-32D-4MB-HIGH-TEMP/12342929",
+        "snippet": "Unit Price Ext Price 1 $6.76000 $6.76 Tape & Reel. Price Ext Price 6,500 $4.31200 $28,028.00 Tariff if shipping to the United States.",
+        "item": "Wi-Fi/BLE Communication Module"
+      },
+      {
+        "title": "AC/DC and DC/DC Conversion Reference Designs",
+        "url": "https://www.digikey.in/reference-designs/en/ac-dc-and-dc-dc-conversion",
+        "snippet": "The Texas Instruments TPS62050 and TPS62052 evaluation modules (EVM) for low-power, high-efficiency, step-down converters help designers evaluate these devices.",
+        "item": "Power Management Board"
+      },
+      {
+        "title": "TPS5430EVM-342 Texas Instruments",
+        "url": "https://www.mouser.in/ProductDetail/Texas-Instruments/TPS5430EVM-342?qs=Vj8prLbzEFCn1%2FedmsT%252BbQ%3D%3D&srsltid=AU7gw4WFLW3J_kFbJAm2SNwOwY-QC5qim-GP9dizbFiT8lBGTEZsE9HP",
+        "snippet": "Specifications ; Input Voltage: 12 V, 15 V ; Output Voltage: - 5 V ; Tool Is For Evaluation Of: TPS5430 ; Series: TPS5430-342.",
+        "item": "Power Management Board"
+      },
+      {
+        "title": "TLV62569PEVM-860 Texas Instruments",
+        "url": "https://www.mouser.in/ProductDetail/Texas-Instruments/TLV62569PEVM-860?qs=7EBvPakHacXc3TSoeaLVmA%3D%3D&srsltid=AU7gw4XXoSP20wbeHO-X9R6rfuy9SVDg00kMXDjitU1nMoUkQSdGieOd",
+        "snippet": "Specifications ; Type: Voltage Regulator - Switching Regulator ; Input Voltage: 2.5 V to 5.5 V ; Output Voltage: 1.8 V ; Tool Is For Evaluation Of: TLV62569P.",
+        "item": "Power Management Board"
+      },
+      {
+        "title": "TPS5430EVM-342 Evaluation board | TI.com",
+        "url": "https://www.ti.com/tool/TPS5430EVM-342",
+        "snippet": "The TPS5430 dc/dc converter is designed to provide up to a 3.0 A output from an input voltage source of 5.5 V to 36 V. Table 1 of the User Guide provides the ...",
+        "item": "Power Management Board"
+      },
+      {
+        "title": "SRD 24V DC Relay Cube",
+        "url": "https://quartzcomponents.com/products/srd-05vdc-srd-12vdc-srd-24vdc-relay?srsltid=AU7gw4WTFOaM8RxrnKSZUJlp1G6zOYVbswWYSrCoO7vARJgnx5lC0Bhn",
+        "snippet": "QuartzComponents. SRD 24V DC Relay Cube. Brand: GENERIC. SKU: MOD-QC0520. Availability: 409 In Stock. Rs. 18.00; Unit price: / per. Quantity: Subtotal: Rs.",
+        "item": "Relay Actuator Module"
+      },
+      {
+        "title": "2 Channel 5V Relay Module With Optocoupler Protection",
+        "url": "https://quartzcomponents.com/products/2-channel-relay-module-with-optocoupler-protection-5v?srsltid=AU7gw4WbCdTS64qh8SI93tL2n_OXffYCGY5q75EcyX-mN69GZk1-h2rM",
+        "snippet": "This 2-channel Relay module comes with Optocoupler protection. Availability: 1534 In Stock Rs. 62.00 Unit price / per. Unbeatable prices.",
+        "item": "Relay Actuator Module"
+      },
+      {
+        "title": "Buy Now SRD-05VDC-SL-A at Best Price - Power Relays",
+        "url": "https://robu.in/product/srd-05vdc-sl-a-ningbo-songle-relay-250vac-5v-15a-1-form-a-1a-spst-no-plugin15-6x19-2mm-power-relays-rohs/",
+        "snippet": "SRD-05VDC-SL-A-Ningbo Songle Relay-250V@AC 5V 15A 1 Form A: 1A (SPST-NO) Plugin,15.6x19.2mm Power Relays ROHS ; 1-4 · 5-9 · 10+ ; ₹ 67.00 · ₹ 58.00 · ₹ 54.00 ...",
+        "item": "Relay Actuator Module"
+      },
+      {
+        "title": "SRD-DC3V-SL-C-Ningbo Songle Relay-250V@AC 3V 15A ...",
+        "url": "https://robu.in/product/srd-dc3v-sl-c-ningbo-songle-relay-250vac-3v-15a-1-form-c-1c-spdt-co-plugin15-6x19-2mm-power-relays-rohs/",
+        "snippet": "SRD-DC3V-SL-C-Ningbo Songle Relay-250V@AC 3V 15A 1 Form C: 1C (SPDT-CO) Plugin,15.6x19.2mm Power Relays ROHS ; 1-4 · 5-9 · 10+ ; ₹ 72.00 · ₹ 62.00 · ₹ 58.00 ...",
+        "item": "Relay Actuator Module"
+      },
+      {
+        "title": "ST-LINK/V2-ISOL",
+        "url": "https://in.element14.com/stmicroelectronics/st-link-v2-isol/in-circuit-debugger-prog-stm8/dp/2318865",
+        "snippet": "Buy ST-LINK/V2-ISOL - Price 1+ Rs.8,017.920 Price for:Each Add to Basket Minimum: Rs.8,017.92",
+        "item": "ST-Link Debugger/Programmer"
+      },
+      {
+        "title": "Buy ST-LINK/V2 - ST's eStore - STMicroelectronics",
+        "url": "https://estore.st.com/en/st-link-v2-cpn.html?srsltid=AU7gw4Wqe04hXhgepz34pDU2b6qPpUj8Mt7Zs6-G9jjo1G8-rV0TlMWd",
+        "snippet": "ST-LINK/V2. Prices and availability in real-time, fast shipping. $25.22 $24.72. The ST-LINK/V2 is an in-circuit debugger and programmer for the STM8 and STM32 ...",
+        "item": "ST-Link Debugger/Programmer"
+      },
+      {
+        "title": "ST-LINK/V2-ISOL STMicroelectronics",
+        "url": "https://www.digikey.com/en/products/detail/stmicroelectronics/ST-LINK-V2-ISOL/4357213",
+        "snippet": "The ST-LINK/V2 is a USB-powered in-circuit debugging and programmer tool. All prices are in USD Box Quantity Unit Price Ext Price 1 $56.11000 $56.11. In Stock ...",
+        "item": "ST-Link Debugger/Programmer"
+      },
+      {
+        "title": "ST LINK V2 in-circuit Debugger / Programmer for STM8 ...",
+        "url": "https://www.rhydolabz.com/st-link-v2-in-circuit-debugger-programmer-for-stm8-and-stm32?srsltid=AU7gw4VTAfWzK4Om4q_uY7GGinbK18uGj7cSD_31LJouFyUxJZ_D1Vb_",
+        "snippet": "ST-LINK/V2 is an in-circuit debugger and programmer for the STM8 and STM32 microcontroller families. Rs 384.00 (Excluding GST) ST-LINK/V2 is an in-circuit ...",
+        "item": "ST-Link Debugger/Programmer"
+      },
+      {
+        "title": "PCB Assembly Service India: JLCPCB vs Local Fab Cost ...",
+        "url": "https://zbotic.in/pcb-assembly-service-india-jlcpcb-vs-local-fab-cost-guide/?srsltid=AU7gw4V0am6KSWMl6L4MHElIcMaUWmeTAZl6t12x3KVkaZpu1_Id5Epw",
+        "snippet": "JLCPCB PCB Fabrication Pricing (2025). 2-layer, 100×100mm, 5 pieces: $2 USD (approximately ₹170); 4-layer, 100×100mm, 5 pieces: $5–8 USD (₹420–680); 6-layer ...",
+        "item": "Custom PCB Prototype / Breadboard"
+      },
+      {
+        "title": "PCBSync vs JLCPCB vs PCBWay: PCB Prototype Services ...",
+        "url": "https://pcbsync.com/pcb-prototype-services-compared/",
+        "snippet": "JLCPCB wins on price and speed for plain FR-4 prototypes — boards from about $2 for five pieces and 24-hour fab on simple 2-layer designs. PCBWay wins on ...",
+        "item": "Custom PCB Prototype / Breadboard"
+      },
+      {
+        "title": "Imagine PCBs made in India at JLC prices… would ...",
+        "url": "https://www.reddit.com/r/PCB/comments/1n3sfhb/imagine_pcbs_made_in_india_at_jlc_prices_would/",
+        "snippet": "Whenever I think of PCB fabrication, the first name that pops up is JLCPCB. They do those famous $2 boards, but the problem is the shipping to India. it ...",
+        "item": "Custom PCB Prototype / Breadboard"
+      },
+      {
+        "title": "JLCPCB: PCB Prototype & PCB Fabrication Manufacturer",
+        "url": "https://jlcpcb.com/",
+        "snippet": "Instant online PCB quote, get PCBs for only >. Check design with the online gerber viewer, Easy and quick PCB Price Calculator from JLCPCB.",
+        "item": "Custom PCB Prototype / Breadboard"
+      }
+    ],
+    "source_count": 28
+  },
+  "software": {
+    "software_payload": {
+      "project_name": "Smart Building Controller Prototype",
+      "currency": "INR",
+      "bom_items": [
+        {
+          "item_name": "Embedded IDE & Compiler License (Keil MDK Professional)",
+          "quantity": 1,
+          "unit_price": 250000.0,
+          "unit": "license",
+          "category": "software",
+          "currency": "INR",
+          "source": "Arm Keil",
+          "region": "India"
+        },
+        {
+          "item_name": "IoT Cloud Platform Subscription (AWS IoT Core)",
+          "quantity": 1,
+          "unit_price": 60000.0,
+          "unit": "subscription",
+          "category": "software",
+          "currency": "INR",
+          "source": "AWS",
+          "region": "India"
+        },
+        {
+          "item_name": "PCB Design & Simulation Software (Altium Designer)",
+          "quantity": 1,
+          "unit_price": 180000.0,
+          "unit": "subscription",
+          "category": "software",
+          "currency": "INR",
+          "source": "Altium",
+          "region": "India"
+        }
+      ],
+      "rules": {
+        "overhead_percentage": 15.0,
+        "contingency_percentage": 10.0,
+        "tax_percentage": 18.0,
+        "currency": "INR"
+      },
+      "target_metric": "Effort",
+      "analogy_dataset_id": "desharnais_software_projects_38c5d000",
+      "ml_features": {
+        "TeamExp": 4,
+        "ManagerExp": 5,
+        "Length": 8,
+        "Transactions": 200,
+        "Entities": 75,
+        "PointsAjust": 280
+      },
+      "labor_items": [
+        {
+          "role_name": "Lead Hardware & Systems Engineer",
+          "hourly_rate": 1800.0,
+          "hours": 120.0,
+          "personnel_count": 1,
+          "currency": "INR"
+        },
+        {
+          "role_name": "Firmware / Embedded Developer",
+          "hourly_rate": 1200.0,
+          "hours": 200.0,
+          "personnel_count": 2,
+          "currency": "INR"
+        },
+        {
+          "role_name": "Quality & Regulatory Compliance Specialist",
+          "hourly_rate": 950.0,
+          "hours": 60.0,
+          "personnel_count": 1,
+          "currency": "INR"
+        }
+      ]
+    },
+    "baseline_estimate": {
+      "currency": "INR",
+      "direct_materials_cost": 490000.0,
+      "direct_labor_cost": 753000.0,
+      "direct_total_cost": 1243000.0,
+      "overhead_amount": 186450.0,
+      "overhead_percentage": 15.0,
+      "subtotal_with_overhead": 1429450.0,
+      "contingency_amount": 142945.0,
+      "contingency_percentage": 10.0,
+      "subtotal_before_tax": 1572395.0,
+      "tax_amount": 283031.1,
+      "tax_percentage": 18.0,
+      "total_project_cost": 1855426.1,
+      "breakdown_by_category": {
+        "software": {
+          "category": "software",
+          "subtotal": 490000.0,
+          "percentage_of_direct": 39.42,
+          "items_count": 3
+        },
+        "personnel": {
+          "category": "personnel",
+          "subtotal": 753000.0,
+          "percentage_of_direct": 60.58,
+          "items_count": 3
+        }
+      },
+      "traceable_assumptions": [
+        "Base currency configured as INR.",
+        "Overhead computed as 15.0% on total direct expenses (1,243,000.00 INR).",
+        "Contingency buffer of 10.0% applied on cost with overhead (1,429,450.00 INR).",
+        "Tax/GST computed at 18.0% on pre-tax subtotal (1,572,395.00 INR).",
+        "Total estimated labor effort: 580.0 person-hours across 3 defined role(s).",
+        "Total distinct BOM components: 3 item(s) totaling 490,000.00 INR."
+      ]
+    },
+    "labor_breakdown": [
+      {
+        "role_name": "Lead Hardware & Systems Engineer",
+        "hourly_rate": 1800.0,
+        "hours": 120.0,
+        "personnel_count": 1,
+        "line_total": 216000.0
+      },
+      {
+        "role_name": "Firmware / Embedded Developer",
+        "hourly_rate": 1200.0,
+        "hours": 200.0,
+        "personnel_count": 2,
+        "line_total": 480000.0
+      },
+      {
+        "role_name": "Quality & Regulatory Compliance Specialist",
+        "hourly_rate": 950.0,
+        "hours": 60.0,
+        "personnel_count": 1,
+        "line_total": 57000.0
+      }
+    ],
+    "bom_breakdown": [
+      {
+        "item_name": "Embedded IDE & Compiler License (Keil MDK Professional)",
+        "quantity": 1.0,
+        "unit_price": 250000.0,
+        "line_total": 250000.0,
+        "category": "software",
+        "unit": "license",
+        "source": "Arm Keil",
+        "region": "India"
+      },
+      {
+        "item_name": "IoT Cloud Platform Subscription (AWS IoT Core)",
+        "quantity": 1.0,
+        "unit_price": 60000.0,
+        "line_total": 60000.0,
+        "category": "software",
+        "unit": "subscription",
+        "source": "AWS",
+        "region": "India"
+      },
+      {
+        "item_name": "PCB Design & Simulation Software (Altium Designer)",
+        "quantity": 1.0,
+        "unit_price": 180000.0,
+        "line_total": 180000.0,
+        "category": "software",
+        "unit": "subscription",
+        "source": "Altium",
+        "region": "India"
+      }
+    ],
+    "monte_carlo_uncertainty": {
+      "iterations": 2000,
+      "random_seed": 42,
+      "base_cost": 1855426.1,
+      "simulated_mean": 1853058.82,
+      "simulated_median_p50": 1853959.15,
+      "p10": 1780476.39,
+      "p25": 1815623.94,
+      "p75": 1891087.41,
+      "p90": 1925143.73,
+      "std_dev": 54962.33,
+      "currency": "INR",
+      "top_cost_drivers": [
+        {
+          "name": "Labor: Firmware / Embedded Developer",
+          "variance_contribution_pct": 59.44,
+          "std_deviation": 42706.91
+        },
+        {
+          "name": "BOM: Embedded IDE & Compiler License (Keil MDK Professional)",
+          "variance_contribution_pct": 17.45,
+          "std_deviation": 23136.21
+        },
+        {
+          "name": "Labor: Lead Hardware & Systems Engineer",
+          "variance_contribution_pct": 12.47,
+          "std_deviation": 19561.25
+        },
+        {
+          "name": "BOM: PCB Design & Simulation Software (Altium Designer)",
+          "variance_contribution_pct": 8.76,
+          "std_deviation": 16392.76
+        },
+        {
+          "name": "BOM: IoT Cloud Platform Subscription (AWS IoT Core)",
+          "variance_contribution_pct": 0.98,
+          "std_deviation": 5482.49
+        },
+        {
+          "name": "Labor: Quality & Regulatory Compliance Specialist",
+          "variance_contribution_pct": 0.9,
+          "std_deviation": 5263.79
+        }
+      ],
+      "confidence_80_range": [
+        1780476.39,
+        1925143.73
+      ],
+      "simulation_histogram": {
+        "bins": [
+          1701766.94,
+          1717485.06,
+          1733203.17,
+          1748921.29,
+          1764639.41,
+          1780357.53,
+          1796075.64,
+          1811793.76,
+          1827511.88,
+          1843230.0,
+          1858948.11,
+          1874666.23,
+          1890384.35,
+          1906102.46,
+          1921820.58,
+          1937538.7,
+          1953256.82,
+          1968974.93,
+          1984693.05,
+          2000411.17,
+          2016129.29
+        ],
+        "counts": [
+          8,
+          23,
+          28,
+          51,
+          90,
+          120,
+          140,
+          185,
+          223,
+          194,
+          228,
+          203,
+          166,
+          125,
+          93,
+          55,
+          36,
+          17,
+          11,
+          4
+        ]
+      }
+    },
+    "ml_prediction": {
+      "target": "Effort",
+      "status": "ML_PREDICTION",
+      "model_version": "v20261011_080758",
+      "dataset_version": "desharnais_software_projects_38c5d000",
+      "algorithm": "XGBoost",
+      "input_snapshot_hash": "c7f2c4886386",
+      "prediction": 3733.7,
+      "interval": {
+        "coverage": 0.8,
+        "low": 1462.18,
+        "expected": 3733.7,
+        "high": 6005.22
+      },
+      "metrics": {
+        "n_test": 17,
+        "MAE": 2222.0,
+        "RMSE": 3187.26,
+        "MMRE": 0.4753,
+        "MdMRE": 0.3496,
+        "PRED25": 0.3529,
+        "PRED50": 0.6471,
+        "Bias": 0.1519
+      },
+      "warnings": [
+        "Missing expected features: ['YearEnd', 'PointsNonAdjust', 'Adjustment', 'Language']. Default imputation will be applied."
+      ],
+      "calculated_ml_cost": 4847372.59,
+      "average_hourly_rate": 1298.28
+    },
+    "analogy_estimate": {
+      "status": "SUCCESS",
+      "point_estimate": 3829.35,
+      "similar_projects": [
+        {
+          "project_index": 32,
+          "similarity_score_pct": 86.6,
+          "distance": 0.657,
+          "actual_target_value": 2429.0,
+          "target_unit": "units",
+          "features": {
+            "TeamExp": 4,
+            "ManagerExp": 4,
+            "Length": 9,
+            "Transactions": 174,
+            "Entities": 78,
+            "PointsAjust": 267
+          }
+        },
+        {
+          "project_index": 14,
+          "similarity_score_pct": 82.2,
+          "distance": 0.874,
+          "actual_target_value": 4977.0,
+          "target_unit": "units",
+          "features": {
+            "TeamExp": 4,
+            "ManagerExp": 4,
+            "Length": 9,
+            "Transactions": 223,
+            "Entities": 121,
+            "PointsAjust": 320
+          }
+        },
+        {
+          "project_index": 13,
+          "similarity_score_pct": 78.6,
+          "distance": 1.048,
+          "actual_target_value": 4172.0,
+          "target_unit": "units",
+          "features": {
+            "TeamExp": 3,
+            "ManagerExp": 4,
+            "Length": 8,
+            "Transactions": 162,
+            "Entities": 61,
+            "PointsAjust": 216
+          }
+        }
+      ],
+      "analogy_coverage_pct": 100.0,
+      "mean_similarity_pct": 82.5
+    },
+    "total": {
+      "min": 1780476.39,
+      "likely": 1853959.15,
+      "max": 1925143.73,
+      "currency": "INR"
+    }
+  },
+  "prediction": {
+    "total_cost_inr": {
+      "optimistic": 1791054,
+      "likely": 1878179,
+      "pessimistic": 1959210
+    },
+    "hardware_cost_inr": {
+      "min": 10577.42,
+      "likely": 24219.59,
+      "max": 34066.46
+    },
+    "software_dev_cost_inr": {
+      "min": 1780476.39,
+      "likely": 1853959.15,
+      "max": 1925143.73
+    },
+    "licence_cost_inr": {
+      "min": 490000.0,
+      "max": 490000.0
+    },
+    "effort_months": {
+      "low": 6,
+      "likely": 8,
+      "high": 10
+    },
+    "confidence": "high",
+    "summary": "Estimated total project cost is ₹1,878,179 (Hardware: ₹24,220, Software Development & Licenses: ₹1,853,959). Hardware prices researched live from Indian electronic suppliers. Software development effort estimated at 3,733.7 person-hours using offline XGBoost model calibrated on the Desharnais dataset with 2,000 Monte Carlo uncertainty trials and historical analogies."
+  }
+}

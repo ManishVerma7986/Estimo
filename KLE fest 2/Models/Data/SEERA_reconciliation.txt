@@ -1,0 +1,16 @@
+sheet 'General Information': 120 projects, 17 columns
+sheet 'Size': 120 projects, 5 columns
+sheet 'Effort': 120 projects, 8 columns
+sheet 'Environment': 120 projects, 41 columns
+sheet 'Users': 120 projects, 32 columns
+sheet 'Developers': 120 projects, 48 columns
+sheet 'Project': 120 projects, 46 columns
+sheet 'Product': 120 projects, 19 columns
+merged raw sub-attributes: (120, 217), unique projIDs=120
+main ARFF: (120, 76)
+main XLSX (raw read): (122, 76) incl. 2 header rows
+per-category ARFF SEERA_Users__csv.arff: (120, 33) rows x cols; sheet rows for Users=120
+per-category ARFF SEERA_Effort__csv.arff: (120, 9) rows x cols; sheet rows for Effort=120
+per-category ARFF SEERA_Size__csv.arff: (120, 6) rows x cols; sheet rows for Size=120
+join status (main vs raw): {'both': 120, 'left_only': 0, 'right_only': 0}
+NASA93: (93, 24); ISBSG10: (37, 94)

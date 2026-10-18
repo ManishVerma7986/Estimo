@@ -1,0 +1,293 @@
+column,source,non_missing,missing,dtype
+projID,RAW XLSX,120,0,int64
+MAIN :: Year of project,MAIN ARFF,120,0,float64
+MAIN :: Organization id,MAIN ARFF,120,0,float64
+MAIN :: Organization type,MAIN ARFF,120,0,float64
+MAIN :: Role in organization,MAIN ARFF,120,0,float64
+MAIN :: Size of organization,MAIN ARFF,112,8,float64
+MAIN :: Size of IT department,MAIN ARFF,112,8,float64
+MAIN :: Customer organization type,MAIN ARFF,116,4,float64
+MAIN :: Estimated duration,MAIN ARFF,120,0,float64
+MAIN :: Actual duration,MAIN ARFF,120,0,float64
+MAIN :: \% project gain (loss),MAIN ARFF,64,56,float64
+MAIN :: Development type,MAIN ARFF,120,0,float64
+MAIN :: Application domain,MAIN ARFF,120,0,float64
+MAIN :: Object points,MAIN ARFF,118,2,float64
+MAIN :: Other sizing method,MAIN ARFF,120,0,float64
+MAIN :: Estimated size,MAIN ARFF,13,107,float64
+MAIN :: Estimated effort,MAIN ARFF,120,0,float64
+MAIN :: Actual effort,MAIN ARFF,120,0,float64
+MAIN :: Contract maturity,MAIN ARFF,120,0,float64
+MAIN :: Government policy impact,MAIN ARFF,119,1,float64
+MAIN :: Economic instability impact,MAIN ARFF,120,0,float64
+MAIN :: Organization management structure clarity,MAIN ARFF,118,2,float64
+MAIN :: Developer hiring policy,MAIN ARFF,119,1,float64
+MAIN :: Developer incentives policy,MAIN ARFF,119,1,float64
+MAIN :: Developer training,MAIN ARFF,118,2,float64
+MAIN :: Development team management,MAIN ARFF,119,1,float64
+MAIN :: Top management support,MAIN ARFF,120,0,float64
+MAIN :: Top management opinion of previous system,MAIN ARFF,120,0,float64
+MAIN :: Clarity of manual system,MAIN ARFF,119,1,float64
+MAIN :: User resistance,MAIN ARFF,120,0,float64
+MAIN :: User computer experience,MAIN ARFF,120,0,float64
+MAIN :: Users stability,MAIN ARFF,120,0,float64
+MAIN :: Requirment stability,MAIN ARFF,120,0,float64
+MAIN :: Requirements flexibility,MAIN ARFF,120,0,float64
+MAIN :: Project manager experience,MAIN ARFF,119,1,float64
+MAIN :: Consultant availability,MAIN ARFF,119,1,float64
+MAIN :: DBMS  expert availability,MAIN ARFF,120,0,float64
+MAIN :: Precedentedness,MAIN ARFF,119,1,float64
+MAIN :: Software tool experience,MAIN ARFF,119,1,float64
+MAIN :: Programmers experience in programming language,MAIN ARFF,119,1,float64
+MAIN :: Programmers capability,MAIN ARFF,119,1,float64
+MAIN :: Analysts capability,MAIN ARFF,119,1,float64
+MAIN :: Team selection,MAIN ARFF,119,1,float64
+MAIN :: Team size,MAIN ARFF,120,0,float64
+MAIN :: Dedicated team members,MAIN ARFF,120,0,float64
+MAIN :: Daily working hours,MAIN ARFF,120,0,float64
+MAIN :: Team contracts,MAIN ARFF,109,11,float64
+MAIN :: Team continuity,MAIN ARFF,119,1,float64
+MAIN :: Team cohesion,MAIN ARFF,119,1,float64
+MAIN :: Income satisfaction,MAIN ARFF,118,2,float64
+MAIN :: Schedule quality,MAIN ARFF,119,1,float64
+MAIN :: Development environment adequacy,MAIN ARFF,119,1,float64
+MAIN :: Tool availability,MAIN ARFF,119,1,float64
+MAIN :: Methodology,MAIN ARFF,120,0,float64
+MAIN :: # Multiple programing languages,MAIN ARFF,120,0,float64
+MAIN :: Programming language used,MAIN ARFF,120,0,float64
+MAIN :: DBMS used,MAIN ARFF,120,0,float64
+MAIN :: Technical stability,MAIN ARFF,119,1,float64
+MAIN :: Open source software,MAIN ARFF,120,0,float64
+MAIN :: Level of outsourcing,MAIN ARFF,119,1,float64
+MAIN :: Outsourcing impact,MAIN ARFF,11,109,float64
+MAIN :: Degree of software reuse,MAIN ARFF,118,2,float64
+MAIN :: Degree of risk management,MAIN ARFF,119,1,float64
+MAIN :: Use of standards,MAIN ARFF,119,1,float64
+MAIN :: Degree of standards usage,MAIN ARFF,21,99,float64
+MAIN :: Process reengineering,MAIN ARFF,117,3,float64
+MAIN :: Requirement accuracy level,MAIN ARFF,116,4,float64
+MAIN :: Technical documentation,MAIN ARFF,119,1,float64
+MAIN :: Comments within the code,MAIN ARFF,118,2,float64
+MAIN :: User manual,MAIN ARFF,119,1,float64
+MAIN :: Required reusability,MAIN ARFF,119,1,float64
+MAIN :: Performance requirements,MAIN ARFF,119,1,float64
+MAIN :: Product complexity,MAIN ARFF,117,3,float64
+MAIN :: Security requirements,MAIN ARFF,119,1,float64
+MAIN :: Reliability requirements,MAIN ARFF,118,2,float64
+MAIN :: Specified H/W,MAIN ARFF,118,2,float64
+General Information :: Year of project | Contract Date,RAW XLSX: General Information,107,13,str
+General Information :: Year of project | Contract software delivery date,RAW XLSX: General Information,106,14,str
+General Information :: Year of project | Actual software development start date,RAW XLSX: General Information,112,8,str
+General Information :: Year of project | Year of project (Main),RAW XLSX: General Information,120,0,int64
+General Information :: Organization id,RAW XLSX: General Information,120,0,int64
+General Information :: Organization type,RAW XLSX: General Information,120,0,int64
+General Information :: Role in organization,RAW XLSX: General Information,120,0,int64
+General Information :: Size of organization,RAW XLSX: General Information,112,8,float64
+General Information :: Size of IT department,RAW XLSX: General Information,112,8,float64
+General Information :: Customer organization type,RAW XLSX: General Information,116,4,float64
+General Information :: Estimated duration,RAW XLSX: General Information,120,0,float64
+General Information :: Actual duration,RAW XLSX: General Information,120,0,float64
+General Information :: % project gain (loss) | Contract price,RAW XLSX: General Information,81,39,object
+General Information :: % project gain (loss) | Actual incurred costs,RAW XLSX: General Information,81,39,object
+General Information :: % project gain (loss) | % project gain (loss) (Main),RAW XLSX: General Information,64,56,float64
+General Information :: Development type,RAW XLSX: General Information,120,0,int64
+General Information :: Application Domain,RAW XLSX: General Information,120,0,int64
+Size :: Object Points | Number of screens,RAW XLSX: Size,118,2,float64
+Size :: Object Points | Number of reports,RAW XLSX: Size,118,2,float64
+Size :: Object Points | Object Points (Main),RAW XLSX: Size,118,2,float64
+Size :: Other Sizing Method,RAW XLSX: Size,120,0,int64
+Size :: Estimated Size,RAW XLSX: Size,13,107,float64
+Effort :: Estimated effort | Estimated duration,RAW XLSX: Effort,120,0,float64
+Effort :: Estimated effort | Team size,RAW XLSX: Effort,120,0,int64
+Effort :: Estimated effort | Dedicated team members,RAW XLSX: Effort,120,0,int64
+Effort :: Estimated effort | Daily workin hours,RAW XLSX: Effort,120,0,int64
+Effort :: Estimated effort | Monthly workin hours,RAW XLSX: Effort,120,0,int64
+Effort :: Estimated effort | Estimated Effort (Main),RAW XLSX: Effort,120,0,int64
+Effort :: Actual effort | Actual Duration,RAW XLSX: Effort,120,0,float64
+Effort :: Actual effort | Actual effort (Main),RAW XLSX: Effort,120,0,float64
+Environment :: Contract maturity | Penalty clause for late payments,RAW XLSX: Environment,120,0,int64
+Environment :: Contract maturity | Penalty clause for contract canclation,RAW XLSX: Environment,120,0,int64
+Environment :: Contract maturity | Penalty clause for schedule overrun,RAW XLSX: Environment,120,0,int64
+Environment :: Contract maturity | Documentation availability,RAW XLSX: Environment,120,0,int64
+Environment :: Contract maturity | Users training,RAW XLSX: Environment,120,0,int64
+Environment :: Contract maturity | Technical support,RAW XLSX: Environment,120,0,int64
+Environment :: Contract maturity | Ownership of source code,RAW XLSX: Environment,120,0,int64
+Environment :: Contract maturity,RAW XLSX: Environment,120,0,int64
+Environment :: Contract maturity | Contract maturity (Main),RAW XLSX: Environment,120,0,int64
+Environment :: Government policy impact,RAW XLSX: Environment,119,1,float64
+Environment :: Economic instability impact | (-) Impact on schedule/quality,RAW XLSX: Environment,120,0,int64
+Environment :: Economic instability impact | (-) Economic Issue,RAW XLSX: Environment,34,86,float64
+Environment :: Economic instability impact | Unavailability of software tools,RAW XLSX: Environment,120,0,int64
+Environment :: Economic instability impact | Losses due to inflation,RAW XLSX: Environment,120,0,int64
+Environment :: Economic instability impact | Customer defaulted on payment or cancelled the contract,RAW XLSX: Environment,120,0,int64
+Environment :: Economic instability impact | Highly Developer turnover,RAW XLSX: Environment,120,0,int64
+Environment :: Economic instability impact | Developer immigration,RAW XLSX: Environment,120,0,int64
+Environment :: Economic instability impact | Cut back of phases and/or programs during development,RAW XLSX: Environment,120,0,int64
+Environment :: Economic instability impact,RAW XLSX: Environment,120,0,int64
+Environment :: Economic instability impact | Economic instability impact (Main),RAW XLSX: Environment,120,0,int64
+Environment :: Organization management structure clarity,RAW XLSX: Environment,118,2,float64
+Environment :: Developer hiring policy,RAW XLSX: Environment,119,1,float64
+Environment :: Developer Incentives Policy | Clear scale for salary increase,RAW XLSX: Environment,119,1,float64
+Environment :: Developer Incentives Policy | Providing transportation,RAW XLSX: Environment,119,1,float64
+Environment :: Developer Incentives Policy | Meal,RAW XLSX: Environment,119,1,float64
+Environment :: Developer Incentives Policy | Social programs,RAW XLSX: Environment,119,1,float64
+Environment :: Developer Incentives Policy | Benefits,RAW XLSX: Environment,119,1,float64
+Environment :: Developer Incentives Policy | Benefits (Reverse),RAW XLSX: Environment,119,1,float64
+Environment :: Developer Incentives Policy | Incentive policy implementation level,RAW XLSX: Environment,119,1,float64
+Environment :: Developer Incentives Policy | Developer Incentives Policy (Main),RAW XLSX: Environment,119,1,float64
+Environment :: Developer training,RAW XLSX: Environment,118,2,float64
+Environment :: Team work management | Time sheet recording,RAW XLSX: Environment,119,1,float64
+Environment :: Team work management | mechanismForHoursCalculation,RAW XLSX: Environment,21,99,float64
+Environment :: Team work management | Time sheet recording (Attendance OR  Other method for recording  working hours),RAW XLSX: Environment,119,1,float64
+Environment :: Team work management | Fixed minimum working hours,RAW XLSX: Environment,119,1,float64
+Environment :: Team work management | Team work commitment,RAW XLSX: Environment,119,1,float64
+"Environment :: Team work management | Sum of(Time sheet recording,Fixed minimum working hours,Team work commitment)",RAW XLSX: Environment,119,1,float64
+"Environment :: Team work management | (Reverse) Sum of(Time sheet recording,Fixed minimum working hours,Team work commitment)",RAW XLSX: Environment,119,1,float64
+Environment :: Team work management | Consequence for lack of work,RAW XLSX: Environment,119,1,float64
+Environment :: Team work management | Absence policy implementation,RAW XLSX: Environment,119,1,float64
+Environment :: Team work management | Development team management(Main),RAW XLSX: Environment,119,1,float64
+Users :: Top management support | Review and approval of the requirements,RAW XLSX: Users,120,0,int64
+Users :: Top management support | Review and approval of the design,RAW XLSX: Users,120,0,int64
+Users :: Top management support | System testing (functional and non-functional requirements),RAW XLSX: Users,120,0,int64
+Users :: Top management support | Moral support of the development team,RAW XLSX: Users,120,0,int64
+Users :: Top management support,RAW XLSX: Users,120,0,int64
+Users :: Top management support | Top management support (Main),RAW XLSX: Users,120,0,int64
+Users :: Top management opinion of previous system,RAW XLSX: Users,120,0,int64
+Users :: Clarity of manual system | User manual clarity,RAW XLSX: Users,119,1,float64
+Users :: Clarity of manual system | Manual system experience,RAW XLSX: Users,119,1,float64
+Users :: Clarity of manual system | Clarity of manual system (Main),RAW XLSX: Users,119,1,float64
+Users :: User Resistance | User cooperation in requirement solicitation,RAW XLSX: Users,120,0,int64
+Users :: User Resistance | Users desire for change/project adaption,RAW XLSX: Users,120,0,int64
+Users :: User Resistance | User not afraid of the impact of product,RAW XLSX: Users,119,1,float64
+Users :: User Resistance | Cohesion between developers and users,RAW XLSX: Users,120,0,int64
+Users :: User Resistance,RAW XLSX: Users,120,0,float64
+Users :: User Computer Experience,RAW XLSX: Users,120,0,int64
+Users :: Users stability | Transfer of key user,RAW XLSX: Users,120,0,int64
+Users :: Users stability | Impact on schedule(User stability),RAW XLSX: Users,120,0,int64
+Users :: Users stability,RAW XLSX: Users,120,0,int64
+Users :: Users stability | Users stability (Main),RAW XLSX: Users,120,0,float64
+Users :: Requirment Stability | Modifications during requirements collection,RAW XLSX: Users,120,0,int64
+Users :: Requirment Stability | Modifications during analysis,RAW XLSX: Users,120,0,int64
+Users :: Requirment Stability | Modifications during design,RAW XLSX: Users,120,0,int64
+Users :: Requirment Stability | Modifications during programming,RAW XLSX: Users,119,1,float64
+Users :: Requirment Stability | Modifications during testing,RAW XLSX: Users,120,0,int64
+Users :: Requirment Stability | Modifications during deployment,RAW XLSX: Users,120,0,int64
+Users :: Requirment Stability,RAW XLSX: Users,120,0,int64
+Users :: Requirment Stability | Requirment Stability (Main),RAW XLSX: Users,120,0,float64
+Users :: Requirements flexibility | Direct automation of the manual system,RAW XLSX: Users,120,0,int64
+Users :: Requirements flexibility | Impact on schedule(direct automation),RAW XLSX: Users,120,0,int64
+Users :: Requirements flexibility,RAW XLSX: Users,120,0,int64
+Users :: Requirements flexibility | Requirements flexibility (Main),RAW XLSX: Users,120,0,float64
+Developers :: Project manager experience,RAW XLSX: Developers,119,1,float64
+Developers :: Consultant availability,RAW XLSX: Developers,119,1,float64
+Developers :: DBMS expert availability,RAW XLSX: Developers,120,0,int64
+Developers :: Precedentedness | New software tools,RAW XLSX: Developers,119,1,float64
+Developers :: Precedentedness | New architecture,RAW XLSX: Developers,119,1,float64
+Developers :: Precedentedness | New difficult algorithms,RAW XLSX: Developers,119,1,float64
+Developers :: Precedentedness,RAW XLSX: Developers,119,1,float64
+Developers :: Precedentedness | Precedentedness (Main),RAW XLSX: Developers,119,1,float64
+Developers :: Software tool experience,RAW XLSX: Developers,119,1,float64
+Developers :: Programmers experience in programming language,RAW XLSX: Developers,119,1,float64
+Developers :: Programmers capability | Work under pressure %,RAW XLSX: Developers,119,1,float64
+Developers :: Programmers capability | Work efficiency %,RAW XLSX: Developers,119,1,float64
+Developers :: Programmers capability | Work accuracy %,RAW XLSX: Developers,119,1,float64
+Developers :: Programmers capability | Degree of communication and cooperation %,RAW XLSX: Developers,119,1,float64
+Developers :: Programmers capability | % Programmers capability,RAW XLSX: Developers,119,1,float64
+Developers :: Programmers capability | % Programmers capability (Main),RAW XLSX: Developers,119,1,float64
+Developers :: Analysts capability | Communication with users,RAW XLSX: Developers,119,1,float64
+Developers :: Analysts capability | Understanding the previous system and information collection,RAW XLSX: Developers,119,1,float64
+Developers :: Analysts capability | Work accuracy,RAW XLSX: Developers,119,1,float64
+Developers :: Analysts capability | % Analysts capability,RAW XLSX: Developers,119,1,float64
+Developers :: Analysts capability | % Analysts capability (Main),RAW XLSX: Developers,119,1,float64
+Developers :: Team selection,RAW XLSX: Developers,119,1,float64
+Developers :: Team size,RAW XLSX: Developers,120,0,int64
+Developers :: Dedicated team members,RAW XLSX: Developers,120,0,int64
+Developers :: Daily working hours,RAW XLSX: Developers,120,0,int64
+Developers :: Team contract | # full-time,RAW XLSX: Developers,109,11,float64
+Developers :: Team contract | # part-time contract,RAW XLSX: Developers,109,11,float64
+Developers :: Team contract | # training/ national service,RAW XLSX: Developers,108,12,float64
+Developers :: Team contract,RAW XLSX: Developers,109,11,float64
+Developers :: Team contract | %Team contract,RAW XLSX: Developers,109,11,float64
+Developers :: Team contract | Team contract (Main),RAW XLSX: Developers,109,11,float64
+Developers :: Team continuity | # of developers that left the project,RAW XLSX: Developers,119,1,float64
+Developers :: Team continuity | % Team continuity  (Main),RAW XLSX: Developers,119,1,float64
+Developers :: Team continuity | (-)Impact on schedule (Team continuaty),RAW XLSX: Developers,119,1,float64
+Developers :: Team Cohesion | Coherence of goals and opinions,RAW XLSX: Developers,119,1,float64
+Developers :: Team Cohesion | Team work experience,RAW XLSX: Developers,119,1,float64
+Developers :: Team Cohesion | Average((Coherence of goals and opinions + Team work experience)),RAW XLSX: Developers,119,1,float64
+Developers :: Team Cohesion | Performance Issues,RAW XLSX: Developers,119,1,float64
+Developers :: Team Cohesion,RAW XLSX: Developers,119,1,float64
+Developers :: Team Cohesion_2,RAW XLSX: Developers,119,1,float64
+Developers :: Team Cohesion_3,RAW XLSX: Developers,119,1,float64
+Developers :: Team Cohesion | Performance Issues_2,RAW XLSX: Developers,119,1,float64
+Developers :: Team Cohesion | Personal tension,RAW XLSX: Developers,119,1,float64
+Developers :: Team Cohesion_4,RAW XLSX: Developers,119,1,float64
+Developers :: Team Cohesion_5,RAW XLSX: Developers,119,1,float64
+Developers :: Team Cohesion | Personal tension_2,RAW XLSX: Developers,119,1,float64
+Developers :: Team Cohesion | Team cohesion (Main),RAW XLSX: Developers,119,1,float64
+Developers :: Income satisfaction,RAW XLSX: Developers,118,2,float64
+Project :: Schedule quality,RAW XLSX: Project,119,1,float64
+Project :: Development environment adequacy | Comfortable Office,RAW XLSX: Project,119,1,float64
+Project :: Development environment adequacy | Enough Pcs,RAW XLSX: Project,119,1,float64
+Project :: Development environment adequacy | Available LANS,RAW XLSX: Project,119,1,float64
+Project :: Development environment adequacy,RAW XLSX: Project,119,1,float64
+Project :: Development environment adequacy | Development environment adequacy (Main),RAW XLSX: Project,119,1,float64
+Project :: Tool availability | Code checking tools(e.g. error detection),RAW XLSX: Project,119,1,float64
+Project :: Tool availability | Software frameworks,RAW XLSX: Project,119,1,float64
+Project :: Tool availability | CASE tools,RAW XLSX: Project,119,1,float64
+Project :: Tool availability | Version control tools,RAW XLSX: Project,119,1,float64
+Project :: Tool availability | (Automated) Testing tools,RAW XLSX: Project,119,1,float64
+Project :: Tool availability | Integrated Development Environments,RAW XLSX: Project,119,1,float64
+Project :: Tool availability | (Automated) Quality control tools,RAW XLSX: Project,119,1,float64
+Project :: Tool availability,RAW XLSX: Project,119,1,float64
+Project :: Tool availability | Tool availability (Main),RAW XLSX: Project,119,1,float64
+Project :: Methodology,RAW XLSX: Project,120,0,int64
+Project :: # Multiple programing languages,RAW XLSX: Project,120,0,int64
+Project :: Programming language used,RAW XLSX: Project,120,0,int64
+Project :: DBMS used,RAW XLSX: Project,120,0,int64
+Project :: Technical stability | Technical stability (Main),RAW XLSX: Project,119,1,float64
+Project :: Technical stability | (-) Technology type,RAW XLSX: Project,15,105,str
+Project :: Technical stability | (-) Impact on schedule(Technical stability),RAW XLSX: Project,119,1,float64
+Project :: Open source software,RAW XLSX: Project,120,0,int64
+Project :: Level of outsourcing,RAW XLSX: Project,119,1,float64
+Project :: Outsourcing impact | Outsourcing impact (Main),RAW XLSX: Project,11,109,float64
+Project :: Outsourcing impact | (-)Percentages of Impact,RAW XLSX: Project,10,110,float64
+Project :: Degree of software reuse,RAW XLSX: Project,118,2,float64
+Project :: Degree of risk management | Risk plan,RAW XLSX: Project,119,1,float64
+Project :: Degree of risk management | Risk management tool usage,RAW XLSX: Project,119,1,float64
+Project :: Degree of risk management,RAW XLSX: Project,119,1,float64
+Project :: Degree of risk management | Degree of risk management(Main),RAW XLSX: Project,119,1,float64
+Project :: Degree of risk management | (-)# of risks during project,RAW XLSX: Project,119,1,float64
+Project :: Degree of risk management | (-)Impact on schedule (Risks),RAW XLSX: Project,44,76,float64
+Project :: Use of standards,RAW XLSX: Project,119,1,float64
+Project :: Degree of standards usage | Standards used for Requirement collection,RAW XLSX: Project,3,117,str
+Project :: Degree of standards usage | Standards used for analysis,RAW XLSX: Project,2,118,str
+Project :: Degree of standards usage | Standards used for design,RAW XLSX: Project,2,118,str
+Project :: Degree of standards usage | Standards used for Programming,RAW XLSX: Project,14,106,str
+Project :: Degree of standards usage | Standards used for testing,RAW XLSX: Project,14,106,str
+Project :: Degree of standards usage | Standards used for deployment,RAW XLSX: Project,1,119,str
+Project :: Degree of standards usage,RAW XLSX: Project,21,99,float64
+Project :: Degree of standards usage | Degree of standards usage (Main),RAW XLSX: Project,21,99,float64
+Project :: Process reengineering | Reengineering,RAW XLSX: Project,117,3,float64
+Project :: Process reengineering | Impact on schedule (Process reengineering),RAW XLSX: Project,117,3,float64
+Project :: Process reengineering,RAW XLSX: Project,117,3,float64
+Project :: Process reengineering | Process reengineering (Main),RAW XLSX: Project,117,3,float64
+Product :: Requirement Accuracy level,RAW XLSX: Product,116,4,float64
+Product :: Technical documentation,RAW XLSX: Product,119,1,float64
+Product :: Comments within the code,RAW XLSX: Product,118,2,float64
+Product :: User manual,RAW XLSX: Product,119,1,float64
+Product :: Required reusability,RAW XLSX: Product,119,1,float64
+Product :: Performance Requirements | Execution time,RAW XLSX: Product,119,1,float64
+Product :: Performance Requirements | Response time,RAW XLSX: Product,119,1,float64
+Product :: Performance Requirements | Particular architecture,RAW XLSX: Product,119,1,float64
+Product :: Performance Requirements,RAW XLSX: Product,119,1,float64
+Product :: Performance Requirements | Performance Requirements (Main),RAW XLSX: Product,119,1,float64
+Product :: Product complexity,RAW XLSX: Product,117,3,float64
+Product :: Security requirements | Code security and encryption,RAW XLSX: Product,119,1,float64
+Product :: Security requirements | Database security,RAW XLSX: Product,119,1,float64
+Product :: Security requirements | Program security and encryption,RAW XLSX: Product,119,1,float64
+Product :: Security requirements | Basic authentiation,RAW XLSX: Product,119,1,float64
+Product :: Security requirements,RAW XLSX: Product,119,1,float64
+Product :: Security requirements | Security requirements (Main),RAW XLSX: Product,119,1,float64
+Product :: Reliability requirements,RAW XLSX: Product,118,2,float64
+Product :: Specified H/W,RAW XLSX: Product,118,2,float64

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Product Browser Search</title>
+  <style>
+    body{font-family:system-ui,sans-serif;max-width:900px;margin:40px auto;padding:0 18px;color:#18202a;background:#f6f8fb}
+    main{background:white;border:1px solid #dfe5ed;border-radius:14px;padding:24px;box-shadow:0 5px 20px #1b2a3a12}
+    form{display:flex;gap:10px} input{flex:1;padding:12px;border:1px solid #bbc6d4;border-radius:8px;font-size:16px}button{padding:12px 18px;border:0;border-radius:8px;background:#1769e0;color:white;font-weight:600;cursor:pointer}
+    pre{white-space:pre-wrap;line-height:1.5;background:#f1f4f8;border-radius:8px;padding:16px;max-height:560px;overflow:auto} #status{margin:16px 0;color:#536273}
+  </style>
+</head>
+<body><main>
+  <h1>Product Browser Search</h1><p>Enter one product or a comma/newline-separated hardware list.</p>
+  <form id="form"><textarea id="url" rows="3" placeholder="Arduino Uno R3, ESP32 board, camera module" required></textarea><button>Search</button></form>
+  <div id="status"></div><section id="result" hidden><h2 id="title"></h2><p id="meta"></p><h3>Price summary — lowest to highest</h3><pre id="summary"></pre><h3>Search results</h3><pre id="structured"></pre><h3>Readable text</h3><pre id="text"></pre></section>
+</main><script>
+const form=document.querySelector('#form'), status=document.querySelector('#status'), result=document.querySelector('#result');
+form.addEventListener('submit',async e=>{e.preventDefault(); status.textContent='Loading…'; result.hidden=true;
+  try{const r=await fetch('/api/search',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({url:document.querySelector('#url').value})}); const d=await r.json(); if(!r.ok) throw Error(d.error||'Request failed');
+    document.querySelector('#title').textContent=d.title; document.querySelector('#meta').textContent=d.mode==='batch'?`Searched ${d.items.length} hardware items with TinyFish`:`HTTP ${d.status} · ${d.url}${d.account?' · '+d.account:''}${d.estimate_note?' · '+d.estimate_note:''}`;
+    const ranges = d.mode==='batch' ? (d.price_summary||[]).map(x=>`${x.item}: ${(x.ranges||[]).map(r=>r.label+' '+r.currency).join(' | ')||'No reliable comparable range — add an exact model'}`).join('\n') : (d.price_summary||[]).map(r=>`${d.query}: ${r.label} ${r.currency} (${r.count} comparable received prices)`).join('\n');
+    document.querySelector('#summary').textContent=ranges||'No reliable comparable price range was received; add the exact model and specification.';
+    document.querySelector('#structured').textContent=d.mode==='batch'?JSON.stringify(d.items,null,2):JSON.stringify({price_summary:d.price_summary,results:d.results,shopping_results:d.shopping_results,knowledge_graph:d.knowledge_graph,json_ld:d.structured_data,metadata:d.metadata},null,2); document.querySelector('#text').textContent=d.mode==='batch'?d.items.map(x=>`${x.item}\n${x.error||((x.data.results||[]).length?(x.data.results||[]).map(r=>`${r.title} — ${r.price||'Price not found'}\n${r.url}`).join('\n'):x.data.text)}`).join('\n\n'):d.text+(d.truncated?'\n\n[Text truncated]':''); result.hidden=false; status.textContent='Done';
+  }catch(err){status.textContent=err.message;}
+});
+</script></body></html>

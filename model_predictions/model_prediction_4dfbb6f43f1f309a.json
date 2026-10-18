@@ -1,0 +1,850 @@
+{
+  "session_id": "4dfbb6f43f1f309a",
+  "timestamp": "20261011_170444",
+  "software_development_estimate": {
+    "software_payload": {
+      "project_name": "Smart Building Controller Prototype (STM32)",
+      "currency": "INR",
+      "bom_items": [
+        {
+          "item_name": "Embedded RTOS & Debug IDE Tooling",
+          "quantity": 1,
+          "unit_price": 28000.0,
+          "unit": "license",
+          "category": "software",
+          "currency": "INR",
+          "source": "SEGGER Microcontroller / Embedded Studio",
+          "region": "India"
+        },
+        {
+          "item_name": "Cloud IoT Broker & Device Telemetry Tier",
+          "quantity": 1,
+          "unit_price": 36000.0,
+          "unit": "subscription",
+          "category": "software",
+          "currency": "INR",
+          "source": "AWS / Azure IoT Core",
+          "region": "India"
+        },
+        {
+          "item_name": "PCB CAD & Rapid Simulation Subscription",
+          "quantity": 1,
+          "unit_price": 24000.0,
+          "unit": "subscription",
+          "category": "software",
+          "currency": "INR",
+          "source": "Altium / Cadence",
+          "region": "India"
+        }
+      ],
+      "labor_items": [
+        {
+          "role_name": "Lead Embedded Systems Architect",
+          "hourly_rate": 1850.0,
+          "hours": 120.0,
+          "personnel_count": 1,
+          "currency": "INR"
+        },
+        {
+          "role_name": "Firmware Engineer (STM32 / FreeRTOS)",
+          "hourly_rate": 1400.0,
+          "hours": 220.0,
+          "personnel_count": 1,
+          "currency": "INR"
+        },
+        {
+          "role_name": "Hardware Design & Layout Engineer",
+          "hourly_rate": 1250.0,
+          "hours": 140.0,
+          "personnel_count": 1,
+          "currency": "INR"
+        },
+        {
+          "role_name": "IoT Cloud & Integration Developer",
+          "hourly_rate": 1350.0,
+          "hours": 110.0,
+          "personnel_count": 1,
+          "currency": "INR"
+        },
+        {
+          "role_name": "Embedded QA & Environmental Test Engineer",
+          "hourly_rate": 1050.0,
+          "hours": 90.0,
+          "personnel_count": 1,
+          "currency": "INR"
+        }
+      ],
+      "rules": {
+        "overhead_percentage": 15.0,
+        "contingency_percentage": 10.0,
+        "tax_percentage": 18.0,
+        "currency": "INR"
+      },
+      "ml_features": {
+        "TeamExp": 4,
+        "ManagerExp": 7,
+        "Length": 6,
+        "Transactions": 160,
+        "Entities": 48,
+        "PointsAjust": 245
+      },
+      "target_metric": "Effort",
+      "analogy_dataset_id": "desharnais_software_projects_38c5d000"
+    },
+    "baseline_estimate": {
+      "currency": "INR",
+      "direct_materials_cost": 88000.0,
+      "direct_labor_cost": 948000.0,
+      "direct_total_cost": 1036000.0,
+      "overhead_amount": 155400.0,
+      "overhead_percentage": 15.0,
+      "subtotal_with_overhead": 1191400.0,
+      "contingency_amount": 119140.0,
+      "contingency_percentage": 10.0,
+      "subtotal_before_tax": 1310540.0,
+      "tax_amount": 235897.2,
+      "tax_percentage": 18.0,
+      "total_project_cost": 1546437.2,
+      "breakdown_by_category": {
+        "software": {
+          "category": "software",
+          "subtotal": 88000.0,
+          "percentage_of_direct": 8.49,
+          "items_count": 3
+        },
+        "personnel": {
+          "category": "personnel",
+          "subtotal": 948000.0,
+          "percentage_of_direct": 91.51,
+          "items_count": 5
+        }
+      },
+      "traceable_assumptions": [
+        "Base currency configured as INR.",
+        "Overhead computed as 15.0% on total direct expenses (1,036,000.00 INR).",
+        "Contingency buffer of 10.0% applied on cost with overhead (1,191,400.00 INR).",
+        "Tax/GST computed at 18.0% on pre-tax subtotal (1,310,540.00 INR).",
+        "Total estimated labor effort: 680.0 person-hours across 5 defined role(s).",
+        "Total distinct BOM components: 3 item(s) totaling 88,000.00 INR."
+      ]
+    },
+    "labor_breakdown": [
+      {
+        "role_name": "Lead Embedded Systems Architect",
+        "hourly_rate": 1850.0,
+        "hours": 120.0,
+        "personnel_count": 1,
+        "line_total": 222000.0
+      },
+      {
+        "role_name": "Firmware Engineer (STM32 / FreeRTOS)",
+        "hourly_rate": 1400.0,
+        "hours": 220.0,
+        "personnel_count": 1,
+        "line_total": 308000.0
+      },
+      {
+        "role_name": "Hardware Design & Layout Engineer",
+        "hourly_rate": 1250.0,
+        "hours": 140.0,
+        "personnel_count": 1,
+        "line_total": 175000.0
+      },
+      {
+        "role_name": "IoT Cloud & Integration Developer",
+        "hourly_rate": 1350.0,
+        "hours": 110.0,
+        "personnel_count": 1,
+        "line_total": 148500.0
+      },
+      {
+        "role_name": "Embedded QA & Environmental Test Engineer",
+        "hourly_rate": 1050.0,
+        "hours": 90.0,
+        "personnel_count": 1,
+        "line_total": 94500.0
+      }
+    ],
+    "bom_breakdown": [
+      {
+        "item_name": "Embedded RTOS & Debug IDE Tooling",
+        "quantity": 1.0,
+        "unit_price": 28000.0,
+        "line_total": 28000.0,
+        "category": "software",
+        "unit": "license",
+        "source": "SEGGER Microcontroller / Embedded Studio",
+        "region": "India"
+      },
+      {
+        "item_name": "Cloud IoT Broker & Device Telemetry Tier",
+        "quantity": 1.0,
+        "unit_price": 36000.0,
+        "line_total": 36000.0,
+        "category": "software",
+        "unit": "subscription",
+        "source": "AWS / Azure IoT Core",
+        "region": "India"
+      },
+      {
+        "item_name": "PCB CAD & Rapid Simulation Subscription",
+        "quantity": 1.0,
+        "unit_price": 24000.0,
+        "line_total": 24000.0,
+        "category": "software",
+        "unit": "subscription",
+        "source": "Altium / Cadence",
+        "region": "India"
+      }
+    ],
+    "monte_carlo_uncertainty": {
+      "iterations": 2000,
+      "random_seed": 42,
+      "base_cost": 1546437.2,
+      "simulated_mean": 1544759.46,
+      "simulated_median_p50": 1544413.94,
+      "p10": 1492552.02,
+      "p25": 1515762.06,
+      "p75": 1573291.39,
+      "p90": 1598114.78,
+      "std_dev": 41258.54,
+      "currency": "INR",
+      "top_cost_drivers": [
+        {
+          "name": "Labor: Firmware Engineer (STM32 / FreeRTOS)",
+          "variance_contribution_pct": 44.13,
+          "std_deviation": 27403.6
+        },
+        {
+          "name": "Labor: Lead Embedded Systems Architect",
+          "variance_contribution_pct": 23.75,
+          "std_deviation": 20104.62
+        },
+        {
+          "name": "Labor: Hardware Design & Layout Engineer",
+          "variance_contribution_pct": 15.35,
+          "std_deviation": 16160.76
+        },
+        {
+          "name": "Labor: IoT Cloud & Integration Developer",
+          "variance_contribution_pct": 11.03,
+          "std_deviation": 13698.5
+        },
+        {
+          "name": "Labor: Embedded QA & Environmental Test Engineer",
+          "variance_contribution_pct": 4.43,
+          "std_deviation": 8680.58
+        },
+        {
+          "name": "BOM: Cloud IoT Broker & Device Telemetry Tier",
+          "variance_contribution_pct": 0.64,
+          "std_deviation": 3289.49
+        },
+        {
+          "name": "BOM: Embedded RTOS & Debug IDE Tooling",
+          "variance_contribution_pct": 0.39,
+          "std_deviation": 2591.26
+        },
+        {
+          "name": "BOM: PCB CAD & Rapid Simulation Subscription",
+          "variance_contribution_pct": 0.28,
+          "std_deviation": 2185.7
+        }
+      ],
+      "confidence_80_range": [
+        1492552.02,
+        1598114.78
+      ],
+      "simulation_histogram": {
+        "bins": [
+          1426781.43,
+          1439273.05,
+          1451764.68,
+          1464256.3,
+          1476747.93,
+          1489239.56,
+          1501731.18,
+          1514222.81,
+          1526714.43,
+          1539206.06,
+          1551697.68,
+          1564189.31,
+          1576680.94,
+          1589172.56,
+          1601664.19,
+          1614155.81,
+          1626647.44,
+          1639139.07,
+          1651630.69,
+          1664122.32,
+          1676613.94
+        ],
+        "counts": [
+          9,
+          10,
+          28,
+          63,
+          72,
+          97,
+          196,
+          199,
+          234,
+          232,
+          227,
+          190,
+          159,
+          99,
+          78,
+          50,
+          42,
+          9,
+          4,
+          2
+        ]
+      }
+    },
+    "ml_prediction": {
+      "target": "Effort",
+      "status": "ML_PREDICTION",
+      "model_version": "v20261011_080758",
+      "dataset_version": "desharnais_software_projects_38c5d000",
+      "algorithm": "XGBoost",
+      "input_snapshot_hash": "f3fee7169c18",
+      "prediction": 3386.54,
+      "interval": {
+        "coverage": 0.8,
+        "low": 1326.22,
+        "expected": 3386.54,
+        "high": 5446.86
+      },
+      "metrics": {
+        "n_test": 17,
+        "MAE": 2222.0,
+        "RMSE": 3187.26,
+        "MMRE": 0.4753,
+        "MdMRE": 0.3496,
+        "PRED25": 0.3529,
+        "PRED50": 0.6471,
+        "Bias": 0.1519
+      },
+      "warnings": [
+        "Missing expected features: ['YearEnd', 'PointsNonAdjust', 'Adjustment', 'Language']. Default imputation will be applied."
+      ],
+      "calculated_ml_cost": 4721235.18,
+      "average_hourly_rate": 1394.12
+    },
+    "analogy_estimate": {
+      "status": "SUCCESS",
+      "point_estimate": 2657.77,
+      "similar_projects": [
+        {
+          "project_index": 63,
+          "similarity_score_pct": 71.8,
+          "distance": 1.382,
+          "actual_target_value": 1603.0,
+          "target_unit": "units",
+          "features": {
+            "TeamExp": 4,
+            "ManagerExp": 7,
+            "Length": 13,
+            "Transactions": 69,
+            "Entities": 74,
+            "PointsAjust": 113
+          }
+        },
+        {
+          "project_index": 32,
+          "similarity_score_pct": 60.8,
+          "distance": 1.92,
+          "actual_target_value": 2429.0,
+          "target_unit": "units",
+          "features": {
+            "TeamExp": 4,
+            "ManagerExp": 4,
+            "Length": 9,
+            "Transactions": 174,
+            "Entities": 78,
+            "PointsAjust": 267
+          }
+        },
+        {
+          "project_index": 13,
+          "similarity_score_pct": 59.2,
+          "distance": 2.0,
+          "actual_target_value": 4172.0,
+          "target_unit": "units",
+          "features": {
+            "TeamExp": 3,
+            "ManagerExp": 4,
+            "Length": 8,
+            "Transactions": 162,
+            "Entities": 61,
+            "PointsAjust": 216
+          }
+        }
+      ],
+      "analogy_coverage_pct": 100.0,
+      "mean_similarity_pct": 63.9
+    },
+    "total": {
+      "min": 1492552.02,
+      "likely": 1544413.94,
+      "max": 1598114.78,
+      "currency": "INR"
+    }
+  },
+  "unified_prediction_summary": {
+    "total_cost_inr": {
+      "optimistic": 1493217,
+      "likely": 1548594,
+      "pessimistic": 1603340
+    },
+    "hardware_cost_inr": {
+      "min": 665.34,
+      "likely": 4180.15,
+      "max": 5225.18
+    },
+    "software_dev_cost_inr": {
+      "min": 1492552.02,
+      "likely": 1544413.94,
+      "max": 1598114.78
+    },
+    "licence_cost_inr": {
+      "min": 88000.0,
+      "max": 88000.0
+    },
+    "effort_months": {
+      "low": 5,
+      "likely": 6,
+      "high": 8
+    },
+    "confidence": "high",
+    "summary": "Estimated total project cost is ₹1,548,594 (Hardware: ₹4,180, Software Development & Licenses: ₹1,544,414). Hardware prices researched live from Indian electronic suppliers. Software development effort estimated at 3,386.5 person-hours using offline XGBoost model calibrated on the Desharnais dataset with 2,000 Monte Carlo uncertainty trials and historical analogies."
+  },
+  "hardware_estimate": {
+    "items": [
+      {
+        "name": "STM32 Development Board",
+        "spec": "ARM Cortex-M4 32-bit MCU, 80MHz, 512KB Flash, Integrated ST-LINK/V2-1 debugger",
+        "quantity": 3,
+        "suggested_models": [
+          {
+            "maker": "STMicroelectronics",
+            "model": "NUCLEO-L476RG",
+            "why": "Ultra-low-power Arm Cortex-M4 board with standard Arduino and Morpho headers for prototyping"
+          }
+        ],
+        "seller_source": "digikey.com",
+        "unit_price_inr": 509.98,
+        "line_total_inr": 1529.94,
+        "price_str": "$5.93000",
+        "product_url": "https://www.digikey.com/en/products/detail/stmicroelectronics/NUCLEO-L476RG/5347711",
+        "price_range": {
+          "min": 5.93,
+          "max": 637.48
+        },
+        "sources": [
+          {
+            "title": "nucleo-l476rg",
+            "url": "https://in.element14.com/stmicroelectronics/nucleo-l476rg/dev-board-arduino-mbed-nucleo/dp/2493816",
+            "snippet": "Buy NUCLEO-L476RG - STMICROELECTRONICS - Development Board, STM32L476RG MCU, On-Board STLINK/V2-1. element14 India ... Price. 1+, Rs.1,895.330. 5+, Rs.1,857.430 ..."
+          },
+          {
+            "title": "NUCLEO-L476RG - STMicroelectronics",
+            "url": "https://evelta.com/nucleo-l476rg-stmicroelectronics-board-arduino-compatible/?srsltid=AU7gw4VZhyO2TmvRiXoPs3g3j0at44wYgP3_GNX6WNYD8EOk45FX3K7F",
+            "snippet": "STMicroelectronics Board (Arduino Compatible) MSRP Was Price Now ₹2,070.90 inc. GST ₹1,755.00 ex. Delivered in 2-5 Days in stock Sold Out ..."
+          },
+          {
+            "title": "Discover STMicroelectronics' Innovative Solutions at Evelta",
+            "url": "https://evelta.com/stmicroelectronics/?sort=pricedesc&page=3&srsltid=AU7gw4WlBOkg0hlJIIS2NSL9WB-PbbiGELwhGukiQRTi12xuix4biMkQ",
+            "snippet": "Was Price Now ₹2,145.00 ex. NUCLEO-L476RG STMicroelectronics Board (Arduino Compatible) MSRP Was Price Now ₹1,755.00 ex."
+          },
+          {
+            "title": "STMICROELECTRONICS NUCLEO-F072RB Development ...",
+            "url": "https://robu.in/product/stmicroelectronics-nucleo-f072rb-development-board-nucleo-64-stm32f072rb-mcu-st-link-v2-1-arduino-and-st-morpho-connectivity/",
+            "snippet": "Buy STMICROELECTRONICS NUCLEO-F072RB … ₹ 2369.00 (Incl. GST) Purchase this product now. Availability: Out of Stock inquiries, email us: sales@ ..."
+          }
+        ],
+        "source_count": 4
+      },
+      {
+        "name": "Precision Temperature & Relative Humidity Sensor",
+        "spec": "I2C digital interface, 1.08V to 5.5V supply, ±0.2°C temp accuracy, ±2% RH accuracy, integrated heater",
+        "quantity": 5,
+        "suggested_models": [
+          {
+            "maker": "Sensirion",
+            "model": "SHT40-AD1B",
+            "why": "Industry-standard accuracy, ultra-low power consumption, and robust I2C driver support"
+          },
+          {
+            "maker": "Texas Instruments",
+            "model": "HDC2080DMBT",
+            "why": "Low-power digital humidity and temperature sensor with programmable interrupt thresholds"
+          }
+        ],
+        "seller_source": "il.farnell.com",
+        "unit_price_inr": 123.32,
+        "line_total_inr": 616.6,
+        "price_str": "$1.434",
+        "product_url": "https://il.farnell.com/sensirion/sht40-ad1b-r2/humidity-temperature-sensor-i2c/dp/3586476?srsltid=AU7gw4VRlP1OWlstncQQTRVOslUvyOExIOSYG1_Z6KXs9Rn7aYmxILTq",
+        "price_range": {
+          "min": 1.2,
+          "max": 154.15
+        },
+        "sources": [
+          {
+            "title": "SHT40-AD1B-R2 Sensirion AG | Humidity, Moisture Sensors",
+            "url": "https://www.digikey.in/en/products/detail/sensirion-ag/SHT40-AD1B-R2/13532084",
+            "snippet": "Price Ext Price 1 $1.94000 $1.94. Price 2,500 $1.19624. For Use With 200 In Stock 1 : $52.02000 Box SHT40 CMOSens® Humidity, Temperature Sensor Evaluation ..."
+          },
+          {
+            "title": "SHT40-AD1B-R3 Sensirion AG | Humidity, Moisture Sensors",
+            "url": "https://www.digikey.in/en/products/detail/sensirion-ag/SHT40-AD1B-R3/14322709",
+            "snippet": "Quantity, Unit Price, Ext Price. 1, $1.94000, $1.94. 5, $1.72400, $8.62. 10, $1.64200, $16.42. 25, $1.54520, $38.63. 50, $1.47880, $73.94."
+          },
+          {
+            "title": "SHT40-BD1B-R2 Sensirion AG | Humidity, Moisture Sensors",
+            "url": "https://www.digikey.in/en/products/detail/sensirion-ag/SHT40-BD1B-R2/19543006",
+            "snippet": "Part Number. SHT40-BD1B-R3 ; Manufacturer. Sensirion AG ; Quantity Available. 8,508 ; DigiKey Part Number. 1649-SHT40-BD1B-R3CT-ND ; Unit Price. $1.94000."
+          },
+          {
+            "title": "SHT40I-AD1B-R2 Sensirion AG | Humidity, Moisture Sensors",
+            "url": "https://www.digikey.in/en/products/detail/sensirion-ag/SHT40I-AD1B-R2/15792546",
+            "snippet": "SHT40-AD1B-R2. SENSOR HUMIDITY 100 RH SMD. Sensirion AG. $1.94000. Details · SHT45-AD1F-R2. DIGITAL RH/TEMP W/FILTER. Sensirion AG."
+          }
+        ],
+        "source_count": 4
+      },
+      {
+        "name": "Industrial Communication Transceiver (RS-485 / Modbus)",
+        "spec": "3.3V Half-Duplex RS-485/RS-422 Transceiver with ±15kV ESD protection for building automation buses",
+        "quantity": 3,
+        "suggested_models": [
+          {
+            "maker": "Texas Instruments",
+            "model": "THVD1429DR",
+            "why": "High-noise-immunity RS-485 transceiver ideal for HVAC Modbus RTU integration"
+          }
+        ],
+        "seller_source": "digikey.in",
+        "unit_price_inr": 235.72,
+        "line_total_inr": 707.16,
+        "price_str": "$2.74088",
+        "product_url": "https://www.digikey.in/en/products/detail/psemi/PE4312C-Z/5878673",
+        "price_range": {
+          "min": 1.94,
+          "max": 294.65
+        },
+        "sources": [
+          {
+            "title": "24LC64T-I/OT Microchip Technology | Memory",
+            "url": "https://www.digikey.in/en/products/detail/microchip-technology/24LC64T-I-OT/2039840",
+            "snippet": "Unit Price Ext Price 1 $0.52000. Technology For Use With 29 In Stock 1 : $1,446.20000 Bulk. Texas Instruments $7.05000. THVD1429DR THVD1429DR IC TXRX 8-SOIC ..."
+          },
+          {
+            "title": "PE4312C-Z pSemi | Attenuators",
+            "url": "https://www.digikey.in/en/products/detail/psemi/PE4312C-Z/5878673",
+            "snippet": "Unit Price, Ext Price. 3,000, $2.74088, $8,222.64. Manufacturers Standard ... Texas Instruments. $3.19000. Details · BMI-S-202-C. RF SHIELD 0.668 ..."
+          },
+          {
+            "title": "THVD1429DR - Drivers, Receivers, Transceivers",
+            "url": "https://www.digikey.in/en/products/detail/texas-instruments/THVD1429DR/10820358",
+            "snippet": "THVD1429DR is out of stock and can be placed on backorder. Unit Price: $3.92000 Datasheet. Texas Instruments 7,797 Unit Price: $6.60000. Unit Price Ext Price 2 ..."
+          },
+          {
+            "title": "THVD1429DT - Drivers, Receivers, Transceivers",
+            "url": "https://www.digikey.in/en/products/detail/texas-instruments/THVD1429DT/9860747",
+            "snippet": "Texas Instruments. View datasheets, pricing and availability from DigiKey now! Unit Price Ext Price 1 $5.81000 $5.81 10 $4.44000 $4.09600 $102.40 100 $3.71840 ..."
+          }
+        ],
+        "source_count": 4
+      },
+      {
+        "name": "Wireless IoT Backhaul Module",
+        "spec": "Wi-Fi 802.11 b/g/n and BLE 5.0 module interfacing via UART/SPI AT commands or ESP-Hosted firmware",
+        "quantity": 3,
+        "suggested_models": [
+          {
+            "maker": "Espressif Systems",
+            "model": "ESP32-C3-WROOM-02-N4",
+            "why": "Cost-effective network co-processor providing secure TLS Wi-Fi and BLE commissioning"
+          }
+        ],
+        "seller_source": "digikey.in",
+        "unit_price_inr": 92.02,
+        "line_total_inr": 276.06,
+        "price_str": "$1.07000",
+        "product_url": "https://www.digikey.in/en/products/detail/espressif-systems/ESP32-C3/14115579",
+        "price_range": {
+          "min": 1.0,
+          "max": 115.02
+        },
+        "sources": [
+          {
+            "title": "ESP32-C3 Espressif Systems",
+            "url": "https://www.digikey.in/en/products/detail/espressif-systems/ESP32-C3/14115579",
+            "snippet": "Unit Price Ext Price 1 $1.07000 $1.07. Ext Price 5,000 $1.00001 $5,000.05. ESP32-C3-WROOM-02-N4. Espressif Systems $3.38000 … support topics 1-800-344-4539 ..."
+          },
+          {
+            "title": "ESP32-C3-DEVKITC-02 Espressif Systems",
+            "url": "https://www.digikey.in/en/products/detail/espressif-systems/ESP32-C3-DEVKITC-02/14553009",
+            "snippet": "ESP32-C3-WROOM-02 module, 840 In Stock 1 : $1.07000 Cut Tape (CT) 5,000 : $1.00001 Tape & Reel (TR) 3-WROOM-02-N4. Espressif Systems $3.38000"
+          },
+          {
+            "title": "ESP32-C3-WROOM-02U-N4 Espressif Systems",
+            "url": "https://www.digikey.in/en/products/detail/espressif-systems/ESP32-C3-WROOM-02U-N4/15222540",
+            "snippet": "Unit Price Ext Price 650 $1.95000 $1,267.50. Price 1 $3.71000 $3.71 10 $3.20400 $32.04 … 2.4GHz Data Rate 150Mbps Power - Output 20.5dBm"
+          },
+          {
+            "title": "ESP32-C3-MINI-1U-N4X Espressif Systems",
+            "url": "https://www.digikey.in/en/products/detail/espressif-systems/ESP32-C3-MINI-1U-N4X/27525543",
+            "snippet": "Quantity 250 $2.40664 $601.66. Unit Price Ext Price 650 $2.27900 $1,481.35 1,300 $2.19275. ESP32-C3-WROOM-02U-N4"
+          }
+        ],
+        "source_count": 4
+      },
+      {
+        "name": "HVAC Actuator Control Relay Module",
+        "spec": "4-Channel Electromechanical Relay Board with optocoupler isolation, 5V/3.3V trigger, 250VAC/10A contacts",
+        "quantity": 2,
+        "suggested_models": [
+          {
+            "maker": "Omron",
+            "model": "G5Q-14 DC5",
+            "why": "Compact relay with high switching capacity suited for multi-stage fan and damper actuation"
+          }
+        ],
+        "seller_source": "digikey.com",
+        "unit_price_inr": 154.8,
+        "line_total_inr": 309.6,
+        "price_str": "$1.80000",
+        "product_url": "https://www.digikey.com/en/products/detail/aratas-formerly-omron-components/G5Q-14-DC5/1815716",
+        "price_range": {
+          "min": 1.53,
+          "max": 193.5
+        },
+        "sources": [
+          {
+            "title": "G5Q-14-DC5 Omron Electronics | Mouser India",
+            "url": "https://www.mouser.in/en/ProductDetail/Omron-Electronics/G5Q-14-DC5?qs=B3tblJ0Nlt%252B8E9IzVC4fqw%3D%3D&srsltid=AU7gw4XrT2wrl3v2yC3wbekrgWKIlAO4UaOg1rsoD0Ie7mrYDUOxchzC",
+            "snippet": "G5Q-14-DC5 Omron Electronics General Purpose Relays Power PCB Relay Sealed ... Qty. Unit Price. Ext. Price. 1, ₹146.18, ₹146.18. 10, ₹141.40, ₹1,414.00. 25"
+          },
+          {
+            "title": "G5Q-14-EU DC5 - Element14",
+            "url": "https://in.element14.com/omron-electronic-components/g5q-14-eu-dc5/power-relay-spdt-5vdc-10a-tht/dp/3872969",
+            "snippet": "POWER RELAY, SPDT, 5VDC, 10A, THT ; 25+, Rs.167.900 ; 50+, Rs.165.040 ; 100+, Rs.149.760 ; 250+, Rs.143.070."
+          },
+          {
+            "title": "G5Q-14 DC5 Aratas (Formerly Omron Components)",
+            "url": "https://www.digikey.com/en/products/detail/aratas-formerly-omron-components/G5Q-14-DC5/1815716",
+            "snippet": "Aratas (Formerly Omron Components) G5Q-14 DC5. Dark Mode. Share. G5Q-14 ... Unit Price, Ext Price. 1, $1.80000, $1.80. 10, $1.60500, $16.05. 25, $1.53320, $38.33."
+          },
+          {
+            "title": "Buy G5Q-14 DC5 Online India | OMRON - Microplacer",
+            "url": "https://lcscindia.com/part/G5Q-14%20DC5",
+            "snippet": "G5Q-14 DC5 ; 30 - 99, ₹117.66 ; 100 - 499, ₹91.75 ; 500 - 999, ₹88.09 ; 1000+, ₹85.94 ..."
+          }
+        ],
+        "source_count": 4
+      },
+      {
+        "name": "Power Conditioning & Regulation Module",
+        "spec": "Wide Input (9-36V DC) Step-Down Buck Regulator to 3.3V/5V DC, 2A output, thermal and overcurrent protection",
+        "quantity": 3,
+        "suggested_models": [
+          {
+            "maker": "CUI Inc",
+            "model": "VXO7803-500-M",
+            "why": "High-efficiency non-isolated switching regulator accepting 24V AC/DC standard building power"
+          }
+        ],
+        "seller_source": "mouser.in",
+        "unit_price_inr": 246.93,
+        "line_total_inr": 740.79,
+        "price_str": "₹246.93",
+        "product_url": "https://www.mouser.in/ProductDetail/CUI-Inc/VXO78015-500-M-TR?qs=GBLSl2AkirsG1iUGBFhbvA%3D%3D&srsltid=AU7gw4Xa5UPi3-rSRIc3NebgcoKkg27P9YgxIrc912Hc0-Z9P5TBn1El",
+        "price_range": {
+          "min": 209.89,
+          "max": 308.66
+        },
+        "sources": [
+          {
+            "title": "VXO78015-500-M-TR CUI Inc.",
+            "url": "https://www.mouser.in/ProductDetail/CUI-Inc/VXO78015-500-M-TR?qs=GBLSl2AkirsG1iUGBFhbvA%3D%3D&srsltid=AU7gw4Xa5UPi3-rSRIc3NebgcoKkg27P9YgxIrc912Hc0-Z9P5TBn1El",
+            "snippet": "VXO78015-500-M-TR CUI Inc. DC/DC Converters - SMD dc-dc non ... Unit Price. Ext. Price. 1, ₹246.93, ₹246.93. 5, ₹238.54, ₹1,192.70. 10, ₹234.81 ..."
+          },
+          {
+            "title": "VXO78-500-M Series CUI DC / DC Non Isolated Board ...",
+            "url": "https://in.element14.com/c/power-supplies/dc-dc-converters/dc-dc-non-isolated-board-mount-converters-fixed-output?brand=cui&product-range=vxo78-500-m-series",
+            "snippet": "Buy VXO78-500-M Series CUI DC / DC Non Isolated Board Mount Converters - Fixed Output. element14 India offers fast quotes, same day dispatch, fast delivery, ..."
+          },
+          {
+            "title": "VXO7803-500-M-TR CUI Inc.",
+            "url": "https://www.mouser.com/ProductDetail/CUI-Inc/VXO7803-500-M-TR?qs=GBLSl2AkiruqsgUrpmz5tw%3D%3D&srsltid=AU7gw4USPKIz1nNy6KOrBf_pRLaA9vDO_j8Q_ZUmc83q5czjVYRYJ-xI",
+            "snippet": "VXO7803-500-M-TR CUI Inc. DC/DC Converters - SMD The factory is currently not accepting orders for this product. datasheet, inventory, & pricing."
+          },
+          {
+            "title": "VXO7803-500-M-TR by CUI Inc | DC to DC Converter and ...",
+            "url": "https://www.arrow.com/en/products/vxo7803-500-m-tr/cui-inc.html",
+            "snippet": "Buy VXO7803-500-M-TR Module DC-DC 24VIN 1-OUT 3.3V 0.5A 1.65W 4-Pin SMD Module T/R online. View datasheets, pricing, stock availability and order from Arrow."
+          }
+        ],
+        "source_count": 4
+      }
+    ],
+    "total": {
+      "min": 665.34,
+      "likely": 4180.15,
+      "max": 5225.18,
+      "currency": "INR"
+    },
+    "all_sources": [
+      {
+        "title": "nucleo-l476rg",
+        "url": "https://in.element14.com/stmicroelectronics/nucleo-l476rg/dev-board-arduino-mbed-nucleo/dp/2493816",
+        "snippet": "Buy NUCLEO-L476RG - STMICROELECTRONICS - Development Board, STM32L476RG MCU, On-Board STLINK/V2-1. element14 India ... Price. 1+, Rs.1,895.330. 5+, Rs.1,857.430 ...",
+        "item": "STM32 Development Board"
+      },
+      {
+        "title": "NUCLEO-L476RG - STMicroelectronics",
+        "url": "https://evelta.com/nucleo-l476rg-stmicroelectronics-board-arduino-compatible/?srsltid=AU7gw4VZhyO2TmvRiXoPs3g3j0at44wYgP3_GNX6WNYD8EOk45FX3K7F",
+        "snippet": "STMicroelectronics Board (Arduino Compatible) MSRP Was Price Now ₹2,070.90 inc. GST ₹1,755.00 ex. Delivered in 2-5 Days in stock Sold Out ...",
+        "item": "STM32 Development Board"
+      },
+      {
+        "title": "Discover STMicroelectronics' Innovative Solutions at Evelta",
+        "url": "https://evelta.com/stmicroelectronics/?sort=pricedesc&page=3&srsltid=AU7gw4WlBOkg0hlJIIS2NSL9WB-PbbiGELwhGukiQRTi12xuix4biMkQ",
+        "snippet": "Was Price Now ₹2,145.00 ex. NUCLEO-L476RG STMicroelectronics Board (Arduino Compatible) MSRP Was Price Now ₹1,755.00 ex.",
+        "item": "STM32 Development Board"
+      },
+      {
+        "title": "STMICROELECTRONICS NUCLEO-F072RB Development ...",
+        "url": "https://robu.in/product/stmicroelectronics-nucleo-f072rb-development-board-nucleo-64-stm32f072rb-mcu-st-link-v2-1-arduino-and-st-morpho-connectivity/",
+        "snippet": "Buy STMICROELECTRONICS NUCLEO-F072RB … ₹ 2369.00 (Incl. GST) Purchase this product now. Availability: Out of Stock inquiries, email us: sales@ ...",
+        "item": "STM32 Development Board"
+      },
+      {
+        "title": "SHT40-AD1B-R2 Sensirion AG | Humidity, Moisture Sensors",
+        "url": "https://www.digikey.in/en/products/detail/sensirion-ag/SHT40-AD1B-R2/13532084",
+        "snippet": "Price Ext Price 1 $1.94000 $1.94. Price 2,500 $1.19624. For Use With 200 In Stock 1 : $52.02000 Box SHT40 CMOSens® Humidity, Temperature Sensor Evaluation ...",
+        "item": "Precision Temperature & Relative Humidity Sensor"
+      },
+      {
+        "title": "SHT40-AD1B-R3 Sensirion AG | Humidity, Moisture Sensors",
+        "url": "https://www.digikey.in/en/products/detail/sensirion-ag/SHT40-AD1B-R3/14322709",
+        "snippet": "Quantity, Unit Price, Ext Price. 1, $1.94000, $1.94. 5, $1.72400, $8.62. 10, $1.64200, $16.42. 25, $1.54520, $38.63. 50, $1.47880, $73.94.",
+        "item": "Precision Temperature & Relative Humidity Sensor"
+      },
+      {
+        "title": "SHT40-BD1B-R2 Sensirion AG | Humidity, Moisture Sensors",
+        "url": "https://www.digikey.in/en/products/detail/sensirion-ag/SHT40-BD1B-R2/19543006",
+        "snippet": "Part Number. SHT40-BD1B-R3 ; Manufacturer. Sensirion AG ; Quantity Available. 8,508 ; DigiKey Part Number. 1649-SHT40-BD1B-R3CT-ND ; Unit Price. $1.94000.",
+        "item": "Precision Temperature & Relative Humidity Sensor"
+      },
+      {
+        "title": "SHT40I-AD1B-R2 Sensirion AG | Humidity, Moisture Sensors",
+        "url": "https://www.digikey.in/en/products/detail/sensirion-ag/SHT40I-AD1B-R2/15792546",
+        "snippet": "SHT40-AD1B-R2. SENSOR HUMIDITY 100 RH SMD. Sensirion AG. $1.94000. Details · SHT45-AD1F-R2. DIGITAL RH/TEMP W/FILTER. Sensirion AG.",
+        "item": "Precision Temperature & Relative Humidity Sensor"
+      },
+      {
+        "title": "24LC64T-I/OT Microchip Technology | Memory",
+        "url": "https://www.digikey.in/en/products/detail/microchip-technology/24LC64T-I-OT/2039840",
+        "snippet": "Unit Price Ext Price 1 $0.52000. Technology For Use With 29 In Stock 1 : $1,446.20000 Bulk. Texas Instruments $7.05000. THVD1429DR THVD1429DR IC TXRX 8-SOIC ...",
+        "item": "Industrial Communication Transceiver (RS-485 / Modbus)"
+      },
+      {
+        "title": "PE4312C-Z pSemi | Attenuators",
+        "url": "https://www.digikey.in/en/products/detail/psemi/PE4312C-Z/5878673",
+        "snippet": "Unit Price, Ext Price. 3,000, $2.74088, $8,222.64. Manufacturers Standard ... Texas Instruments. $3.19000. Details · BMI-S-202-C. RF SHIELD 0.668 ...",
+        "item": "Industrial Communication Transceiver (RS-485 / Modbus)"
+      },
+      {
+        "title": "THVD1429DR - Drivers, Receivers, Transceivers",
+        "url": "https://www.digikey.in/en/products/detail/texas-instruments/THVD1429DR/10820358",
+        "snippet": "THVD1429DR is out of stock and can be placed on backorder. Unit Price: $3.92000 Datasheet. Texas Instruments 7,797 Unit Price: $6.60000. Unit Price Ext Price 2 ...",
+        "item": "Industrial Communication Transceiver (RS-485 / Modbus)"
+      },
+      {
+        "title": "THVD1429DT - Drivers, Receivers, Transceivers",
+        "url": "https://www.digikey.in/en/products/detail/texas-instruments/THVD1429DT/9860747",
+        "snippet": "Texas Instruments. View datasheets, pricing and availability from DigiKey now! Unit Price Ext Price 1 $5.81000 $5.81 10 $4.44000 $4.09600 $102.40 100 $3.71840 ...",
+        "item": "Industrial Communication Transceiver (RS-485 / Modbus)"
+      },
+      {
+        "title": "ESP32-C3 Espressif Systems",
+        "url": "https://www.digikey.in/en/products/detail/espressif-systems/ESP32-C3/14115579",
+        "snippet": "Unit Price Ext Price 1 $1.07000 $1.07. Ext Price 5,000 $1.00001 $5,000.05. ESP32-C3-WROOM-02-N4. Espressif Systems $3.38000 … support topics 1-800-344-4539 ...",
+        "item": "Wireless IoT Backhaul Module"
+      },
+      {
+        "title": "ESP32-C3-DEVKITC-02 Espressif Systems",
+        "url": "https://www.digikey.in/en/products/detail/espressif-systems/ESP32-C3-DEVKITC-02/14553009",
+        "snippet": "ESP32-C3-WROOM-02 module, 840 In Stock 1 : $1.07000 Cut Tape (CT) 5,000 : $1.00001 Tape & Reel (TR) 3-WROOM-02-N4. Espressif Systems $3.38000",
+        "item": "Wireless IoT Backhaul Module"
+      },
+      {
+        "title": "ESP32-C3-WROOM-02U-N4 Espressif Systems",
+        "url": "https://www.digikey.in/en/products/detail/espressif-systems/ESP32-C3-WROOM-02U-N4/15222540",
+        "snippet": "Unit Price Ext Price 650 $1.95000 $1,267.50. Price 1 $3.71000 $3.71 10 $3.20400 $32.04 … 2.4GHz Data Rate 150Mbps Power - Output 20.5dBm",
+        "item": "Wireless IoT Backhaul Module"
+      },
+      {
+        "title": "ESP32-C3-MINI-1U-N4X Espressif Systems",
+        "url": "https://www.digikey.in/en/products/detail/espressif-systems/ESP32-C3-MINI-1U-N4X/27525543",
+        "snippet": "Quantity 250 $2.40664 $601.66. Unit Price Ext Price 650 $2.27900 $1,481.35 1,300 $2.19275. ESP32-C3-WROOM-02U-N4",
+        "item": "Wireless IoT Backhaul Module"
+      },
+      {
+        "title": "G5Q-14-DC5 Omron Electronics | Mouser India",
+        "url": "https://www.mouser.in/en/ProductDetail/Omron-Electronics/G5Q-14-DC5?qs=B3tblJ0Nlt%252B8E9IzVC4fqw%3D%3D&srsltid=AU7gw4XrT2wrl3v2yC3wbekrgWKIlAO4UaOg1rsoD0Ie7mrYDUOxchzC",
+        "snippet": "G5Q-14-DC5 Omron Electronics General Purpose Relays Power PCB Relay Sealed ... Qty. Unit Price. Ext. Price. 1, ₹146.18, ₹146.18. 10, ₹141.40, ₹1,414.00. 25",
+        "item": "HVAC Actuator Control Relay Module"
+      },
+      {
+        "title": "G5Q-14-EU DC5 - Element14",
+        "url": "https://in.element14.com/omron-electronic-components/g5q-14-eu-dc5/power-relay-spdt-5vdc-10a-tht/dp/3872969",
+        "snippet": "POWER RELAY, SPDT, 5VDC, 10A, THT ; 25+, Rs.167.900 ; 50+, Rs.165.040 ; 100+, Rs.149.760 ; 250+, Rs.143.070.",
+        "item": "HVAC Actuator Control Relay Module"
+      },
+      {
+        "title": "G5Q-14 DC5 Aratas (Formerly Omron Components)",
+        "url": "https://www.digikey.com/en/products/detail/aratas-formerly-omron-components/G5Q-14-DC5/1815716",
+        "snippet": "Aratas (Formerly Omron Components) G5Q-14 DC5. Dark Mode. Share. G5Q-14 ... Unit Price, Ext Price. 1, $1.80000, $1.80. 10, $1.60500, $16.05. 25, $1.53320, $38.33.",
+        "item": "HVAC Actuator Control Relay Module"
+      },
+      {
+        "title": "Buy G5Q-14 DC5 Online India | OMRON - Microplacer",
+        "url": "https://lcscindia.com/part/G5Q-14%20DC5",
+        "snippet": "G5Q-14 DC5 ; 30 - 99, ₹117.66 ; 100 - 499, ₹91.75 ; 500 - 999, ₹88.09 ; 1000+, ₹85.94 ...",
+        "item": "HVAC Actuator Control Relay Module"
+      },
+      {
+        "title": "VXO78015-500-M-TR CUI Inc.",
+        "url": "https://www.mouser.in/ProductDetail/CUI-Inc/VXO78015-500-M-TR?qs=GBLSl2AkirsG1iUGBFhbvA%3D%3D&srsltid=AU7gw4Xa5UPi3-rSRIc3NebgcoKkg27P9YgxIrc912Hc0-Z9P5TBn1El",
+        "snippet": "VXO78015-500-M-TR CUI Inc. DC/DC Converters - SMD dc-dc non ... Unit Price. Ext. Price. 1, ₹246.93, ₹246.93. 5, ₹238.54, ₹1,192.70. 10, ₹234.81 ...",
+        "item": "Power Conditioning & Regulation Module"
+      },
+      {
+        "title": "VXO78-500-M Series CUI DC / DC Non Isolated Board ...",
+        "url": "https://in.element14.com/c/power-supplies/dc-dc-converters/dc-dc-non-isolated-board-mount-converters-fixed-output?brand=cui&product-range=vxo78-500-m-series",
+        "snippet": "Buy VXO78-500-M Series CUI DC / DC Non Isolated Board Mount Converters - Fixed Output. element14 India offers fast quotes, same day dispatch, fast delivery, ...",
+        "item": "Power Conditioning & Regulation Module"
+      },
+      {
+        "title": "VXO7803-500-M-TR CUI Inc.",
+        "url": "https://www.mouser.com/ProductDetail/CUI-Inc/VXO7803-500-M-TR?qs=GBLSl2AkiruqsgUrpmz5tw%3D%3D&srsltid=AU7gw4USPKIz1nNy6KOrBf_pRLaA9vDO_j8Q_ZUmc83q5czjVYRYJ-xI",
+        "snippet": "VXO7803-500-M-TR CUI Inc. DC/DC Converters - SMD The factory is currently not accepting orders for this product. datasheet, inventory, & pricing.",
+        "item": "Power Conditioning & Regulation Module"
+      },
+      {
+        "title": "VXO7803-500-M-TR by CUI Inc | DC to DC Converter and ...",
+        "url": "https://www.arrow.com/en/products/vxo7803-500-m-tr/cui-inc.html",
+        "snippet": "Buy VXO7803-500-M-TR Module DC-DC 24VIN 1-OUT 3.3V 0.5A 1.65W 4-Pin SMD Module T/R online. View datasheets, pricing, stock availability and order from Arrow.",
+        "item": "Power Conditioning & Regulation Module"
+      }
+    ],
+    "source_count": 24
+  }
+}

@@ -1,0 +1,195 @@
+{
+  "hardware_requirement": [
+    {
+      "name": "STM32 Development Board",
+      "spec": "ARM Cortex-M4 32-bit MCU, 80MHz, 512KB Flash, Integrated ST-LINK/V2-1 debugger",
+      "quantity": 3,
+      "suggested_models": [
+        {
+          "maker": "STMicroelectronics",
+          "model": "NUCLEO-L476RG",
+          "why": "Ultra-low-power Arm Cortex-M4 board with standard Arduino and Morpho headers for prototyping"
+        }
+      ]
+    },
+    {
+      "name": "Precision Temperature & Relative Humidity Sensor",
+      "spec": "I2C digital interface, 1.08V to 5.5V supply, ±0.2°C temp accuracy, ±2% RH accuracy, integrated heater",
+      "quantity": 5,
+      "suggested_models": [
+        {
+          "maker": "Sensirion",
+          "model": "SHT40-AD1B",
+          "why": "Industry-standard accuracy, ultra-low power consumption, and robust I2C driver support"
+        },
+        {
+          "maker": "Texas Instruments",
+          "model": "HDC2080DMBT",
+          "why": "Low-power digital humidity and temperature sensor with programmable interrupt thresholds"
+        }
+      ]
+    },
+    {
+      "name": "Industrial Communication Transceiver (RS-485 / Modbus)",
+      "spec": "3.3V Half-Duplex RS-485/RS-422 Transceiver with ±15kV ESD protection for building automation buses",
+      "quantity": 3,
+      "suggested_models": [
+        {
+          "maker": "Texas Instruments",
+          "model": "THVD1429DR",
+          "why": "High-noise-immunity RS-485 transceiver ideal for HVAC Modbus RTU integration"
+        }
+      ]
+    },
+    {
+      "name": "Wireless IoT Backhaul Module",
+      "spec": "Wi-Fi 802.11 b/g/n and BLE 5.0 module interfacing via UART/SPI AT commands or ESP-Hosted firmware",
+      "quantity": 3,
+      "suggested_models": [
+        {
+          "maker": "Espressif Systems",
+          "model": "ESP32-C3-WROOM-02-N4",
+          "why": "Cost-effective network co-processor providing secure TLS Wi-Fi and BLE commissioning"
+        }
+      ]
+    },
+    {
+      "name": "HVAC Actuator Control Relay Module",
+      "spec": "4-Channel Electromechanical Relay Board with optocoupler isolation, 5V/3.3V trigger, 250VAC/10A contacts",
+      "quantity": 2,
+      "suggested_models": [
+        {
+          "maker": "Omron",
+          "model": "G5Q-14 DC5",
+          "why": "Compact relay with high switching capacity suited for multi-stage fan and damper actuation"
+        }
+      ]
+    },
+    {
+      "name": "Power Conditioning & Regulation Module",
+      "spec": "Wide Input (9-36V DC) Step-Down Buck Regulator to 3.3V/5V DC, 2A output, thermal and overcurrent protection",
+      "quantity": 3,
+      "suggested_models": [
+        {
+          "maker": "CUI Inc",
+          "model": "VXO7803-500-M",
+          "why": "High-efficiency non-isolated switching regulator accepting 24V AC/DC standard building power"
+        }
+      ]
+    }
+  ],
+  "software_requirement": {
+    "project_name": "Smart Building Controller Prototype (STM32)",
+    "currency": "INR",
+    "bom_items": [
+      {
+        "item_name": "Embedded RTOS & Debug IDE Tooling",
+        "quantity": 1,
+        "unit_price": 28000.0,
+        "unit": "license",
+        "category": "software",
+        "currency": "INR",
+        "source": "SEGGER Microcontroller / Embedded Studio",
+        "region": "India"
+      },
+      {
+        "item_name": "Cloud IoT Broker & Device Telemetry Tier",
+        "quantity": 1,
+        "unit_price": 36000.0,
+        "unit": "subscription",
+        "category": "software",
+        "currency": "INR",
+        "source": "AWS / Azure IoT Core",
+        "region": "India"
+      },
+      {
+        "item_name": "PCB CAD & Rapid Simulation Subscription",
+        "quantity": 1,
+        "unit_price": 24000.0,
+        "unit": "subscription",
+        "category": "software",
+        "currency": "INR",
+        "source": "Altium / Cadence",
+        "region": "India"
+      }
+    ],
+    "labor_items": [
+      {
+        "role_name": "Lead Embedded Systems Architect",
+        "hourly_rate": 1850.0,
+        "hours": 120.0,
+        "personnel_count": 1,
+        "currency": "INR"
+      },
+      {
+        "role_name": "Firmware Engineer (STM32 / FreeRTOS)",
+        "hourly_rate": 1400.0,
+        "hours": 220.0,
+        "personnel_count": 1,
+        "currency": "INR"
+      },
+      {
+        "role_name": "Hardware Design & Layout Engineer",
+        "hourly_rate": 1250.0,
+        "hours": 140.0,
+        "personnel_count": 1,
+        "currency": "INR"
+      },
+      {
+        "role_name": "IoT Cloud & Integration Developer",
+        "hourly_rate": 1350.0,
+        "hours": 110.0,
+        "personnel_count": 1,
+        "currency": "INR"
+      },
+      {
+        "role_name": "Embedded QA & Environmental Test Engineer",
+        "hourly_rate": 1050.0,
+        "hours": 90.0,
+        "personnel_count": 1,
+        "currency": "INR"
+      }
+    ],
+    "rules": {
+      "overhead_percentage": 15.0,
+      "contingency_percentage": 10.0,
+      "tax_percentage": 18.0,
+      "currency": "INR"
+    },
+    "ml_features": {
+      "TeamExp": 4,
+      "ManagerExp": 7,
+      "Length": 6,
+      "Transactions": 160,
+      "Entities": 48,
+      "PointsAjust": 245
+    },
+    "target_metric": "Effort",
+    "analogy_dataset_id": "desharnais_software_projects_38c5d000"
+  },
+  "team": [
+    {
+      "role": "Lead Embedded Systems Architect",
+      "reason": "Allocated 120.0 hrs @ ₹1850.0/hr"
+    },
+    {
+      "role": "Firmware Engineer (STM32 / FreeRTOS)",
+      "reason": "Allocated 220.0 hrs @ ₹1400.0/hr"
+    },
+    {
+      "role": "Hardware Design & Layout Engineer",
+      "reason": "Allocated 140.0 hrs @ ₹1250.0/hr"
+    },
+    {
+      "role": "IoT Cloud & Integration Developer",
+      "reason": "Allocated 110.0 hrs @ ₹1350.0/hr"
+    },
+    {
+      "role": "Embedded QA & Environmental Test Engineer",
+      "reason": "Allocated 90.0 hrs @ ₹1050.0/hr"
+    }
+  ],
+  "summary": "This prototype combines an STM32L4-based controller with precision Sensirion SHT40 temperature/humidity sensors to implement real-time environmental monitoring and HVAC actuation. The architecture supports Modbus RTU and Wi-Fi/BLE network bridges, providing dual standalone industrial automation control and secure telemetry ingestion into cloud dashboards.",
+  "input_type": "text",
+  "confidence": "high"
+}

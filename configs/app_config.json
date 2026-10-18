@@ -1,0 +1,32 @@
+{
+  "app_name": "Estimo Cost Engine",
+  "version": "1.0.0",
+  "default_currency": "INR",
+  "supported_currencies": ["INR", "USD", "EUR", "GBP", "JPY", "AUD", "CAD"],
+  "currency_symbols": {
+    "INR": "₹",
+    "USD": "$",
+    "EUR": "€",
+    "GBP": "£",
+    "JPY": "¥",
+    "AUD": "A$",
+    "CAD": "C$"
+  },
+  "default_rules": {
+    "overhead_percentage": 15.0,
+    "contingency_percentage": 10.0,
+    "tax_percentage": 18.0
+  },
+  "storage_paths": {
+    "data_raw": "data/raw",
+    "data_processed": "data/processed",
+    "data_manifests": "data/manifests",
+    "models": "models",
+    "reports": "reports"
+  },
+  "security": {
+    "max_upload_size_mb": 50,
+    "allowed_dataset_extensions": [".csv", ".arff", ".xlsx", ".parquet"],
+    "prohibited_extensions": [".exe", ".bat", ".cmd", ".sh", ".py", ".joblib", ".pkl", ".pickle", ".dll", ".so"]
+  }
+}

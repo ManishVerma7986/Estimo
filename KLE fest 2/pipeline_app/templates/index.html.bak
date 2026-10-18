@@ -1,0 +1,767 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Project Cost Estimator Pipeline</title>
+<style>
+:root{--blue:#1769e0;--green:#10b981;--yellow:#f59e0b;--red:#ef4444;--gray:#64748b;--bg:#0b0f19;--card:#131b2e;--card-border:#1f2b48;--text:#f1f5f9;--muted:#94a3b8}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+header{background:linear-gradient(135deg,#0f2b5c 0%,#2e1065 100%);border-bottom:1px solid #1e293b;padding:24px 36px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+header h1{font-size:1.5rem;font-weight:700;display:flex;align-items:center;gap:10px;letter-spacing:-.02em}
+header p{color:#93c5fd;font-size:.88rem;margin-top:4px}
+.badge{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:4px 14px;font-size:.78rem;font-weight:600;letter-spacing:.05em}
+.container{max-width:1150px;margin:0 auto;padding:28px 20px}
+
+/* Input Grid */
+.input-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:24px}
+@media(max-width:768px){.input-grid{grid-template-columns:1fr}}
+
+.input-panel{background:var(--card);border:1px solid var(--card-border);border-radius:14px;padding:24px;display:flex;flex-direction:column}
+.panel-title{font-size:1rem;font-weight:600;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.panel-desc{font-size:.82rem;color:var(--muted);margin-bottom:14px}
+
+/* Drop Zone */
+.upload-card{border:2px dashed #2d3b5d;border-radius:12px;padding:28px 16px;text-align:center;cursor:pointer;transition:.2s;flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;background:#0d1424}
+.upload-card:hover,.upload-card.drag-over{border-color:var(--blue);background:#131f38}
+.upload-card input{display:none}
+.upload-icon{font-size:2.4rem;margin-bottom:8px}
+.upload-card p{color:var(--muted);font-size:.85rem}
+#preview-wrap{margin-top:12px;display:none;width:100%}
+#preview{max-height:160px;max-width:100%;border-radius:8px;object-fit:contain;border:1px solid var(--card-border)}
+
+/* Text Box */
+.project-textarea{width:100%;min-height:160px;flex:1;background:#0d1424;border:1px solid #2d3b5d;border-radius:10px;padding:14px;color:var(--text);font-family:inherit;font-size:.9rem;line-height:1.5;resize:vertical}
+.project-textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 2px rgba(23,105,224,.2)}
+.project-textarea::placeholder{color:#475569}
+
+/* Action row */
+.action-row{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:28px;flex-wrap:wrap}
+.input-hint{font-size:.84rem;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 30px;border:0;border-radius:10px;font-size:1rem;font-weight:600;cursor:pointer;transition:.18s}
+.btn-primary{background:var(--blue);color:#fff}
+.btn-primary:hover{background:#1255bb;box-shadow:0 4px 14px rgba(23,105,224,.4)}
+.btn-primary:disabled{opacity:.4;cursor:not-allowed;box-shadow:none}
+
+/* Pipeline stages */
+.stages{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin:16px 0 28px}
+.stage-card{background:var(--card);border:1px solid var(--card-border);border-radius:14px;padding:18px;transition:.25s;position:relative;overflow:hidden}
+.stage-card.running{border-color:var(--yellow);box-shadow:0 0 16px rgba(245,158,11,.15)}
+.stage-card.done{border-color:var(--green);box-shadow:0 0 16px rgba(16,185,129,.12)}
+.stage-card.error{border-color:var(--red);box-shadow:0 0 16px rgba(239,68,68,.15)}
+.stage-card.waiting{opacity:.5}
+.stage-icon{font-size:1.6rem;margin-bottom:8px}
+.stage-label{font-size:.72rem;font-weight:700;letter-spacing:.08em;color:var(--muted);text-transform:uppercase;margin-bottom:3px}
+.stage-name{font-size:.95rem;font-weight:600;margin-bottom:8px}
+.stage-msg{font-size:.82rem;color:var(--muted);line-height:1.45;min-height:36px}
+.status-dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:6px;background:var(--gray)}
+.status-dot.running{background:var(--yellow);animation:pulse 1s infinite}
+.status-dot.done{background:var(--green)}
+.status-dot.error{background:var(--red)}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* Results Section */
+.results-section{margin-top:20px;display:none}
+.cost-banner{background:linear-gradient(135deg,#0d2347,#131b2e);border:1px solid #1d4ed8;border-radius:16px;padding:26px;margin-bottom:22px}
+.cost-banner h2{font-size:1.05rem;color:#93c5fd;margin-bottom:16px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.cost-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:600px){.cost-grid{grid-template-columns:1fr}}
+.cost-box{text-align:center;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05);border-radius:10px;padding:16px}
+.cost-box .label{font-size:.72rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+.cost-box .amount{font-size:1.55rem;font-weight:700;letter-spacing:-.03em}
+.cost-box.likely .amount{color:#60a5fa}
+.cost-box.optimistic .amount{color:var(--green)}
+.cost-box.pessimistic .amount{color:var(--yellow)}
+.summary-text{margin-top:16px;color:#cbd5e1;font-size:.88rem;line-height:1.6;background:rgba(255,255,255,.03);border-radius:8px;padding:12px 14px}
+
+/* Detail tables */
+.detail-section{background:var(--card);border:1px solid var(--card-border);border-radius:14px;padding:22px;margin-bottom:18px}
+.detail-section h3{font-size:.95rem;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+table{width:100%;border-collapse:collapse;font-size:.84rem}
+th{text-align:left;color:var(--muted);font-weight:600;padding:8px;border-bottom:1px solid var(--card-border);font-size:.74rem;text-transform:uppercase;letter-spacing:.05em}
+td{padding:9px 8px;border-bottom:1px solid rgba(31,43,72,.6);vertical-align:top;line-height:1.45}
+tr:last-child td{border-bottom:0}
+.pill{display:inline-block;padding:2px 8px;border-radius:14px;font-size:.72rem;font-weight:600;margin-right:4px}
+.pill-hw{background:#1e3a5f;color:#93c5fd}
+.pill-sw{background:#143827;color:#6ee7b7}
+.pill-buy{background:#3b1e1e;color:#fca5a5}
+.pill-build{background:#1e2448;color:#a5b4fc}
+.pill-process{background:#281e48;color:#c4b5fd}
+
+/* Chatbot */
+.chat-section{background:var(--card);border:1px solid var(--card-border);border-radius:16px;padding:24px;margin-top:28px}
+.chat-section h3{font-size:1rem;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+#chat-log{min-height:120px;max-height:360px;overflow-y:auto;margin-bottom:16px;display:flex;flex-direction:column;gap:10px;padding-right:4px}
+.chat-msg{padding:10px 14px;border-radius:10px;max-width:82%;font-size:.88rem;line-height:1.55}
+.chat-msg.user{background:#1d4ed8;align-self:flex-end;border-bottom-right-radius:2px;color:#fff}
+.chat-msg.bot{background:#17223b;border:1px solid #1f2f52;align-self:flex-start;border-bottom-left-radius:2px}
+.chat-msg.thinking{color:var(--muted);font-style:italic}
+.chat-input-row{display:flex;gap:10px}
+#chat-input{flex:1;background:#0d1424;border:1px solid #2d3b5d;border-radius:8px;padding:11px 14px;color:var(--text);font-size:.9rem}
+#chat-input:focus{outline:none;border-color:var(--blue)}
+#chat-send{background:var(--blue);color:#fff;border:0;border-radius:8px;padding:11px 22px;font-weight:600;cursor:pointer}
+#chat-send:hover{background:#1255bb}
+
+.section-title{font-size:.85rem;font-weight:700;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin:24px 0 10px}
+.disclaimer{font-size:.76rem;color:var(--muted);background:rgba(255,255,255,.02);border:1px solid var(--card-border);border-radius:8px;padding:10px 14px;line-height:1.5;margin-top:10px}
+.no-items{color:var(--muted);font-size:.85rem;font-style:italic}
+.effort-bar{background:#0d1424;border-radius:6px;height:6px;margin-top:4px;overflow:hidden}
+.effort-fill{background:linear-gradient(90deg,var(--blue),#8b5cf6);height:100%;border-radius:6px}
+
+.btn-source{background:rgba(59,130,246,.12);border:1px solid #3b82f6;color:#93c5fd;border-radius:8px;padding:6px 14px;font-size:.82rem;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:.2s}
+.btn-source:hover{background:#3b82f6;color:#fff;box-shadow:0 0 12px rgba(59,130,246,.3)}
+.btn-source-pill{background:#111b33;border:1px solid #2d3b5d;color:#93c5fd;border-radius:14px;padding:4px 10px;font-size:.75rem;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:4px;transition:.18s}
+.btn-source-pill:hover{background:#2563eb;color:#fff;border-color:#2563eb}
+.btn-source-card{background:rgba(59,130,246,.12);border:1px solid rgba(59,130,246,.35);color:#93c5fd;border-radius:6px;padding:4px 10px;font-size:.75rem;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:5px;transition:.2s}
+.btn-source-card:hover{background:#2563eb;color:#fff}
+.modal-backdrop{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.78);backdrop-filter:blur(5px);z-index:9999;display:none;align-items:center;justify-content:center;padding:16px}
+.modal-box{background:#131b2e;border:1px solid #2d3b5d;border-radius:16px;max-width:760px;width:100%;max-height:85vh;display:flex;flex-direction:column;box-shadow:0 24px 50px rgba(0,0,0,.7)}
+.modal-header{padding:18px 22px;border-bottom:1px solid #1f2b48;display:flex;align-items:center;justify-content:space-between}
+.modal-header h3{font-size:1.1rem;font-weight:700;color:#93c5fd;display:flex;align-items:center;gap:8px}
+.modal-close{background:transparent;border:0;color:#94a3b8;font-size:1.8rem;cursor:pointer;line-height:1}
+.modal-close:hover{color:#fff}
+.modal-body{padding:20px;overflow-y:auto;display:flex;flex-direction:column;gap:12px}
+.source-card{background:#0d1424;border:1px solid #1f2b48;border-radius:10px;padding:14px;transition:.2s}
+.source-card:hover{border-color:#3b82f6}
+.source-header{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:6px;flex-wrap:wrap}
+.source-item-badge{font-size:.74rem;font-weight:700;color:#93c5fd;background:rgba(59,130,246,.15);border:1px solid rgba(59,130,246,.3);border-radius:12px;padding:2px 8px}
+.source-title-link{font-size:.92rem;font-weight:600;color:#60a5fa;text-decoration:none;word-break:break-word}
+.source-title-link:hover{text-decoration:underline;color:#93c5fd}
+.source-snippet{font-size:.82rem;color:#cbd5e1;line-height:1.45;margin-top:6px;background:rgba(255,255,255,.02);border-radius:6px;padding:8px}
+.source-url{font-size:.74rem;color:#64748b;margin-top:4px;word-break:break-all}
+
+
+.tabs-nav{display:flex;gap:10px;border-bottom:1px solid var(--card-border);padding-bottom:14px;margin-bottom:18px;flex-wrap:wrap}
+.tab-btn{background:#0d1424;border:1px solid var(--card-border);color:var(--muted);border-radius:10px;padding:10px 20px;font-size:.88rem;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:.2s}
+.tab-btn:hover{color:#fff;border-color:#3b82f6}
+.tab-btn.active{background:var(--blue);border-color:var(--blue);color:#fff;box-shadow:0 4px 14px rgba(23,105,224,.35)}
+.tab-pane{display:none}
+.tab-pane.active{display:block}
+.pane-desc{font-size:.84rem;color:var(--muted);margin-bottom:12px;line-height:1.5}
+.file-badge{margin-top:14px;display:none;background:#1e293b;border:1px solid #334155;border-radius:10px;padding:10px 18px;align-items:center;gap:12px}
+.file-badge-name{color:#60a5fa;font-weight:600;font-size:.9rem}
+.file-badge-remove{background:transparent;border:0;color:#ef4444;font-size:1.1rem;cursor:pointer;font-weight:700}
+
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>&#9889; Project Cost Estimator Pipeline</h1>
+    <p>Gemini Vision/Text &rarr; Hardware + Software Agents (Parallel) &rarr; LLM Cost Prediction</p>
+  </div>
+  <span class="badge">KLE Fest 2</span>
+</header>
+
+<div class="container">
+
+  <!-- Dual Input: Image Upload + Text Box -->
+  <div class="input-container" style="background:var(--card);border:1px solid var(--card-border);border-radius:16px;padding:24px;margin-bottom:24px">
+    <div style="font-size:.82rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px">Select Input Mode (Choose Exactly One):</div>
+    <div class="tabs-nav">
+      <button type="button" class="tab-btn active" id="tab-btn-text" onclick="switchMode('text')">
+        &#9997;&#65039; Option 1: Text Description
+      </button>
+      <button type="button" class="tab-btn" id="tab-btn-image" onclick="switchMode('image')">
+        &#128247; Option 2: Image File
+      </button>
+      <button type="button" class="tab-btn" id="tab-btn-pdf" onclick="switchMode('pdf')">
+        &#128196; Option 3: PDF Document
+      </button>
+    </div>
+
+    <!-- Mode 1: Text -->
+    <div class="tab-pane active" id="tab-pane-text">
+      <p class="pane-desc">Describe your project idea, required components, microcontrollers, cameras, software stack, or deliverables:</p>
+      <textarea id="project-text" class="project-textarea" placeholder="e.g. automatic crop disease scanner drone with camera, GPS, flight controller, and farm analytics dashboard..."></textarea>
+    </div>
+
+    <!-- Mode 2: Image -->
+    <div class="tab-pane" id="tab-pane-image">
+      <p class="pane-desc">Upload a single requirements diagram, BOM sheet, circuit schematic, or process chart (PNG, JPG, WEBP):</p>
+      <div class="upload-card" id="image-dropzone">
+        <input type="file" id="image-input" accept="image/png,image/jpeg,image/webp,.png,.jpg,.jpeg,.webp">
+        <div class="upload-icon">&#128247;</div>
+        <p id="image-drop-text"><strong>Click or Drag &amp; Drop Image</strong><br>PNG, JPG, WEBP (up to 20 MB)</p>
+        <div id="image-preview-wrap" style="display:none;margin-top:12px">
+          <img id="image-preview" alt="preview" style="max-height:160px;border-radius:8px;border:1px solid var(--card-border)">
+          <div style="margin-top:8px"><button type="button" class="btn-source-pill" onclick="clearSelectedFile(event, 'image')" style="color:#ef4444;border-color:#ef4444">&times; Remove Image</button></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mode 3: PDF -->
+    <div class="tab-pane" id="tab-pane-pdf">
+      <p class="pane-desc">Upload a project specification document, PRD, RFP, or system architecture PDF document:</p>
+      <div class="upload-card" id="pdf-dropzone">
+        <input type="file" id="pdf-input" accept="application/pdf,.pdf">
+        <div class="upload-icon">&#128196;</div>
+        <p id="pdf-drop-text"><strong>Click or Drag &amp; Drop PDF Document</strong><br>Standard or scanned PDF (up to 20 MB)</p>
+        <div id="pdf-file-badge" class="file-badge">
+          <span class="file-badge-name" id="pdf-file-name">document.pdf</span>
+          <button type="button" class="file-badge-remove" onclick="clearSelectedFile(event, 'pdf')">&times;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Action Bar -->
+  <div class="action-row">
+    <div class="input-hint" id="input-status-hint">Enter text, upload an image, or use both together.</div>
+    <button class="btn btn-primary" id="analyse-btn" disabled onclick="startPipeline()">
+      &#9654; Run Cost Estimation
+    </button>
+  </div>
+
+  <!-- Pipeline stages -->
+  <p class="section-title">Execution Pipeline</p>
+  <div class="stages">
+    <div class="stage-card waiting" id="stage-gemini">
+      <div class="stage-icon">&#129302;</div>
+      <div class="stage-label">Step 1</div>
+      <div class="stage-name">Gemini Agent</div>
+      <div class="stage-msg" id="msg-gemini">Waiting to start...</div>
+    </div>
+    <div class="stage-card waiting" id="stage-hardware">
+      <div class="stage-icon">&#9881;</div>
+      <div class="stage-label">Step 2A &bull; Parallel</div>
+      <div class="stage-name">Hardware Agent</div>
+      <div class="stage-msg" id="msg-hardware">Waiting for Step 1...</div><div id="card-hw-sources" style="margin-top:10px;display:none"><button class="btn-source-card" onclick="openSourcesModal('hardware')">&#127760; View Researched Sources</button></div>
+    </div>
+    <div class="stage-card waiting" id="stage-software">
+      <div class="stage-icon">&#128187;</div>
+      <div class="stage-label">Step 2B &bull; Parallel</div>
+      <div class="stage-name">Software Agent</div>
+      <div class="stage-msg" id="msg-software">Waiting for Step 1...</div><div id="card-sw-sources" style="margin-top:10px;display:none"><button class="btn-source-card" onclick="openSourcesModal('software')">&#127760; View Researched Sources</button></div>
+    </div>
+    <div class="stage-card waiting" id="stage-prediction">
+      <div class="stage-icon">&#127774;</div>
+      <div class="stage-label">Step 3</div>
+      <div class="stage-name">LLM Cost Prediction</div>
+      <div class="stage-msg" id="msg-prediction">Waiting for agents...</div>
+    </div>
+  </div>
+
+  <!-- Results -->
+  <div class="results-section" id="results">
+
+    <!-- Cost banner -->
+    <div class="cost-banner">
+      <h2>&#128184; Total Cost Estimate (INR)</h2>
+      <div class="cost-grid">
+        <div class="cost-box optimistic">
+          <div class="label">Optimistic</div>
+          <div class="amount" id="cost-opt">-</div>
+        </div>
+        <div class="cost-box likely">
+          <div class="label">Likely</div>
+          <div class="amount" id="cost-likely">-</div>
+        </div>
+        <div class="cost-box pessimistic">
+          <div class="label">Pessimistic</div>
+          <div class="amount" id="cost-pess">-</div>
+        </div>
+      </div>
+      <div class="summary-text" id="cost-summary"></div>
+    </div>
+
+    <!-- Breakdown -->
+    <div class="cost-banner" style="border-color:#3b82f6">
+      <h2>&#128200; Cost Breakdown</h2>
+      <div class="cost-grid">
+        <div class="cost-box">
+          <div class="label">&#9881; Hardware (INR)</div>
+          <div class="amount" id="bk-hw" style="font-size:1.15rem;color:#93c5fd">-</div>
+        </div>
+        <div class="cost-box">
+          <div class="label">&#128187; Dev Effort (INR)</div>
+          <div class="amount" id="bk-dev" style="font-size:1.15rem;color:#a5b4fc">-</div>
+        </div>
+        <div class="cost-box">
+          <div class="label">&#128273; Licences / SaaS (INR)</div>
+          <div class="amount" id="bk-lic" style="font-size:1.15rem;color:#6ee7b7">-</div>
+        </div>
+      </div>
+      <div style="margin-top:14px;font-size:.83rem;color:#94a3b8">
+        Timeline: <span id="bk-months" style="color:#e2e8f0;font-weight:600"></span> &bull;
+        Confidence: <span id="bk-conf" style="color:#fcd34d;font-weight:600"></span>
+      </div>
+    </div>
+
+    <!-- HW Items table -->
+    <div class="detail-section">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:12px"><h3>&#9881; Hardware Items <small style="font-weight:400;color:var(--muted)">(Live Web Prices via TinyFish)</small></h3><button class="btn-source" id="btn-hw-all-sources" onclick="openSourcesModal('hardware')" style="display:none">&#127760; View Researched Sources (<span id="hw-source-count">0</span>)</button></div>
+      <div id="hw-table-wrap"></div>
+    </div>
+
+    <!-- SW Items table -->
+    <div class="detail-section">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:12px"><h3>&#128187; Software Items <small style="font-weight:400;color:var(--muted)">(Effort Model + Live Web Research)</small></h3><button class="btn-source" id="btn-sw-all-sources" onclick="openSourcesModal('software')" style="display:none">&#127760; View Researched Sources (<span id="sw-source-count">0</span>)</button></div>
+      <div id="sw-table-wrap"></div>
+    </div>
+
+    <!-- Team -->
+    <div class="detail-section">
+      <h3>&#128101; Suggested Engineering Team</h3>
+      <div id="team-wrap"></div>
+    </div>
+
+    <!-- Missing specs / flags -->
+    <div class="detail-section" id="flags-section" style="display:none">
+      <h3>&#9888; Model Flags &amp; Missing Specs</h3>
+      <div id="flags-wrap"></div>
+    </div>
+
+    <p class="disclaimer">Hardware prices fetched from live Indian electronics and component suppliers via TinyFish CLI. Software effort estimated using a Ridge regression model calibrated on the ISBSG dataset. Developer rates computed at an industry benchmark rate of ₹800/hour. Figures are indicative guidelines.</p>
+  </div>
+
+  <!-- Chatbot -->
+  <div class="chat-section">
+    <h3>&#129302; Ask About This Estimate</h3>
+    <div id="chat-log">
+      <div class="chat-msg bot">Run an estimate above by uploading an image or typing your project description. Then ask me anything — component prices, team costs, development timeline, or breakdown details!</div>
+    </div>
+    <div class="chat-input-row">
+      <input type="text" id="chat-input" placeholder="e.g. How much will the engineering team cost?" onkeydown="if(event.key==='Enter')sendChat()">
+      <button id="chat-send" onclick="sendChat()">Send</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+
+let _hwData = null;
+let _swData = null;
+
+function openSourcesModal(type) {
+  const isHw = type === 'hardware';
+  const data = isHw ? _hwData : _swData;
+  const list = data ? (data.all_sources || []) : [];
+  const title = isHw ? '⚙️ Hardware Researched Websites' : '💻 Software Researched Websites';
+  renderSourcesInModal(title, list);
+}
+
+function openItemSourcesModal(type, idx) {
+  const isHw = type === 'hardware';
+  const data = isHw ? _hwData : _swData;
+  const item = (data && data.items) ? data.items[idx] : null;
+  if (!item) return;
+  const list = (item.sources || []).map(s => ({ ...s, item: item.name }));
+  const title = '🔗 Researched Sources for "' + item.name + '"';
+  renderSourcesInModal(title, list);
+}
+
+function renderSourcesInModal(title, list) {
+  document.getElementById('modal-title').innerHTML = escHtml(title) + ' <small style="font-size:.8rem;color:var(--muted);font-weight:400">(' + list.length + ' results)</small>';
+  const body = document.getElementById('modal-content');
+  if (list.length === 0) {
+    body.innerHTML = '<p style="color:var(--muted);text-align:center;padding:30px">No external links found for this item.</p>';
+  } else {
+    body.innerHTML = list.map(s => {
+      let hostname = '';
+      try { hostname = new URL(s.url).hostname.replace('www.',''); } catch(e){}
+      return '<div class="source-card">' +
+        '<div class="source-header">' +
+          (s.item ? '<span class="source-item-badge">' + escHtml(s.item) + '</span>' : '') +
+          (hostname ? '<span style="font-size:.72rem;color:var(--muted);background:#1a233a;padding:2px 8px;border-radius:10px">' + escHtml(hostname) + '</span>' : '') +
+        '</div>' +
+        '<div>' +
+          '<a class="source-title-link" href="' + escHtml(s.url) + '" target="_blank" rel="noopener noreferrer">' +
+            escHtml(s.title || s.url) + ' &#8599;' +
+          '</a>' +
+        '</div>' +
+        (s.snippet ? '<div class="source-snippet">' + escHtml(s.snippet) + '</div>' : '') +
+        '<div class="source-url">' + escHtml(s.url) + '</div>' +
+      '</div>';
+    }).join('');
+  }
+  document.getElementById('sources-modal').style.display = 'flex';
+}
+
+function closeSourcesModal() {
+  document.getElementById('sources-modal').style.display = 'none';
+}
+
+let currentMode = 'text'; // 'text', 'image', or 'pdf'
+let selectedImageFile = null;
+let selectedPdfFile = null;
+let sessionId = null;
+
+const projectText = document.getElementById('project-text');
+const imageInput = document.getElementById('image-input');
+const pdfInput = document.getElementById('pdf-input');
+const analyseBtn = document.getElementById('analyse-btn');
+const inputStatusHint = document.getElementById('input-status-hint');
+
+function switchMode(mode) {
+  currentMode = mode;
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+
+  document.getElementById('tab-btn-' + mode).classList.add('active');
+  document.getElementById('tab-pane-' + mode).classList.add('active');
+
+  // Enforce strict mutual exclusivity: reset inputs for other modes
+  if (mode === 'text') {
+    clearSelectedFile(null, 'image');
+    clearSelectedFile(null, 'pdf');
+  } else if (mode === 'image') {
+    projectText.value = '';
+    clearSelectedFile(null, 'pdf');
+  } else if (mode === 'pdf') {
+    projectText.value = '';
+    clearSelectedFile(null, 'image');
+  }
+
+  checkInputValidity();
+}
+
+function clearSelectedFile(e, type) {
+  if (e) e.stopPropagation();
+  if (type === 'image') {
+    selectedImageFile = null;
+    imageInput.value = '';
+    document.getElementById('image-preview-wrap').style.display = 'none';
+    document.getElementById('image-drop-text').style.display = 'block';
+  } else if (type === 'pdf') {
+    selectedPdfFile = null;
+    pdfInput.value = '';
+    document.getElementById('pdf-file-badge').style.display = 'none';
+    document.getElementById('pdf-drop-text').style.display = 'block';
+  }
+  checkInputValidity();
+}
+
+function checkInputValidity() {
+  if (currentMode === 'text') {
+    const textVal = projectText.value.trim();
+    const valid = textVal.length > 0;
+    analyseBtn.disabled = !valid;
+    inputStatusHint.textContent = valid ? `Text mode ready (${textVal.split(/\s+/).length} words).` : 'Type your project description in the text box.';
+  } else if (currentMode === 'image') {
+    const valid = selectedImageFile !== null;
+    analyseBtn.disabled = !valid;
+    inputStatusHint.textContent = valid ? `Image mode ready: "${selectedImageFile.name}".` : 'Click or drop an image file (PNG, JPG, WEBP).';
+  } else if (currentMode === 'pdf') {
+    const valid = selectedPdfFile !== null;
+    analyseBtn.disabled = !valid;
+    inputStatusHint.textContent = valid ? `PDF mode ready: "${selectedPdfFile.name}".` : 'Click or drop a PDF document.';
+  }
+}
+
+projectText.addEventListener('input', checkInputValidity);
+
+// Image dropzone
+const imageDropzone = document.getElementById('image-dropzone');
+imageDropzone.addEventListener('click', () => imageInput.click());
+imageDropzone.addEventListener('dragover', e => { e.preventDefault(); imageDropzone.classList.add('drag-over'); });
+imageDropzone.addEventListener('dragleave', () => imageDropzone.classList.remove('drag-over'));
+imageDropzone.addEventListener('drop', e => {
+  e.preventDefault(); imageDropzone.classList.remove('drag-over');
+  const f = e.dataTransfer.files[0];
+  if (f && f.type.startsWith('image/')) setImageFile(f);
+});
+imageInput.addEventListener('change', () => { if (imageInput.files[0]) setImageFile(imageInput.files[0]); });
+
+function setImageFile(f) {
+  selectedImageFile = f;
+  const reader = new FileReader();
+  reader.onload = ev => {
+    document.getElementById('image-preview').src = ev.target.result;
+    document.getElementById('image-preview-wrap').style.display = 'block';
+    document.getElementById('image-drop-text').style.display = 'none';
+  };
+  reader.readAsDataURL(f);
+  checkInputValidity();
+}
+
+// PDF dropzone
+const pdfDropzone = document.getElementById('pdf-dropzone');
+pdfDropzone.addEventListener('click', () => pdfInput.click());
+pdfDropzone.addEventListener('dragover', e => { e.preventDefault(); pdfDropzone.classList.add('drag-over'); });
+pdfDropzone.addEventListener('dragleave', () => pdfDropzone.classList.remove('drag-over'));
+pdfDropzone.addEventListener('drop', e => {
+  e.preventDefault(); pdfDropzone.classList.remove('drag-over');
+  const f = e.dataTransfer.files[0];
+  if (f && (f.type === 'application/pdf' || f.name.toLowerCase().endsWith('.pdf'))) setPdfFile(f);
+});
+pdfInput.addEventListener('change', () => { if (pdfInput.files[0]) setPdfFile(pdfInput.files[0]); });
+
+function setPdfFile(f) {
+  selectedPdfFile = f;
+  document.getElementById('pdf-file-name').textContent = f.name + ` (${(f.size/1024).toFixed(0)} KB)`;
+  document.getElementById('pdf-file-badge').style.display = 'inline-flex';
+  document.getElementById('pdf-drop-text').style.display = 'none';
+  checkInputValidity();
+}
+
+function setStage(name, status, msg) {
+  const card = document.getElementById('stage-' + name);
+  const msgEl = document.getElementById('msg-' + name);
+  if (!card || !msgEl) return;
+  card.className = 'stage-card ' + status;
+  msgEl.innerHTML = '<span class="status-dot ' + status + '"></span>' + escHtml(msg);
+}
+
+function escHtml(s) {
+  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function fmt(n) {
+  if (!n && n !== 0) return '—';
+  return '₹' + Number(n).toLocaleString('en-IN', {maximumFractionDigits: 0});
+}
+
+function fmtRange(min, max) {
+  if (!min && !max) return '—';
+  if (!max || min === max) return fmt(min);
+  return fmt(min) + ' – ' + fmt(max);
+}
+
+function startPipeline() {
+  const fd = new FormData();
+  fd.append('mode', currentMode);
+
+  if (currentMode === 'text') {
+    const t = projectText.value.trim();
+    if (!t) { alert('Please enter your project description in the text box.'); return; }
+    fd.append('text', t);
+  } else if (currentMode === 'image') {
+    if (!selectedImageFile) { alert('Please select an image file first.'); return; }
+    fd.append('image', selectedImageFile);
+  } else if (currentMode === 'pdf') {
+    if (!selectedPdfFile) { alert('Please select a PDF document first.'); return; }
+    fd.append('pdf', selectedPdfFile);
+  } else {
+    return;
+  }
+
+  analyseBtn.disabled = true;
+  document.getElementById('results').style.display = 'none';
+  if (document.getElementById('card-hw-sources')) document.getElementById('card-hw-sources').style.display = 'none';
+  if (document.getElementById('card-sw-sources')) document.getElementById('card-sw-sources').style.display = 'none';
+  ['gemini','hardware','software','prediction'].forEach(s => setStage(s, 'waiting', s === 'gemini' ? 'Starting analysis...' : 'Waiting...'));
+
+  fetch('/api/estimate', { method: 'POST', body: fd })
+    .then(res => {
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder();
+      let buffer = '';
+      function read() {
+        reader.read().then(({ done, value }) => {
+          if (done) { analyseBtn.disabled = false; return; }
+          buffer += decoder.decode(value, { stream: true });
+          const parts = buffer.split('\n\n');
+          buffer = parts.pop();
+          parts.forEach(part => {
+            const lines = part.split('\n');
+            let event = 'message', data = '';
+            lines.forEach(l => {
+              if (l.startsWith('event:')) event = l.slice(6).trim();
+              if (l.startsWith('data:')) data = l.slice(5).trim();
+            });
+            if (data) {
+              try { handleEvent(event, JSON.parse(data)); } catch(e){}
+            }
+          });
+          read();
+        });
+      }
+      read();
+    })
+    .catch(err => {
+      setStage('gemini', 'error', 'Request failed: ' + err.message);
+      analyseBtn.disabled = false;
+    });
+}
+
+function handleEvent(event, data) {
+  if (event === 'stage') {
+    let stageId = data.stage;
+    if (stageId === 'gemini_pred' || stageId === 'nemotron') stageId = 'prediction';
+    setStage(stageId, data.status, data.message);
+    if (data.stage === 'prediction' || data.stage === 'gemini_pred' || data.stage === 'nemotron') {
+      if (data.status === 'done' && data.data) renderPrediction(data.data);
+    }
+  }
+  if (event === 'done') {
+    sessionId = data.session_id;
+    if (!data.error) {
+      renderAll(data);
+      document.getElementById('results').style.display = 'block';
+      appendChat('bot', '✅ Cost estimate ready! Ask me anything about the breakdown, components, team, or timeline.');
+    }
+    analyseBtn.disabled = false;
+  }
+}
+
+function renderPrediction(p) {
+  const tc = p.total_cost_inr || {};
+  document.getElementById('cost-opt').textContent = fmt(tc.optimistic);
+  document.getElementById('cost-likely').textContent = fmt(tc.likely);
+  document.getElementById('cost-pess').textContent = fmt(tc.pessimistic);
+  document.getElementById('cost-summary').textContent = p.summary || '';
+
+  const hw = p.hardware_cost_inr || {};
+  const dev = p.software_dev_cost_inr || {};
+  const lic = p.licence_cost_inr || {};
+  const eff = p.effort_months || {};
+  document.getElementById('bk-hw').textContent = fmtRange(hw.min, hw.max);
+  document.getElementById('bk-dev').textContent = fmtRange(dev.min, dev.max);
+  document.getElementById('bk-lic').textContent = fmtRange(lic.min, lic.max);
+  document.getElementById('bk-months').textContent = eff.likely ? eff.low + '–' + eff.high + ' months (likely ~' + eff.likely + ' mo)' : '—';
+  document.getElementById('bk-conf').textContent = (p.confidence || 'medium').toUpperCase();
+
+  const flagsEl = document.getElementById('flags-wrap');
+  const flagsSec = document.getElementById('flags-section');
+  const flags = [...(p.duplicates_flagged||[]), ...(p.missing_specs||[])];
+  if (flags.length) {
+    flagsEl.innerHTML = '<ul style="padding-left:18px;line-height:1.8">' + flags.map(f => '<li style="color:#fcd34d">' + escHtml(f) + '</li>').join('') + '</ul>';
+    flagsSec.style.display = '';
+  }
+}
+
+function renderAll(data) {
+  const g = data.gemini || {};
+  const hw = data.hardware || {};
+  const sw = data.software || {};
+  _hwData = hw;
+  _swData = sw;
+  const hwSources = hw.all_sources || [];
+  if (hwSources.length > 0) {
+    document.getElementById('hw-source-count').textContent = hwSources.length;
+    document.getElementById('btn-hw-all-sources').style.display = 'inline-flex';
+    document.getElementById('card-hw-sources').style.display = 'block';
+  }
+  const swSources = sw.all_sources || [];
+  if (swSources.length > 0) {
+    document.getElementById('sw-source-count').textContent = swSources.length;
+    document.getElementById('btn-sw-all-sources').style.display = 'inline-flex';
+    document.getElementById('card-sw-sources').style.display = 'block';
+  }
+
+  // Hardware Table
+  const hwWrap = document.getElementById('hw-table-wrap');
+  if ((hw.items||[]).length === 0) {
+    hwWrap.innerHTML = '<p class="no-items">No hardware components required.</p>';
+  } else {
+        let rows = hw.items.map((it, idx) => {
+      const ps = it.price_summary || {};
+      const models = (it.suggested_models||[]).map(m => `<span class="pill pill-hw">${escHtml(m.maker+' '+m.model)}</span>`).join('');
+      const scnt = (it.sources||[]).length || it.source_count || 0;
+      const sbtn = scnt > 0 ? `<button class="btn-source-pill" onclick="openItemSourcesModal('hardware', ${idx})">🔗 ${scnt} links</button>` : '<span style="color:var(--muted)">—</span>';
+      return `<tr>
+        <td><strong>${escHtml(it.name)}</strong>${it.spec?'<br><small style="color:var(--muted)">'+escHtml(it.spec)+'</small>':''}</td>
+        <td>${models||'—'}</td>
+        <td>${ps.min?fmtRange(ps.min,ps.max):'<span style="color:var(--muted)">Price not found</span>'}</td>
+        <td>${sbtn}</td>
+      </tr>`;
+    }).join('');
+    hwWrap.innerHTML = `<table><thead><tr><th>Component / Spec</th><th>Suggested Models</th><th>Live Price Range (INR)</th><th>Researched Sources</th></tr></thead><tbody>${rows}</tbody></table>`;
+    if (hw.total && (hw.total.min || hw.total.max)) {
+      hwWrap.innerHTML += `<div style="text-align:right;margin-top:10px;font-weight:600;color:#93c5fd">Total Hardware: ${fmtRange(hw.total.min, hw.total.max)}</div>`;
+    }
+  }
+
+  // Software Table
+  const swWrap = document.getElementById('sw-table-wrap');
+  if ((sw.items||[]).length === 0) {
+    swWrap.innerHTML = '<p class="no-items">No software items required.</p>';
+  } else {
+    let rows = sw.items.map((it, idx) => {
+      const eff = it.effort || {};
+      const ps = it.price_summary || {};
+      const kindCls = it.kind && it.kind.includes('buy') ? 'pill-buy' : it.kind === 'process' ? 'pill-process' : 'pill-build';
+      const kindPill = `<span class="pill ${kindCls}">${escHtml(it.kind||'')}</span>`;
+      let detail = '—';
+      if (eff.hours_likely) {
+        const pct = Math.min(100, Math.round((eff.hours_likely / 1200) * 100));
+        detail = `${eff.hours_low}–${eff.hours_high} hrs (likely ~${eff.hours_likely} hrs)<br>
+          <div class="effort-bar"><div class="effort-fill" style="width:${pct}%"></div></div>
+          <small style="color:var(--muted)">${eff.source||''}</small>`;
+      } else if (ps.min || ps.max) {
+        detail = fmtRange(ps.min, ps.max) + '<br><small style="color:var(--muted)">licence / SaaS</small>';
+      }
+      const scnt = (it.sources||[]).length || it.source_count || 0;
+      const sbtn = scnt > 0 ? `<button class="btn-source-pill" onclick="openItemSourcesModal('software', ${idx})">🔗 ${scnt} links</button>` : '<span style="color:var(--muted)">—</span>';
+      return `<tr>
+        <td><strong>${escHtml(it.name)}</strong></td>
+        <td>${kindPill}<span class="pill" style="background:#131b2e;color:var(--muted)">${escHtml(it.discipline||'')}</span></td>
+        <td>${detail}</td>
+        <td>${sbtn}</td>
+      </tr>`;
+    }).join('');
+    let footer = '';
+    if (sw.effort && sw.effort.months_likely) {
+      footer = `<div style="margin-top:10px;font-weight:600;color:#a5b4fc">Total Dev Effort: ${sw.effort.total_hours_low}–${sw.effort.total_hours_high} hrs &bull; ~${sw.effort.months_likely} months likely</div>`;
+    }
+    swWrap.innerHTML = `<table><thead><tr><th>Item / Deliverable</th><th>Type</th><th>Estimated Effort / Cost</th></tr></thead><tbody>${rows}</tbody></table>${footer}`;
+  }
+
+  // Engineering Team
+  const teamWrap = document.getElementById('team-wrap');
+  const team = g.team || [];
+  if (!team.length) {
+    teamWrap.innerHTML = '<p class="no-items">No specific engineering roles designated.</p>';
+  } else {
+    teamWrap.innerHTML = '<div style="display:flex;flex-wrap:wrap;gap:10px">' +
+      team.map(r => `<div style="background:#0d1424;border:1px solid var(--card-border);border-radius:10px;padding:10px 14px;min-width:170px">
+        <div style="font-weight:600;margin-bottom:4px;color:#93c5fd">${escHtml(r.role)}</div>
+        <div style="color:var(--muted);font-size:.8rem">${escHtml(r.reason)}</div>
+      </div>`).join('') + '</div>';
+  }
+
+  if (data.prediction && !data.prediction.error) renderPrediction(data.prediction);
+}
+
+// Chatbot
+async function sendChat() {
+  const input = document.getElementById('chat-input');
+  const msg = input.value.trim();
+  if (!msg) return;
+  input.value = '';
+  appendChat('user', msg);
+  const thinkEl = appendChat('bot thinking', '…');
+
+  try {
+    const res = await fetch('/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ session_id: sessionId || '', message: msg }),
+    });
+    const d = await res.json();
+    thinkEl.className = 'chat-msg bot';
+    thinkEl.textContent = d.reply || d.error || 'No response.';
+  } catch (e) {
+    thinkEl.className = 'chat-msg bot';
+    thinkEl.textContent = 'Error: ' + e.message;
+  }
+  document.getElementById('chat-log').scrollTop = 9999;
+}
+
+function appendChat(cls, text) {
+  const el = document.createElement('div');
+  el.className = 'chat-msg ' + cls;
+  el.textContent = text;
+  const log = document.getElementById('chat-log');
+  log.appendChild(el);
+  log.scrollTop = 9999;
+  return el;
+}
+</script>
+
+<!-- Sources Modal -->
+<div id="sources-modal" class="modal-backdrop" onclick="if(event.target===this)closeSourcesModal()">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3 id="modal-title">&#127760; Researched Sources</h3>
+      <button class="modal-close" onclick="closeSourcesModal()">&times;</button>
+    </div>
+    <div class="modal-body" id="modal-content"></div>
+  </div>
+</div>
+
+</body>
+</html>

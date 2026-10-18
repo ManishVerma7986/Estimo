@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Moolya | Project cost estimator</title>
+  <meta name="description" content="Moolya estimates what a project will cost: live hardware prices, software effort and a low, likely and high total in rupees.">
+  <meta name="theme-color" content="#1A2342">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23D1A02E'/%3E%3Cpath d='M7 16h18M7 10v12M25 10v12' stroke='%231A2342' stroke-width='2.4' stroke-linecap='round'/%3E%3Ccircle cx='15' cy='16' r='3.6' fill='%231A2342'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="shell">
+
+  <!-- Left pane: the brief and the live progress route -->
+  <aside class="brief" aria-label="Project brief">
+
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <rect width="32" height="32" rx="8" fill="#D1A02E"/>
+        <path d="M7 16h18M7 10v12M25 10v12" stroke="#1A2342" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+        <circle cx="15" cy="16" r="3.6" fill="#1A2342"/>
+      </svg>
+      <span class="brand-name">Moolya</span>
+      <span class="brand-event">KLE Fest 2</span>
+    </div>
+
+    <div class="intro">
+      <h1>Price a project before you build it.</h1>
+      <p class="lede">Describe it, sketch it or upload the spec. Moolya prices the hardware from live Indian suppliers, sizes the software effort and returns a low, likely and high estimate in rupees.</p>
+    </div>
+
+    <form class="composer" id="composer" novalidate>
+      <div class="modes" role="tablist" aria-label="Brief format">
+        <button type="button" role="tab" class="mode is-active" id="mode-text" data-mode="text" aria-selected="true" aria-controls="pane-text">Describe it</button>
+        <button type="button" role="tab" class="mode" id="mode-image" data-mode="image" aria-selected="false" aria-controls="pane-image" tabindex="-1">Image</button>
+        <button type="button" role="tab" class="mode" id="mode-pdf" data-mode="pdf" aria-selected="false" aria-controls="pane-pdf" tabindex="-1">PDF</button>
+      </div>
+
+      <div class="pane is-active" id="pane-text" role="tabpanel" aria-labelledby="mode-text">
+        <label class="sr-only" for="project-text">Project description</label>
+        <textarea id="project-text" placeholder="Components, microcontrollers, cameras, software stack, deliverables. For example: a drone that scans crop fields for disease, with a camera, GPS, flight controller and a farm analytics dashboard."></textarea>
+      </div>
+
+      <div class="pane" id="pane-image" role="tabpanel" aria-labelledby="mode-image" hidden>
+        <label class="dropzone" id="image-dropzone">
+          <input type="file" id="image-input" class="sr-only" accept="image/png,image/jpeg,image/webp,.png,.jpg,.jpeg,.webp">
+          <span class="dz-prompt" id="image-prompt">
+            <strong>Drop an image here, or click to browse</strong>
+            <small>A requirements diagram, BOM sheet, circuit schematic or process chart. PNG, JPG or WEBP, up to 20 MB.</small>
+          </span>
+          <span class="file-chip" id="image-chip" hidden>
+            <img id="image-preview" alt="Selected image preview">
+            <span class="file-meta"><span class="file-name" id="image-name"></span><span class="file-size" id="image-size"></span></span>
+            <button type="button" class="chip-remove" data-clear="image">Remove</button>
+          </span>
+        </label>
+      </div>
+
+      <div class="pane" id="pane-pdf" role="tabpanel" aria-labelledby="mode-pdf" hidden>
+        <label class="dropzone" id="pdf-dropzone">
+          <input type="file" id="pdf-input" class="sr-only" accept="application/pdf,.pdf">
+          <span class="dz-prompt" id="pdf-prompt">
+            <strong>Drop a PDF here, or click to browse</strong>
+            <small>A project spec, PRD, RFP or architecture document. Text or scanned, up to 20 MB.</small>
+          </span>
+          <span class="file-chip" id="pdf-chip" hidden>
+            <span class="doc-icon" aria-hidden="true">PDF</span>
+            <span class="file-meta"><span class="file-name" id="pdf-name"></span><span class="file-size" id="pdf-size"></span></span>
+            <button type="button" class="chip-remove" data-clear="pdf">Remove</button>
+          </span>
+        </label>
+      </div>
+
+      <div class="actions">
+        <p class="hint" id="input-hint" aria-live="polite">Describe the project to begin.</p>
+        <button type="submit" class="run" id="analyse-btn" disabled>Estimate cost</button>
+      </div>
+      <p class="run-error" id="run-error" role="alert" hidden></p>
+    </form>
+
+    <section class="route" aria-labelledby="route-title">
+      <h2 id="route-title">Progress</h2>
+      <ol class="route-list" aria-live="polite">
+
+        <li class="station is-waiting" id="stage-gemini">
+          <span class="node" aria-hidden="true"></span>
+          <div class="station-body">
+            <div class="station-head"><span class="station-name">Reading the brief</span><span class="station-tool">Gemini</span></div>
+            <p class="station-msg" id="msg-gemini">Waiting to start</p>
+            <details class="stage-output" id="output-wrap-gemini" hidden>
+              <summary>View Gemini response and extracted requirements</summary>
+              <pre id="output-gemini"></pre>
+            </details>
+          </div>
+        </li>
+
+        <li class="station-group">
+          <div class="branch">
+            <p class="branch-label">These two run in parallel</p>
+            <ul class="branch-list">
+              <li class="station is-waiting" id="stage-hardware">
+                <span class="node" aria-hidden="true"></span>
+                <div class="station-body">
+                  <div class="station-head"><span class="station-name">Pricing hardware</span><span class="station-tool">TinyFish</span></div>
+                  <p class="station-msg" id="msg-hardware">Waits for the brief</p>
+                  <button type="button" class="link-btn" id="card-hw-sources" data-sources="hardware" hidden>View researched sources</button>
+                  <details class="stage-output" id="output-wrap-hardware" hidden>
+                    <summary>View hardware agent output</summary>
+                    <pre id="output-hardware"></pre>
+                  </details>
+                </div>
+              </li>
+              <li class="station is-waiting" id="stage-software">
+                <span class="node" aria-hidden="true"></span>
+                <div class="station-body">
+                  <div class="station-head"><span class="station-name">Sizing software effort</span><span class="station-tool">Effort model</span></div>
+                  <p class="station-msg" id="msg-software">Waits for the brief</p>
+                  <button type="button" class="link-btn" id="card-sw-sources" data-sources="software" hidden>View researched sources</button>
+                  <details class="stage-output" id="output-wrap-software" hidden>
+                    <summary>View software estimate and exact local model prediction</summary>
+                    <pre id="output-software"></pre>
+                  </details>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="station is-waiting" id="stage-nemotron">
+          <span class="node" aria-hidden="true"></span>
+          <div class="station-body">
+            <div class="station-head"><span class="station-name">Interpreting the estimate</span><span class="station-tool">Nemotron</span></div>
+            <p class="station-msg" id="msg-nemotron">Waits for both agents</p>
+            <details class="stage-output" id="output-wrap-nemotron" hidden>
+              <summary>View Nemotron response</summary>
+              <pre id="output-nemotron"></pre>
+            </details>
+          </div>
+        </li>
+
+        <li class="station is-waiting" id="stage-prediction">
+          <span class="node" aria-hidden="true"></span>
+          <div class="station-body">
+            <div class="station-head"><span class="station-name">Calculating the final total</span><span class="station-tool">Local estimator</span></div>
+            <p class="station-msg" id="msg-prediction">Waits for both agents</p>
+            <details class="stage-output" id="output-wrap-prediction" hidden>
+              <summary>View final cost calculation</summary>
+              <pre id="output-prediction"></pre>
+            </details>
+          </div>
+        </li>
+
+      </ol>
+    </section>
+
+  </aside>
+
+  <!-- Right pane: the estimate sheet -->
+  <main class="desk">
+
+    <div class="desk-bar">
+      <h2>Estimate</h2>
+      <button type="button" class="ask-btn" id="ask-btn">Ask about this estimate</button>
+    </div>
+
+    <section class="empty" id="empty">
+      <svg class="empty-art" viewBox="0 0 520 70" aria-hidden="true" preserveAspectRatio="xMinYMid meet">
+        <defs>
+          <pattern id="ticks" width="13" height="70" patternUnits="userSpaceOnUse">
+            <line x1="0.5" y1="40" x2="0.5" y2="52" stroke="currentColor" stroke-width="1"/>
+          </pattern>
+        </defs>
+        <rect x="0" y="0" width="520" height="70" fill="url(#ticks)"/>
+        <line x1="0" y1="40" x2="520" y2="40" stroke="currentColor" stroke-width="1.5"/>
+        <circle cx="70" cy="40" r="7" fill="none" stroke="#4D6E40" stroke-width="2"/>
+        <circle cx="250" cy="40" r="9" fill="none" stroke="#2D3F72" stroke-width="2.5"/>
+        <circle cx="450" cy="40" r="7" fill="none" stroke="#96403A" stroke-width="2"/>
+      </svg>
+      <h3>Your estimate shows up here</h3>
+      <p>Add a brief on the left and run it. You get a cost range, a hardware price list with sources, software effort by deliverable and a suggested team.</p>
+    </section>
+
+    <div class="sheet" id="results" hidden>
+
+      <section class="range" aria-labelledby="range-title">
+        <h3 class="range-label" id="range-title">Likely total cost</h3>
+        <p class="range-figure" id="cost-likely">-</p>
+        <div class="scale" aria-hidden="true">
+          <span class="scale-lo" id="scale-lo"></span>
+          <span class="scale-mark" id="scale-mark"></span>
+        </div>
+        <div class="scale-ends">
+          <div><span class="end-label">Optimistic</span><span class="end-fig" id="cost-opt">-</span></div>
+          <div class="end-right"><span class="end-label">Pessimistic</span><span class="end-fig" id="cost-pess">-</span></div>
+        </div>
+        <p class="summary" id="cost-summary"></p>
+        <dl class="facts">
+          <div><dt>Timeline</dt><dd id="bk-months">-</dd></div>
+          <div><dt>Confidence</dt><dd id="bk-conf">-</dd></div>
+        </dl>
+      </section>
+
+      <section class="block" aria-labelledby="bk-title">
+        <div class="block-head"><h3 id="bk-title">Where the money goes</h3></div>
+        <div class="stack" id="bk-stack" role="img" aria-label="Share of cost by hardware, development and licences">
+          <span class="seg seg-hw" id="seg-hw"></span>
+          <span class="seg seg-dev" id="seg-dev"></span>
+          <span class="seg seg-lic" id="seg-lic"></span>
+        </div>
+        <ul class="legend">
+          <li><span class="key key-hw"></span><span class="legend-text"><span class="legend-name">Hardware</span><span class="legend-val" id="bk-hw">-</span></span></li>
+          <li><span class="key key-dev"></span><span class="legend-text"><span class="legend-name">Development effort</span><span class="legend-val" id="bk-dev">-</span></span></li>
+          <li><span class="key key-lic"></span><span class="legend-text"><span class="legend-name">Licences and SaaS</span><span class="legend-val" id="bk-lic">-</span></span></li>
+        </ul>
+      </section>
+
+      <section class="block" aria-labelledby="hw-title">
+        <div class="block-head">
+          <div>
+            <h3 id="hw-title">1. Hardware Requirements & Live Market Cost</h3>
+            <p class="block-note">Prices researched live from Indian component suppliers (Robu.in, Sunrom, DigiKey, Amazon, etc.)</p>
+          </div>
+          <button type="button" class="src-btn" id="btn-hw-all-sources" data-sources="hardware" hidden>All sources (<span id="hw-source-count">0</span>)</button>
+        </div>
+        <div class="table-wrap" id="hw-table-wrap"></div>
+      </section>
+
+      <section class="block" aria-labelledby="sw-title">
+        <div class="block-head">
+          <div>
+            <h3 id="sw-title">2. Software Requirements & Estimated Development Cost</h3>
+            <p class="block-note">Computed by offline ML model (XGBoost on Desharnais dataset), itemised labor breakdown, 2,000-iteration Monte Carlo simulation & historical analogies</p>
+          </div>
+          <button type="button" class="src-btn" id="btn-sw-all-sources" data-sources="software" hidden>All sources (<span id="sw-source-count">0</span>)</button>
+        </div>
+        <div class="table-wrap" id="sw-table-wrap"></div>
+      </section>
+
+      <section class="block" aria-labelledby="team-title">
+        <div class="block-head"><h3 id="team-title">Suggested engineering team</h3></div>
+        <div id="team-wrap"></div>
+      </section>
+
+      <section class="block flags" id="flags-section" aria-labelledby="flags-title" hidden>
+        <div class="block-head"><h3 id="flags-title">Flags and missing specs</h3></div>
+        <div id="flags-wrap"></div>
+      </section>
+
+      <p class="footnote">Hardware prices sourced live from Indian electronics suppliers via TinyFish and SerpApi. Software development cost computed by offline trained ML models (calibrated on the Desharnais project dataset), transparent baseline arithmetic, 2,000-iteration Monte Carlo uncertainty analysis, and historical project analogies.</p>
+
+    </div>
+
+  </main>
+</div>
+
+<!-- Sources dialog -->
+<dialog id="sources-dialog" aria-labelledby="modal-title">
+  <div class="dlg-head">
+    <h3 id="modal-title">Researched sources</h3>
+    <button type="button" class="dlg-close" data-close aria-label="Close">&times;</button>
+  </div>
+  <div class="dlg-body" id="modal-content"></div>
+</dialog>
+
+<!-- Chat drawer -->
+<div class="scrim" id="scrim" hidden></div>
+<aside class="chat" id="chat" aria-label="Ask about this estimate" aria-hidden="true" inert>
+  <div class="chat-head">
+    <h3>Ask about this estimate</h3>
+    <button type="button" class="dlg-close" id="chat-close" aria-label="Close chat">&times;</button>
+  </div>
+  <div class="chat-log" id="chat-log" aria-live="polite">
+    <div class="msg bot">Run an estimate first, then ask about component prices, team cost, the timeline or any line in the breakdown.</div>
+  </div>
+  <div class="chat-suggest" id="chat-suggest" hidden>
+    <button type="button" class="chip" data-ask="What drives the hardware cost?">What drives the hardware cost?</button>
+    <button type="button" class="chip" data-ask="How much will the engineering team cost?">How much will the team cost?</button>
+    <button type="button" class="chip" data-ask="Where can I cut the cost?">Where can I cut cost?</button>
+  </div>
+  <form class="chat-form" id="chat-form">
+    <label class="sr-only" for="chat-input">Your question</label>
+    <input type="text" id="chat-input" placeholder="e.g. How long will development take?" autocomplete="off">
+    <button type="submit" id="chat-send">Send</button>
+  </form>
+</aside>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
